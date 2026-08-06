@@ -1,0 +1,18 @@
+LTspice 26.0.1 for Windows
+Circuit: C:\Users\tshen\OneDrive\Desktop\MS_NCSU\2026 Spring\ECE533\Final Project\Submission ready\Spice_Files\New folder\ECE533_IL_Buck_parasitics (2).net
+Start Time: Mon May  4 02:20:45 2026
+Options:TOPOLOGYCHECK=0 TOPOLOGYCHECK=0
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 187.329 seconds.
+
+Files loaded:
+C:\Users\tshen\OneDrive\Desktop\MS_NCSU\2026 Spring\ECE533\Final Project\Submission ready\Spice_Files\New folder\ECE533_IL_Buck_parasitics (2).net
+C:\Users\tshen\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\tshen\OneDrive\Desktop\MS_NCSU\2026 Spring\ECE533\Final Project\Submission ready\Spice_Files\New folder\EPCGaNLibrary.lib
+C:\Users\tshen\OneDrive\Desktop\MS_NCSU\2026 Spring\ECE533\Final Project\Submission ready\Spice_Files\New folder\ERUC.sub
+
