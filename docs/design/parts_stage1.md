@@ -1,10 +1,9 @@
 # Stage 1 — Proposed part list
 
 Checked **2026-10-15**.
-- **Digi-Key:** every product page returned a bot-verification ("Performing security verification")
-  screen, so no Digi-Key stock or Digi-Key PN could be read automatically. **Please confirm Digi-Key
-  status/stock for each row** (search link: `https://www.digikey.com/en/products/result?keywords=<MPN>`).
-  Lifecycle status below comes from the manufacturer pages (TI, Skyworks, Würth) or the datasheet.
+- **Digi-Key:** stock and Digi-Key PNs are handled by the user (Stage 1 review). Automatic checks
+  were blocked by bot verification. Lifecycle status below comes from the manufacturer pages (TI,
+  Skyworks, Würth) or the datasheet.
 - **LCSC:** stock read from lcsc.com search results on the date above. "0" means LCSC lists the part
   but has none in stock (consign or buy from Digi-Key for JLC assembly).
 - Passives (R/C values, 0603 minimum) are finalised in Stage 2. Only the critical ones are listed here.
@@ -36,7 +35,7 @@ Checked **2026-10-15**.
 | U9, U10 (HV) | Fast OCP comparator / current-sense amp, 0–36 V CM | TI **INA301A3IDGKR** | Active (ti.com) | C2861552 / 59 | Gain 100 |
 | AT1, AT2 | 2-ch digital isolator (HV → LV flags) | Skyworks SI86S620BC-IS | Active (BOM) | C7363570 / 0 | **Kept**, new role |
 | PS1 | Isolated 5 V → 5 V | Murata NME1S0505SC (1 W) **or recommended NXE2S0505MC-R7 (2 W, 3 kVDC, SMD)** | Active | NME1S: C39128444 / 66; NXE2S: C5817088 / 36 | Decide at review |
-| U15 (LV), U14 (HV) | Comparator + 1.242 V reference (OVP 27 V; OTP 80 °C) | TI TLV3012AIDBVR | Active | C62505 / 3 | |
+| U15 (LV), U14 (HV), U22 (HV) | Comparator + 1.242 V reference (output OVP 27 V; OTP 80 °C; input OVP 82 V) | TI TLV3012AIDBVR | Active | C62505 / 3 | U22 added at the Stage 1 review for a precise 82 V input OVP |
 | U16, U17, U18 | D flip-flop (cycle latches ×2, fault latch) | TI SN74LVC1G74DCTR | Active | C840104 / 2,335 | |
 | U19, U20 | 2-input AND (PWM gating) | TI SN74LVC1G08DBVR | Active | C7666 / 68,650 | |
 | D8, D9 | PGOOD green / FAULT red LED 0603 | Stage 2 | | | |
@@ -51,7 +50,7 @@ Checked **2026-10-15**.
 | Q2 | Reverse-polarity FET 100 V 1.5 mΩ TOLL | Infineon IPT015N10N5 | Active | C108964 / 40,000 | |
 | U13 | Photovoltaic MOSFET driver | Vishay VOM1271T | Active | C146286 / 3,610 | Q2 gate |
 | U12 | Hot-swap controller 9–80 V, auto-retry | TI **LM5069MM-2/NOPB** | Active (ti.com) | not found | Digi-Key |
-| Q1 | Hot-swap pass FET | Infineon IPT015N10N5 | Active | C108964 / 40,000 | Option IPT059N15N3ATMA1 (150 V; C3278549 / 277) |
+| Q1 | Hot-swap pass FET 100 V | Infineon IPT015N10N5 | Active | C108964 / 40,000 | 100 V kept (Stage 1 review) |
 | RS1 | 2 mΩ shunt | Bourns CSS2H-2512R-2L00F (or 2 × CSS2H-2512R-1L00F) | Active | 1 mΩ: C4175647 / 1,380 | |
 | U11 | 5.2 V buck 6–100 V, 2.5 A | TI **LM5012DDAR** | Active (ti.com) | C6079494 / 1,414 | + 100 V 3 A Schottky + 22–33 µH inductor (Stage 2) |
 | U21 | Fan current-limit switch | TI TPS2553DBVR | Active (ti.com) | C55266 / 52,811 | Limit ≈ 1.0 A |

@@ -19,12 +19,18 @@ Stage 2 and simulated.
 - **UVLO** (R1 top / R2 bottom, 21 µA hysteresis current):
   R1 = ΔV/21 µA = 2 V/21 µA → **95.3 kΩ**; R2 = 2.5·R1/(V_UVL − 2.5) → **4.12 kΩ**.
   Result: **on 62.3 V / off 60.3 V** (threshold 2.45–2.55 V, hysteresis 12–30 µA → on 61.5–63.2 V).
-- **OVLO** (R3 / R4): R3 = **95.3 kΩ** (2 V hysteresis), R4 = **2.94 kΩ**.
-  Result: **trip 83.5 V typ, release 81.5 V**. Tolerance (2.4–2.6 V threshold): **80.2–86.9 V**.
-  *Deviation from "≈ 82 V":* a nominal 82 V divider (R4 = 3.01 kΩ) has a tolerance band of
-  78.4–84.9 V, so it could trip at the 79.2 V maximum line. Moving to 83.5 V typ keeps the minimum
-  above 80 V. If a tight 82 V ± 1.5 % is required, add a TLV3012 comparator (1.242 V ±1 % reference)
-  driving OVLO (+1 part). Decision for review.
+- **OVLO: precise 82 V comparator (decided at the Stage 1 review).** The LM5069's own OVLO threshold
+  (2.4–2.6 V) would give a band of 78.4–84.9 V around a nominal 82 V, which could trip at the 79.2 V
+  maximum line. Instead, **U22 TLV3012** (HV side, 1.242 V internal reference, push-pull output) senses
+  a separate divider from the unclamped bus and drives the LM5069 OVLO pin through 10 kΩ, with
+  10 kΩ to PGND so OVLO defaults low.
+  - Divider: R_top **649 kΩ** (0.1 %) / R_bot **10.0 kΩ** (0.1 %) → trip = 1.242 × (1 + 64.9) =
+    **81.9 V**.
+  - Hysteresis about 2 V: positive feedback R_f ≈ R_top × 5.2 V / 2 V ≈ **1.69 MΩ** → release about
+    80 V (exact values set in Stage 2).
+  - Tolerance (about ±1.5 % from the reference and 0.1 % resistors): **≈ 80.7–83.1 V**, above the
+    79.2 V maximum line.
+  - Fallback: the LM5069 divider alone (R3 = 95.3 kΩ, R4 = 2.94 kΩ → 83.5 V typ, 80.2–86.9 V).
 - **Current limit** V_CL = 55 mV (48.5–61.5) / 2 mΩ → **27.5 A** (24.3–30.8 A), above the 17.9 A
   maximum load current. **Circuit breaker** V_CB = 105 mV → **53 A** (fast gate pull-down): covers a
   power-stage short or shoot-through.
@@ -38,15 +44,16 @@ Stage 2 and simulated.
 "Clamp below 100 V" holds only at low surge currents: the SMDJ85CA is about 95–100 V near 1 A and
 137 V at its full rated I_PP. Downstream, 100 V items are C1–C4/C15–C18 (100 V X7T MLCC), the
 LM5069 pin (RC-filtered), Q1/Q2 (100 V, avalanche-rated) and the LM5012 (100 V). Mitigations: bulk electrolytic ESR damping (C5, 160 V),
-the TVS at the connector, and the spec statement that the line never exceeds 80 V. Option if the
-review wants more margin: 150 V pass FET (IPT059N15N3, +1.3 W loss) and 150 V-rated HF ceramics.
+the TVS at the connector, and the spec statement that the line never exceeds 80 V. **Decided at the
+Stage 1 review: keep the 100 V pass FET (IPT015N10N5).** The 150 V option (IPT059N15N3, +1.3 W loss)
+was not needed.
 
 ## 2. Converter protections
 
 | Function | Where | Implementation | Value |
 |---|---|---|---|
 | Input UVLO | HV | LM5069 UVLO | On 62.3 V / off 60.3 V |
-| Input OVP | HV | LM5069 OVLO | 83.5 V / 81.5 V (see above) |
+| Input OVP | HV | U22 TLV3012 → LM5069 OVLO | 81.9 V trip / about 80 V release (see above) |
 | **Cycle-by-cycle OCP, per phase** | HV → LV | INA301A3 on RS2/RS3 (0.5 mΩ, gain 100, 0–36 V CM, < 1 µs) → AT1 → cycle latch + AND | **36 A instantaneous**, about 28 A average plus half the 14–16 A ripple. A 28 A peak threshold would trip at full load (peak 31 A). INA301 output at 36 A = 1.80 V; R_LIMIT per the datasheet (Stage 2) |
 | Average OCP + hiccup | LV | LTC3861 ISNS (AMC3301 out, attenuated ×0.261 → 30 mV at 28 A), 128-cycle counter → three-state, 32 768-cycle wait | **28 A per phase (≈ 56 A total, about 120 %)**, R_ILIM = (18.5 × 30 mV + 0.5 V)/20 µA = **52.3 kΩ**; hiccup off-time 131 ms, auto-retry |
 | Output OVP (latch) | LV | LTC3861 VSNSOUT (0.6 V at 24 V) → TLV3012 → fault latch | **27.0 V** (VSNSOUT = 0.675 V) |

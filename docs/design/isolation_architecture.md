@@ -36,7 +36,7 @@ flowchart LR
   subgraph HV["HV power domain (PGND)"]
     IN["J1/J3 72 V in"] --> F1["F1 25 A fuse"] --> TVS["D6 SMDJ85CA<br/>(bidirectional)"]
     TVS --> QR["Q2 reverse-polarity FET<br/>+ U13 VOM1271 PV driver"]
-    QR --> HS["U12 LM5069-2 hot-swap<br/>Q1 pass FET, RS1 2 mΩ<br/>UVLO 62/60 V, OVLO ≈ 83.5 V"]
+    QR --> HS["U12 LM5069-2 hot-swap<br/>Q1 pass FET, RS1 2 mΩ<br/>UVLO 62/60 V<br/>OVP 82 V via U22 TLV3012"]
     HS --> BUS["VIN bus: C5 bulk, C1–C4 (+) HF"]
     BUS --> PH1["Phase 1: Q3/Q4 EPC2304"]
     BUS --> PH2["Phase 2: Q5/Q6 EPC2304"]
@@ -104,7 +104,7 @@ NTC + TLV3012 (80 °C) ───────────AT2──► ┐
 AMC3330 → LTC3861 VSNSOUT → TLV3012 (27 V) ┤─► FAULT latch (74LVC1G74, POR-cleared) ─► RUN1/RUN2 low,
                                          ┘                                             Si8274 ENABLE low, FAULT LED/J4
 LTC3861 average OC (28 A/phase via AMC3301, 128-cycle counter) ─► 3-state PWM, 131 ms hiccup, auto-retry
-LM5069: UVLO 62/60 V, OVLO, inrush/power limit, 27.5 A current limit, 53 A circuit breaker (auto-retry, -2)
+LM5069: UVLO 62/60 V, OVLO driven by U22 TLV3012 (82 V), inrush/power limit, 27.5 A current limit, 53 A circuit breaker (auto-retry, -2)
 ```
 
 - **Cycle-by-cycle per phase:** forcing PWM low ends the high-side on-time and turns the low-side

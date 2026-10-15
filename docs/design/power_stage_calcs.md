@@ -35,9 +35,9 @@ Options (same model method):
 | ERUC23-3R2K (5.84 µH, k 0.714) | 63–70 % | 52–58 % | **39–44 %** |
 | ERUC23-4R1K (7.75 µH, k 0.728, DCR 1.87 mΩ) | 49–55 % | **40–45 %** | 30–34 % |
 
-→ **Open decision for review.** Recommendation: keep ERUC23-3R2K at 250 kHz and relax the ripple spec
-to "< 75 % per phase, < 10 % at the output", or move to ERUC23-4R1K at 300 kHz (check its saturation
-rating against the 31 A peak). Everything below uses ERUC23-3R2K at 250 kHz.
+→ **Decided at the Stage 1 review: keep ERUC23-3R2K and EPC2304** (the existing simulations are built
+on them). The ripple target becomes what this inductor gives at 250 kHz: about 53–70 % per phase and
+under 10 % at the output. Everything below uses ERUC23-3R2K at 250 kHz.
 
 ## 3. Input capacitors
 

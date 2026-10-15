@@ -12,12 +12,15 @@ Stage 1 (architecture, issue #1). Read in this order:
 6. [protection.md](protection.md): thresholds, dividers, fault line, EMI items
 7. [parts_stage1.md](parts_stage1.md): proposed parts with status/stock, removed parts, rejected candidates
 
-## Decisions needed at the Stage 1 review
-- Per-phase ripple: the < 40 % spec isn't met with ERUC23-3R2K (63–70 % at 250 kHz). Relax the spec,
-  or change to ERUC23-4R1K at 300 kHz (`power_stage_calcs.md` §2).
-- ERUC23-3R2K saturation rating per winding vs the 31 A peak (§7).
-- Input OVP: 83.5 V typical with LM5069 tolerance, or a precision 82 V comparator (+1 part).
+## Stage 1 review outcome
+- **Kept:** ERUC23-3R2K inductor and EPC2304 FETs, because the simulations depend on them. Per-phase
+  ripple is accepted at about 53–70 % (output ripple < 10 %).
+- **Input OVP:** precise 82 V with a TLV3012 comparator (U22).
+- **Stack-up:** 4 × 2 oz, JLC04161H-3313, accepted.
+- **Pass FET:** 100 V (IPT015N10N5).
+- **Digi-Key stock:** handled by the user.
+
+Still open:
 - PS1: keep NME1S0505SC (1 W) or move to NXE2S0505MC (2 W).
-- Stack-up: 2 oz on all four layers with 3313 prepreg (confirm with JLC) vs a 7628 fallback.
-- Pass FET 100 V (lower loss) vs 150 V (more surge margin).
-- Fuse DC rating confirmation; Digi-Key stock for every part (bot verification blocked automatic checks).
+- ERUC23-3R2K saturation definition per winding vs the 31 A peak (TDK datasheet, Stage 2 check).
+- Fuse 0456025.ER DC voltage rating (Littelfuse datasheet, Stage 2 check).
