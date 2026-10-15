@@ -1,8 +1,8 @@
 # LTspice vendor models (local only — not committed)
 
 `ECE533_IL_Buck_parasitics (2).asc` uses two vendor models that are copyrighted by
-their manufacturers, so they aren't committed. Download them and put them in this folder
-(or next to the `.asc`):
+their manufacturers, so they aren't committed. Download them and put them **next to the `.asc`** in `sim/ltspice/` (LTspice finds symbols
+there by default; those filenames are git-ignored):
 
 | File | Source |
 |---|---|

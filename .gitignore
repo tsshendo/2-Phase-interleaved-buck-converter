@@ -32,6 +32,9 @@ fab/**/*.zip
 *.log.bak
 # Vendor simulation models (EPC, TDK) — download locally, see sim/ltspice/models/README.md
 sim/ltspice/models/*
+sim/ltspice/EPCGaN*
+sim/ltspice/ERUC.sub
+sim/ltspice/ERUC.asy
 !sim/ltspice/models/README.md
 
 # ---------- Office / OS / editors ----------
