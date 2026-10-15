@@ -20,7 +20,7 @@ jobs:
       image: kicad/kicad:10.0
       options: --user root
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: ERC
         id: erc
@@ -58,7 +58,7 @@ jobs:
 
       - name: Upload reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: kicad-reports
           path: |
