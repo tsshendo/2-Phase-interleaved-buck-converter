@@ -143,7 +143,7 @@ bidirectional TVS doesn't conduct. Nothing downstream sees a negative voltage.
 - L2 (and L3) are split into a `PGND` region under the power stage and a `GND_ISO` island under the
   controls, with the gap aligned to the barrier.
 - Isolation rating of each bridging part: Si8274 2.5 kVrms (UL1577, 62368-1 basic); AMC3301/AMC3330
-  4.25 kVrms reinforced; SI86S620BC basic class; NME1S0505SC 1 kVDC functional, NXE2S0505MC 3 kVDC.
+  4.25 kVrms reinforced; SI86S620BC basic class; NME1S0505SC 1 kVDC functional.
   All are far above the 80 V working voltage.
 
 ## 7. What changes in the BOM (summary; details in `parts_stage1.md`)
@@ -153,5 +153,5 @@ bidirectional TVS doesn't conduct. Nothing downstream sees a negative voltage.
 | 1EDN7550 ×4 (U1–U4) → **Si8274GB1-IS1 ×2** | Isolated half-bridge driver with dead time; no 1EDN common-mode limit at 79 V |
 | SS110HL ×4 → ×2 (high-side bootstrap only) + 5.1 V Zener clamp on each bootstrap | Si8274 low side is supplied directly; the Zener stops bootstrap over-charge during GaN reverse conduction (EPC2304 VGS ≤ 6 V) |
 | AT1/AT2 SI86S620BC kept, new role | HV → LV fault and tach flags |
-| PS1 kept as the isolated control supply; **NXE2S0505MC (2 W) recommended** | NME1S0505SC (1 W, 200 mA) would run at 68 % (typ) to 87 % (max) load |
+| PS1 NME1S0505SC kept as the isolated control supply (Stage 1 review) | Runs at 65 % (typ) to 88 % (max) load; output voltage checked in Stage 2 |
 | New: LTC3861, AMC3301 ×2, AMC3330, INA301A3 ×2, LM5012, LM5069-2, VOM1271, logic, TPS2553 | See parts list |

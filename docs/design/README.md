@@ -20,7 +20,8 @@ Stage 1 (architecture, issue #1). Read in this order:
 - **Pass FET:** 100 V (IPT015N10N5).
 - **Digi-Key stock:** handled by the user.
 
-Still open:
-- PS1: keep NME1S0505SC (1 W) or move to NXE2S0505MC (2 W).
+- **PS1:** NME1S0505SC (1 W) kept; output voltage at load checked in Stage 2.
+
+Still open (Stage 2 checks):
 - ERUC23-3R2K saturation definition per winding vs the 31 A peak (TDK datasheet, Stage 2 check).
 - Fuse 0456025.ER DC voltage rating (Littelfuse datasheet, Stage 2 check).

@@ -34,7 +34,7 @@ Checked **2026-10-15**.
 | U8 | Isolated voltage amplifier ±1 V, built-in isolated DC-DC | TI **AMC3330DWER** | Active (ti.com) | C2999368 / 4,333 | |
 | U9, U10 (HV) | Fast OCP comparator / current-sense amp, 0–36 V CM | TI **INA301A3IDGKR** | Active (ti.com) | C2861552 / 59 | Gain 100 |
 | AT1, AT2 | 2-ch digital isolator (HV → LV flags) | Skyworks SI86S620BC-IS | Active (BOM) | C7363570 / 0 | **Kept**, new role |
-| PS1 | Isolated 5 V → 5 V | Murata NME1S0505SC (1 W) **or recommended NXE2S0505MC-R7 (2 W, 3 kVDC, SMD)** | Active | NME1S: C39128444 / 66; NXE2S: C5817088 / 36 | Decide at review |
+| PS1 | Isolated 5 V → 5 V, 1 W | Murata NME1S0505SC | Active | C39128444 / 66 | Kept (Stage 1 review). Fallback NXE2S0505MC-R7 (2 W) |
 | U15 (LV), U14 (HV), U22 (HV) | Comparator + 1.242 V reference (output OVP 27 V; OTP 80 °C; input OVP 82 V) | TI TLV3012AIDBVR | Active | C62505 / 3 | U22 added at the Stage 1 review for a precise 82 V input OVP |
 | U16, U17, U18 | D flip-flop (cycle latches ×2, fault latch) | TI SN74LVC1G74DCTR | Active | C840104 / 2,335 | |
 | U19, U20 | 2-input AND (PWM gating) | TI SN74LVC1G08DBVR | Active | C7666 / 68,650 | |

@@ -40,8 +40,10 @@ Next: Stage 1 review, then Stage 2 (schematic + ERC).
 | 2026-10-15 | Hot-swap pass FET 100 V (IPT015N10N5) | Lower loss; 100 V accepted at review |
 | 2026-10-15 | Digi-Key stock handled by the user | User choice |
 
+| 2026-10-15 | PS1 stays NME1S0505SC (1 W) | User choice; 65–88 % load, output voltage to be checked in Stage 2 |
+
 ## Open questions
-- PS1 (isolated 5 V module for the control side): NME1S0505SC (1 W) vs NXE2S0505MC (2 W).
+- PS1 output voltage at 130–176 mA vs AMC3330 4.5 V min / LTC3861 5.5 V max (Stage 2).
 - ERUC23-3R2K saturation definition per winding vs the 31 A peak (TDK datasheet, Stage 2 check).
 - Fuse 0456025.ER DC voltage rating (Littelfuse datasheet, Stage 2 check).
 

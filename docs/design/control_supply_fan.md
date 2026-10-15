@@ -23,10 +23,11 @@ VIN (after Q2) ─► U11 LM5012 (100 V, 2.5 A buck) ─► +5V_PWR 5.2 V (PGND)
 | J4 outputs (open-drain to host) | 0 | 2 | |
 | **Total** | **≈ 130 mA (0.65 W)** | **≈ 176 mA (0.88 W)** | |
 
-- **PS1 = NME1S0505SC (1 W, 200 mA, 1 kVDC):** 65 % typical / 88 % worst-case load. It works, but it's
-  unregulated, and at high load the output sags toward the AMC3330's 4.5 V minimum.
-- **Recommended: Murata NXE2S0505MC (2 W, 400 mA, 3 kVDC, SMD).** It runs at 33–44 % load with
-  better output tolerance; same vendor, isolated. Decide at the Stage 1 review.
+- **PS1 = NME1S0505SC (1 W, 200 mA, 1 kVDC) — kept (Stage 1 review).** Load is 65 % typical / 88 %
+  worst case. It's unregulated, so in Stage 2: (a) check its output voltage at 130–176 mA against the
+  AMC3330's 4.5 V minimum and the LTC3861's 5.5 V maximum, using the datasheet load-regulation curve;
+  (b) keep LV loads lean (2 mA LEDs, no extra loads on +5V_ISO).
+  Fallback if the margin is too thin: Murata NXE2S0505MC (2 W, 400 mA, 3 kVDC, SMD).
 - Input power drawn from +5V_PWR: 0.88 W / 0.72 ≈ 1.2 W → **0.24 A at 5.2 V** (worst case).
 
 ## 2. +5V_PWR budget (HV domain, 5.2 V)
