@@ -1,0 +1,78 @@
+name: KiCad checks
+
+on:
+  push:
+    paths: ["kicad/**", ".github/workflows/kicad-checks.yml"]
+  pull_request:
+    paths: ["kicad/**", ".github/workflows/kicad-checks.yml"]
+  workflow_dispatch:
+
+env:
+  PROJECT_DIR: kicad/ECE533_Guide
+  PROJECT: ECE533_Guide
+  # Set to "true" once the Stage 2 schematic is clean, so ERC/DRC violations fail the build.
+  STRICT: "false"
+
+jobs:
+  erc-drc:
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:10.0
+      options: --user root
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: ERC
+        id: erc
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          set +e
+          kicad-cli sch erc --format report --severity-all --exit-code-violations \
+            -o erc.rpt "$PROJECT.kicad_sch"
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          {
+            echo "## ERC"
+            echo '```'
+            tail -n 40 erc.rpt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: DRC
+        id: drc
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          set +e
+          kicad-cli pcb drc --format report --severity-all --exit-code-violations \
+            -o drc.rpt "$PROJECT.kicad_pcb"
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          {
+            echo "## DRC"
+            echo '```'
+            tail -n 40 drc.rpt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Export schematic PDF
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: kicad-cli sch export pdf -o "$PROJECT-schematic.pdf" "$PROJECT.kicad_sch"
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: kicad-reports
+          path: |
+            ${{ env.PROJECT_DIR }}/erc.rpt
+            ${{ env.PROJECT_DIR }}/drc.rpt
+            ${{ env.PROJECT_DIR }}/*-schematic.pdf
+
+      - name: Gate on violations
+        run: |
+          echo "ERC exit code: ${{ steps.erc.outputs.code }} | DRC exit code: ${{ steps.drc.outputs.code }}"
+          if [ "$STRICT" = "true" ] && { [ "${{ steps.erc.outputs.code }}" != "0" ] || [ "${{ steps.drc.outputs.code }}" != "0" ]; }; then
+            echo "::error::ERC/DRC violations found (STRICT mode)."
+            exit 1
+          fi
+          if [ "${{ steps.erc.outputs.code }}" != "0" ] || [ "${{ steps.drc.outputs.code }}" != "0" ]; then
+            echo "::warning::ERC/DRC violations found. Non-blocking until STRICT is enabled."
+          fi

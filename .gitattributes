@@ -1,0 +1,26 @@
+* text=auto
+
+# KiCad files: keep LF so Windows checkouts don't create whole-file diffs
+*.kicad_pro   text eol=lf
+*.kicad_sch   text eol=lf
+*.kicad_pcb   text eol=lf
+*.kicad_sym   text eol=lf
+*.kicad_mod   text eol=lf
+*.kicad_dru   text eol=lf
+*-lib-table   text eol=lf
+fp-lib-table  text eol=lf
+sym-lib-table text eol=lf
+
+# LTspice
+*.asc text eol=crlf
+*.raw binary
+
+# Binary documents and models
+*.pdf  binary
+*.docx binary
+*.xlsx binary
+*.step binary
+*.stp  binary
+*.zip  binary
+*.png  binary
+*.jpg  binary

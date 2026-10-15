@@ -1,0 +1,46 @@
+# ---------- KiCad ----------
+*.lck
+*-backups/
+_autosave-*
+*.bak
+*.kicad_prl
+fp-info-cache
+*.kicad_sch-bak
+*.kicad_pcb-bak
+~*
+\#auto_saved_files\#
+.history/
+
+# Vendor library models (SamacSys/Component Search Engine license forbids
+# redistributing them as PCB library components). Keep them locally only.
+# See kicad/lib/vendor/README.md for how to download them.
+kicad/lib/vendor/*
+!kicad/lib/vendor/README.md
+
+# Vendor datasheets: local only (links in docs/datasheets/README.md)
+docs/datasheets/*
+!docs/datasheets/README.md
+
+# ---------- Fabrication outputs (regenerate; attach to releases instead) ----------
+fab/**/*.zip
+
+# ---------- LTspice ----------
+# Transient .raw files are regenerable and can be >1 GB. Keep .op.raw (small).
+*.raw
+!*.op.raw
+*.net
+*.log.bak
+# Vendor simulation models (EPC, TDK) — download locally, see sim/ltspice/models/README.md
+sim/ltspice/models/*
+sim/ltspice/EPCGaN*
+sim/ltspice/ERUC.sub
+sim/ltspice/ERUC.asy
+!sim/ltspice/models/README.md
+
+# ---------- Office / OS / editors ----------
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.tmp
