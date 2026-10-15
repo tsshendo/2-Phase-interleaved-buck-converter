@@ -20,8 +20,8 @@ reference design. Copy their topology and current paths, then improve them where
 | Input voltage | 72 V nominal, ±10 % worst case → **64.8–79.2 V**; the line never exceeds 80 V. Single input |
 | Output | 24 V, 46 A (23 A per phase), 1.1 kW; rack load, no back-feed |
 | Topology | 2-phase interleaved synchronous buck, phases 180° apart, one coupled inductor |
-| Switching frequency | 200 kHz per phase |
-| Inductor current ripple | < 40 % p-p |
+| Switching frequency | 250 kHz per phase (was 200 kHz; LTC3861 minimum, approved in Stage 1) |
+| Inductor current ripple | As given by ERUC23-3R2K at 250 kHz: about 53–70 % p-p per phase, < 10 % at the output (the original < 40 % target was relaxed in Stage 1 to keep the simulated parts) |
 | Output voltage ripple | < 1 % p-p |
 | Efficiency target | ≥ 95 % at full load |
 | Max junction temperature | 150 °C |
@@ -41,7 +41,7 @@ reference design. Copy their topology and current paths, then improve them where
   (power-stage side). The plane next to the bottom switching loop acts as the return plane/shield from the
   report. Document the IPC-2152 temperature rise for 46 A out and 23 A per phase.
 - **Double-sided placement:**
-  - **Bottom:** EPC2304 FETs, 1EDN7550 gate drivers, bootstrap parts, gate resistors, and the high-frequency
+  - **Bottom:** EPC2304 FETs, Si8274 gate drivers, bootstrap parts, gate resistors, and the high-frequency
     input ceramics (same side as the FETs to keep the commutation loop small). The heatsink mounts here.
   - **Top:** TDK coupled inductor, controller, control supply, protection circuitry, bulk capacitors,
     connectors, LEDs.
@@ -66,15 +66,17 @@ reference design. Copy their topology and current paths, then improve them where
 - Required parts (BOM: `bom/PCB_BOM.xlsx`; vendor footprints: `kicad/lib/vendor/`, local only):
   - Q3–Q6: EPC2304 eGaN FETs (200 V), two per phase
   - L1: TDK ERUC23-3R2K coupled inductor
-  - U1–U4: Infineon 1EDN7550 gate drivers (high side uses bootstrap)
-  - D1–D4: SS110HL Schottky (bootstrap)
+  - U1, U2: Skyworks Si8274GB1-IS1 isolated half-bridge gate drivers, one per phase (high side uses
+    bootstrap). They replace the original 4 × Infineon 1EDN7550 (Stage 1, isolated control architecture)
+  - D1, D2: SS110HL Schottky (bootstrap, high side only), plus a 5.1 V Zener clamp per bootstrap
   - Gate resistors: 2 Ω HS turn-on (R15–R18), 5.6 Ω LS (R13, R14, R19, R20), 4.7 Ω (R9–R12), 51 kΩ (R1–R8)
   - Input decoupling: 4× 2.2 µF 100 V X7T 0805 (C1–C4). Bulk: Chemi-Con EGXF 160 V 110 µF (C5/C6)
   - Gate-drive decoupling: 100 nF (C7–C11, C13), 10 µF (C12, C14)
   - Heatsink: Alpha Novatech Z60-12.7B
   - Fan: Sanyo Denki San Ace 40 9GA0405P6H001 (§6). In stock on Digi-Key, confirmed 2026-10-15
-- **Probably removed (confirm with me first):** AT1/AT2 SI86S620BC isolators and the PS1 NME1S0505SC
-  isolated module. With an on-board non-isolated controller they don't do anything.
+- **Kept (Stage 1 decision):** AT1/AT2 SI86S620BC isolators (HV → LV fault/tach flags) and PS1, the
+  isolated 5 V module for the control side. All LV control electronics and signals are galvanically
+  isolated from the HV power path (`docs/design/isolation_architecture.md`).
 - Reference only: UCC27611 datasheet, FAN3122 app note (links in `docs/datasheets/README.md`).
 
 ## 5. Layout requirements (keep the simulated physical design, but improve it)
@@ -106,7 +108,7 @@ reference design. Copy their topology and current paths, then improve them where
   uses a separate divider from the unclamped bus.
 - **Control supply:** one minimal converter is allowed and required (the fan rules out a linear-only
   supply). Use a small, low-part-count buck with **≥ 100 V input** running from 72 V that makes **5 V,
-  rated ≥ 1 A**, only for: controller bias (if needed), 1EDN7550 VDD/bootstrap, protection comparators,
+  rated ≥ 1 A**, only for: the isolated control-side module (PS1), Si8274 output side/bootstrap, protection comparators,
   LEDs and the fan. Write out the current budget. The low-side drivers are referenced to power ground;
   the high-side drivers use the bootstrap.
 - **Cooling fan:** Sanyo Denki San Ace 40 **9GA0405P6H001**: 40 × 40 × 20 mm, 5 V, 0.35 A (1.75 W),
