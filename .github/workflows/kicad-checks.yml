@@ -8,13 +8,22 @@ on:
   workflow_dispatch:
 
 env:
-  PROJECT_DIR: kicad/ECE533_Guide
-  PROJECT: ECE533_Guide
   # Set to "true" once the Stage 2 schematic is clean, so ERC/DRC violations fail the build.
   STRICT: "false"
 
 jobs:
   erc-drc:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dir: kicad/ECE533_Guide
+            project: ECE533_Guide
+          - dir: kicad/PowerModule
+            project: PowerModule
+    env:
+      PROJECT_DIR: ${{ matrix.dir }}
+      PROJECT: ${{ matrix.project }}
     runs-on: ubuntu-latest
     container:
       image: kicad/kicad:10.0
@@ -34,12 +43,12 @@ jobs:
           ls -l "$CFG"
 
       - name: ERC errors (blocking)
-        working-directory: ${{ env.PROJECT_DIR }}
+        working-directory: ${{ matrix.dir }}
         run: kicad-cli sch erc --severity-error --exit-code-violations -o erc-errors.rpt "$PROJECT.kicad_sch"
 
       - name: ERC
         id: erc
-        working-directory: ${{ env.PROJECT_DIR }}
+        working-directory: ${{ matrix.dir }}
         run: |
           set +e
           kicad-cli sch erc --format report --severity-all --exit-code-violations \
@@ -54,7 +63,7 @@ jobs:
 
       - name: DRC
         id: drc
-        working-directory: ${{ env.PROJECT_DIR }}
+        working-directory: ${{ matrix.dir }}
         run: |
           set +e
           kicad-cli pcb drc --format report --severity-all --exit-code-violations \
@@ -68,18 +77,18 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Export schematic PDF
-        working-directory: ${{ env.PROJECT_DIR }}
+        working-directory: ${{ matrix.dir }}
         run: kicad-cli sch export pdf -o "$PROJECT-schematic.pdf" "$PROJECT.kicad_sch"
 
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v5
         with:
-          name: kicad-reports
+          name: kicad-reports-${{ matrix.project }}
           path: |
-            ${{ env.PROJECT_DIR }}/erc.rpt
-            ${{ env.PROJECT_DIR }}/drc.rpt
-            ${{ env.PROJECT_DIR }}/*-schematic.pdf
+            ${{ matrix.dir }}/erc.rpt
+            ${{ matrix.dir }}/drc.rpt
+            ${{ matrix.dir }}/*-schematic.pdf
 
       - name: Gate on violations
         run: |

@@ -12,6 +12,11 @@ Scripts used to build and check the Stage 2 schematic. Run them with KiCad's bun
 | `build_pcb.py` | Stage 3 first pass: builds `ECE533_Guide.kicad_pcb` from the netlist (footprints, nets, schematic links, outline, stack-up, net classes, heatsink/barrier drawings) and places all parts (fixed floor plan + nearest-free-spot placement). Re-running overwrites the board, so after Stage 3 edit in KiCad. |
 | `check_footprints.py` | Checks every symbol pin against the pads of its footprint (and flags unused pads). |
 | `make_bom.py` | Builds `bom/PCB_BOM.xlsx` and `bom/PCB_BOM.csv` from an exported netlist. |
+| `route_power.py`, `route_signals.py` | Stage 4 power copper and Freerouting round trip for the main board; their `Router` and DSN helpers are reused by `pm_route.py`. |
+| `pm_assign.py`, `pm_flags.py` | PowerModule: footprints, catalog values and MPN/LCSC fields on the base schematic; PWR_FLAGs on the driver supply nets. |
+| `pm_build.py` | PowerModule: builds `PowerModule.kicad_pcb` from the netlist and places all 54 parts in the report's layout. |
+| `pm_route.py` | PowerModule: report polygon pours (`power`), Freerouting for the signals (`signals`), ground fills and stitching (`finish`). See `docs/design/power_module.md` §8. |
+| `pm_bom.py` | PowerModule: `bom/PowerModule_BOM.csv` from the netlist. |
 | `kisch.py`, `kilib.py`, `sexp.py`, `parts.py` | Helpers: schematic writer, symbol builder, S-expression reader, part catalogue (footprints, MPNs). |
 
 **After Stage 2, edit the schematic in KiCad.** Re-running `gen_schematic.py` overwrites the
