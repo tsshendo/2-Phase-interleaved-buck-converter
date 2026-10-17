@@ -1,0 +1,4083 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "3afb6bfc-cae1-5950-b173-3e961770b9df")
+	(paper "A3")
+	(title_block
+		(title "Input protection and hot-swap")
+		(date "2026-10-16")
+		(rev "A")
+		(company "ECE533 MeGaNism - 72 V to 24 V 1.1 kW 2-phase GaN buck")
+	)
+	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x01"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286)
+						(xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794)
+						(xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D_TVS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_TVS"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Bidirectional transient-voltage-suppression diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode TVS thyrector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_TVS_0_1"
+				(polyline
+					(pts
+						(xy -2.54 1.27)
+						(xy -2.54 -1.27)
+						(xy 2.54 1.27)
+						(xy 2.54 -1.27)
+						(xy -2.54 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27)
+						(xy 0 1.27)
+						(xy 0 -1.27)
+						(xy -0.508 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_TVS_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Fuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R_Shunt"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at -2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_Shunt"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Shunt resistor with Kelvin connections"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res shunt resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*Shunt*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_Shunt_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54)
+						(xy 1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Shunt_1_1"
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 2.54 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -2.54 180)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:+5V_PWR"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V_PWR"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_PWR_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_PWR_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+5V_PWR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:PGND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PGND"
+				(at 0 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PGND_0_1"
+				(polyline
+					(pts
+						(xy -1.016 -1.27)
+						(xy -1.27 -2.032)
+						(xy -1.27 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -1.27)
+						(xy -0.762 -2.032)
+						(xy -0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27)
+						(xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27)
+						(xy -0.254 -2.032)
+						(xy -0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.27)
+						(xy 0.254 -2.032)
+						(xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27)
+						(xy -1.016 -1.27)
+						(xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27)
+						(xy 0.762 -2.032)
+						(xy 0.762 -2.032)
+						(xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PGND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "PGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:TLV3012"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -5.08 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TLV3012AIDBVR"
+				(at 5.08 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv3012.pdf"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Description" "Nanopower push-pull comparator with integrated 1.242 V reference"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "ki_keywords" "comparator reference"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(symbol "TLV3012_0_1"
+				(rectangle
+					(start -5.08 5.08)
+					(end 5.08 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "TLV3012_1_1"
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "REF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ECE533:VBUS"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VBUS"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "72 V input bus after hot-swap (HV domain)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VBUS_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VBUS_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "VBUS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:VOM1271"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -7.62 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "VOM1271T"
+				(at 7.62 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "Package_SO:SOP-4_3.8x4.1mm_P2.54mm"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/83469/vom1271.pdf"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Description" "Photovoltaic MOSFET driver with integrated fast turn-off, 4.5 kVrms"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "ki_keywords" "photovoltaic gate driver optocoupler"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(symbol "VOM1271_0_1"
+				(rectangle
+					(start -7.62 2.54)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "VOM1271_1_1"
+				(pin passive line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "LED A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "LED K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "VO+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "VO-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Power_Management:LM5069MM-2"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -7.62 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "LM5069MM-2"
+				(at 1.27 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm"
+				(at 1.27 -21.844 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm5069.pdf"
+				(at -0.508 -25.146 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Hot swap & Inrush current controller with power limiting, auto retry on fault, 9V to 80Vin, UVLO & OVLO, VSSOP-10"
+				(at 0.762 -23.368 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "high-voltage mosfet-driver efuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MSOP*3x3mm*P0.5mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LM5069MM-2_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "LM5069MM-2_1_0"
+				(pin input line
+					(at 12.7 -7.62 180)
+					(length 2.54)
+					(name "TIMER"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM5069MM-2_1_1"
+				(pin input line
+					(at -2.54 10.16 270)
+					(length 2.54)
+					(name "SENSE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -7.62 10.16 270)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -7.62 0)
+					(length 2.54)
+					(name "UVLO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "OVLO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -12.7 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -5.08 180)
+					(length 2.54)
+					(name "PWR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "PGD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 7.62 10.16 270)
+					(length 2.54)
+					(name "OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 2.54 10.16 270)
+					(length 2.54)
+					(name "GATE"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Transistor_FET:IPT015N10N5"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "IPT015N10N5"
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1"
+				(at 5.08 -1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://www.infineon.com/dgdl/Infineon-IPT015N10N5-DS-v02_01-EN.pdf?fileId=5546d4624a75e5f1014ac94680661aff"
+				(at 5.08 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "OptiMOS Power MOSFET N-MOS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Infineon*PG*HSOF*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "IPT015N10N5_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905)
+						(xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0)
+						(xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508)
+						(xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27)
+						(xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778)
+						(xy 3.302 -1.778)
+						(xy 3.302 1.778)
+						(xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0)
+						(xy 2.032 0.381)
+						(xy 2.032 -0.381)
+						(xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54)
+						(xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54)
+						(xy 2.54 0)
+						(xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508)
+						(xy 2.921 0.381)
+						(xy 3.683 0.381)
+						(xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381)
+						(xy 2.921 -0.254)
+						(xy 3.683 -0.254)
+						(xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "IPT015N10N5_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 1.27)
+						(xy -1.016 1.905)
+						(xy 0 2.54)
+						(xy 1.016 1.905)
+						(xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "INPUT PROTECTION (HV domain):  J1 -> F1 -> D6 -> Q2 (reverse) -> RS1 -> Q1 (hot-swap) -> VBUS" (exclude_from_sim no) (at 20.32 20.32 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "35c29727-5758-59ed-aded-9acc0d11bdaf"))
+	(wire (pts (xy 40.64 111.76) (xy 50.8 111.76)) (stroke (width 0) (type default)) (uuid "655afde2-3c16-5305-b551-076780e83fbc"))
+	(wire (pts (xy 40.64 81.28) (xy 43.18 81.28)) (stroke (width 0) (type default)) (uuid "eb6219fb-f3dc-579c-9863-66e928f225a2"))
+	(wire (pts (xy 50.8 81.28) (xy 58.42 81.28)) (stroke (width 0) (type default)) (uuid "cd46a6d2-e4cc-50d5-986e-7aded34c7540"))
+	(junction (at 58.42 81.28) (diameter 0) (color 0 0 0 0) (uuid "1c698662-3e9f-5968-a00f-53c6de964d7e"))
+	(wire (pts (xy 58.42 81.28) (xy 58.42 83.82)) (stroke (width 0) (type default)) (uuid "81c4ad78-bf08-5205-9a06-53d71ad05f35"))
+	(text "D6 bidirectional: does not\nconduct on reverse polarity" (exclude_from_sim no) (at 38.1 101.6 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "9c57d008-3081-52f5-be68-87826c12bbc2"))
+	(wire (pts (xy 58.42 81.28) (xy 63.5 81.28)) (stroke (width 0) (type default)) (uuid "908a6431-d402-51ff-b08b-311b5f3902d5"))
+	(wire (pts (xy 38.1 53.34) (xy 35.56 53.34)) (stroke (width 0) (type default)) (uuid "b5734926-aa4b-5835-9756-e6cae45f87ca"))
+	(global_label "PGND" (shape passive) (at 35.56 53.34 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "6539ddbf-81da-5672-81ec-ca6068ec7981") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 35.56 53.34 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 58.42 50.8) (xy 68.58 50.8)) (stroke (width 0) (type default)) (uuid "0e9f0d53-d553-517f-b22c-bf3151cb23d7"))
+	(wire (pts (xy 68.58 50.8) (xy 68.58 73.66)) (stroke (width 0) (type default)) (uuid "96547aed-213f-5391-bfb7-b3e9011dfac2"))
+	(wire (pts (xy 58.42 53.34) (xy 60.96 53.34)) (stroke (width 0) (type default)) (uuid "1974fda8-149a-555f-8eb8-304863a4afad"))
+	(wire (pts (xy 60.96 53.34) (xy 60.96 81.28)) (stroke (width 0) (type default)) (uuid "5ff76585-d887-5cf8-8b54-a223a7461f5e"))
+	(junction (at 60.96 81.28) (diameter 0) (color 0 0 0 0) (uuid "850ee0e5-df14-5ae8-bdab-3fcc524600fc"))
+	(wire (pts (xy 20.32 50.8) (xy 17.78 50.8)) (stroke (width 0) (type default)) (uuid "4b905ac3-5cab-58c8-92c6-ba6fc173936a"))
+	(global_label "+5V_PWR" (shape passive) (at 17.78 50.8 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "83c87507-8500-59ae-9736-b1ca4e201f0a") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 17.78 50.8 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 27.94 50.8) (xy 38.1 50.8)) (stroke (width 0) (type default)) (uuid "bdd230c4-6115-50b8-b949-0b9b31435593"))
+	(text "U13 LED runs from +5V_PWR, which exists only with correct polarity:\nreversed input -> Q2 stays off, its body diode blocks (100 V)." (exclude_from_sim no) (at 20.32 33.02 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "4c78ac3a-6d47-575d-aeae-fb08fa63f701"))
+	(rectangle (start 15.24 38.1) (end 101.6 121.92) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "c802622e-5999-5006-b43c-7cddf9b00376"))
+	(text "Fuse, TVS, reverse polarity" (exclude_from_sim no) (at 16.51 39.37 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "5af67254-8598-5bbd-8570-2aba84ed0b00"))
+	(wire (pts (xy 73.66 81.28) (xy 116.84 81.28)) (stroke (width 0) (type default)) (uuid "829d12b5-67fe-5902-b72e-fcdc81512d70"))
+	(junction (at 106.68 81.28) (diameter 0) (color 0 0 0 0) (uuid "24953ee0-3f8a-5f75-93d3-f4dce54482aa"))
+	(wire (pts (xy 106.68 81.28) (xy 106.68 73.66)) (stroke (width 0) (type default)) (uuid "ef4cda3e-ab54-5b16-b6c8-6d83284f40b0"))
+	(hierarchical_label "VIN_PROT" (shape output) (at 106.68 73.66 90) (effects (font (size 1.27 1.27)) (justify left)) (uuid "72d1b494-70ef-5bd0-a071-815c4f0cbabe"))
+	(junction (at 111.76 81.28) (diameter 0) (color 0 0 0 0) (uuid "4cbfa49b-8c18-52a9-9d3f-85827d22e7e4"))
+	(wire (pts (xy 111.76 81.28) (xy 111.76 83.82)) (stroke (width 0) (type default)) (uuid "32b4f0b3-4072-5cfd-a5c5-1c6237cc4902"))
+	(wire (pts (xy 119.38 78.74) (xy 119.38 76.2)) (stroke (width 0) (type default)) (uuid "5ec8deb1-ff81-568d-acd6-80d7005c69b0"))
+	(label "HSC_VIN" (at 119.38 76.2 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "39f8c434-adcd-559d-9d19-b487e328e94d"))
+	(wire (pts (xy 124.46 78.74) (xy 124.46 76.2)) (stroke (width 0) (type default)) (uuid "256e3d68-a25d-52ed-a06e-d6a9c4bf0962"))
+	(label "HSC_SENSE" (at 124.46 76.2 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "78a05985-99f8-5467-a1c0-1cb8f56a5da0"))
+	(wire (pts (xy 127 81.28) (xy 129.54 81.28)) (stroke (width 0) (type default)) (uuid "9da1e639-1208-5ab5-8676-093db74c5894"))
+	(wire (pts (xy 139.7 81.28) (xy 149.86 81.28)) (stroke (width 0) (type default)) (uuid "06c2c856-c2e4-54f2-9d18-c4b8234ca6a9"))
+	(wire (pts (xy 134.62 99.06) (xy 134.62 101.6)) (stroke (width 0) (type default)) (uuid "520ea88d-be58-5e08-aae1-dc5cf1440983"))
+	(label "HSC_GATE" (at 134.62 101.6 270) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "3eba115a-71db-5ded-b492-66f78794f930"))
+	(wire (pts (xy 134.62 88.9) (xy 134.62 91.44)) (stroke (width 0) (type default)) (uuid "7a25f73e-d7d9-541d-b692-96928daeb379"))
+	(text "Q1, Q2: 100 V 1.5 mOhm TOLL.  RS1 2 mOhm (Kelvin):\nI_limit 55 mV -> 27.5 A, breaker 105 mV -> 53 A" (exclude_from_sim no) (at 116.84 50.8 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "a5022dec-e639-54e0-8e76-fe2f3bda0b84"))
+	(wire (pts (xy 149.86 132.08) (xy 149.86 129.54)) (stroke (width 0) (type default)) (uuid "ebaa1b09-2af6-5021-bb6b-7e298a056c43"))
+	(label "HSC_VIN" (at 149.86 129.54 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "b022ab55-43fa-5e19-8739-102af168d8dc"))
+	(wire (pts (xy 154.94 132.08) (xy 154.94 129.54)) (stroke (width 0) (type default)) (uuid "47c6da33-5bda-52ad-8e26-cb533da2705f"))
+	(label "HSC_SENSE" (at 154.94 129.54 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "3591a06f-acf9-556d-a72a-6434cc439141"))
+	(wire (pts (xy 160.02 132.08) (xy 160.02 129.54)) (stroke (width 0) (type default)) (uuid "a52d4ecb-5909-50f3-90c3-e41d6351cf4c"))
+	(label "HSC_GATE" (at 160.02 129.54 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "ec3019e9-677f-57c1-9315-c73b6232cae0"))
+	(wire (pts (xy 144.78 149.86) (xy 142.24 149.86)) (stroke (width 0) (type default)) (uuid "ca6c04df-c183-5f44-b2a2-5d7177c04a7f"))
+	(label "UVLO" (at 142.24 149.86 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "aa412169-c514-5cf2-ae6f-0a1baa5bf035"))
+	(wire (pts (xy 144.78 144.78) (xy 142.24 144.78)) (stroke (width 0) (type default)) (uuid "cb6c025c-1cfd-58aa-a5de-3423582c5eb8"))
+	(label "OVLO" (at 142.24 144.78 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "186bed44-2db3-575d-bdcc-a61ff86b5c31"))
+	(wire (pts (xy 170.18 149.86) (xy 172.72 149.86)) (stroke (width 0) (type default)) (uuid "be4be898-69ad-5ea6-9d71-ebcc2a44574c"))
+	(label "TIMER" (at 172.72 149.86 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "dfa0d205-0458-5295-9739-593ab5d573c8"))
+	(wire (pts (xy 170.18 147.32) (xy 172.72 147.32)) (stroke (width 0) (type default)) (uuid "fb38a967-f221-532d-93e3-40fe8de6a321"))
+	(label "PWR" (at 172.72 147.32 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "32a2e81b-fa56-5bfa-be77-193557e1ad45"))
+	(wire (pts (xy 170.18 144.78) (xy 172.72 144.78)) (stroke (width 0) (type default)) (uuid "9452830e-c5f8-52dc-aba1-d364f78dceb0"))
+	(label "BUS_PG" (at 172.72 144.78 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "46e3b91f-6324-526e-8ad9-95385f32f5f1"))
+	(wire (pts (xy 127 101.6) (xy 127 99.06)) (stroke (width 0) (type default)) (uuid "d19eb241-3ba3-56b0-9f0b-2a6be9d44f80"))
+	(label "HSC_VIN" (at 127 99.06 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "c6691da0-6972-5951-bdb7-9b29e867fd72"))
+	(wire (pts (xy 132.08 106.68) (xy 137.16 106.68)) (stroke (width 0) (type default)) (uuid "b8e0d850-ceb5-5416-ad74-79b06f269903"))
+	(label "HSC_VIN" (at 137.16 106.68 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "365d8c36-3168-5b2c-8fd9-f4f19ab5bd39"))
+	(wire (pts (xy 111.76 116.84) (xy 111.76 114.3)) (stroke (width 0) (type default)) (uuid "a1bd6d36-2b32-50ff-9c1c-24138669c542"))
+	(label "VIN_PROT" (at 111.76 114.3 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "8b83aa5d-8233-5551-8d06-396fde3ce7ca"))
+	(junction (at 111.76 124.46) (diameter 0) (color 0 0 0 0) (uuid "fbdc628b-2b2b-581d-8824-b7bea2340ba1"))
+	(wire (pts (xy 111.76 124.46) (xy 106.68 124.46)) (stroke (width 0) (type default)) (uuid "092bf4ce-71fa-5ae7-b93e-14bc77e94986"))
+	(label "UVLO" (at 106.68 124.46 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "efcee2b9-bc6b-5b2b-b896-3d47926234fd"))
+	(wire (pts (xy 198.12 137.16) (xy 198.12 134.62)) (stroke (width 0) (type default)) (uuid "978d15ad-cbed-5c31-9a34-d808e40fd21f"))
+	(label "TIMER" (at 198.12 134.62 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "e9aa0769-d2f9-542e-a470-d52c35509823"))
+	(wire (pts (xy 208.28 137.16) (xy 208.28 134.62)) (stroke (width 0) (type default)) (uuid "274181c4-063a-5c69-9e86-717d8f5fa8e6"))
+	(label "PWR" (at 208.28 134.62 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "9ae11771-6aea-5a69-93af-d981d2e3e758"))
+	(wire (pts (xy 223.52 129.54) (xy 223.52 132.08)) (stroke (width 0) (type default)) (uuid "608ee885-5f49-5f31-9002-d74e09a08f61"))
+	(hierarchical_label "BUS_PG" (shape output) (at 223.52 132.08 270) (effects (font (size 1.27 1.27)) (justify right)) (uuid "d4cc8a43-4266-50bb-92d8-833d80d6fd63"))
+	(text "UVLO on 62.3 V / off 60.3 V: R45 = 2 V / 21 uA, R46 = 2.5 V x R45 / 57.5 V\nP_FET limit ~50 W: R_PWR = 1.3e5 x R_S x (P - 1.18 mV x V_DS) = 13.0k\nC72 470 nF: start ~12 ms, insertion delay ~0.34 s.  -2: auto-retry, 0.5 % duty" (exclude_from_sim no) (at 106.68 172.72 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "2dd1be96-5efd-5d54-a5d7-131c9482fd38"))
+	(rectangle (start 101.6 38.1) (end 243.84 193.04) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "8d79df19-5605-597c-8d0e-a802fd11742a"))
+	(text "Hot-swap / inrush (LM5069-2)" (exclude_from_sim no) (at 102.87 39.37 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "8fe2623a-627a-5210-a0ad-39dc4858d81b"))
+	(wire (pts (xy 269.24 50.8) (xy 269.24 48.26)) (stroke (width 0) (type default)) (uuid "d08ab1dc-a678-51df-a593-2af858c6cdff"))
+	(label "VIN_PROT" (at 269.24 48.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "31d89dca-982c-5679-9da7-a9aed8bf3003"))
+	(junction (at 269.24 58.42) (diameter 0) (color 0 0 0 0) (uuid "e889c793-d47b-5229-ae18-35297f38fb18"))
+	(wire (pts (xy 269.24 58.42) (xy 264.16 58.42)) (stroke (width 0) (type default)) (uuid "7273777d-9d14-530f-a619-926e2f8a831f"))
+	(label "OVP_SNS" (at 264.16 58.42 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "a6448e32-38c2-5dac-98f9-ed782de35cf4"))
+	(wire (pts (xy 302.26 71.12) (xy 299.72 71.12)) (stroke (width 0) (type default)) (uuid "4588f21c-8eb3-58d9-b6e4-15811ea7ad21"))
+	(label "OVP_SNS" (at 299.72 71.12 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "0d244275-2414-54eb-8104-aaf98c6f8876"))
+	(wire (pts (xy 302.26 73.66) (xy 299.72 73.66)) (stroke (width 0) (type default)) (uuid "15a7c36f-a232-5aca-9392-8307dbb9727e"))
+	(label "OVP_REF" (at 299.72 73.66 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "eee6798f-a9ef-5dc8-9042-3bb488844a5c"))
+	(wire (pts (xy 317.5 73.66) (xy 320.04 73.66)) (stroke (width 0) (type default)) (uuid "8b1d089d-880d-56fd-ba6d-b457dbb18dc6"))
+	(label "OVP_REF" (at 320.04 73.66 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "51e58590-b1ab-5500-9fd0-83b525c17ce9"))
+	(wire (pts (xy 317.5 71.12) (xy 320.04 71.12)) (stroke (width 0) (type default)) (uuid "b5a5c986-0f3c-553d-b67b-0933650f6e98"))
+	(label "OVP_CMP" (at 320.04 71.12 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f28a8a68-9221-58c5-95cd-695517410d21"))
+	(wire (pts (xy 284.48 45.72) (xy 281.94 45.72)) (stroke (width 0) (type default)) (uuid "b58eb055-df3e-57f9-aa3d-c6cf717885c3"))
+	(label "OVP_SNS" (at 281.94 45.72 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "35b9bae4-54a9-5b28-9da1-ccf371fb8774"))
+	(wire (pts (xy 292.1 45.72) (xy 294.64 45.72)) (stroke (width 0) (type default)) (uuid "098fbca3-53db-568a-a61e-7f54ed786fa0"))
+	(label "OVP_CMP" (at 294.64 45.72 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "e3f2d0d3-1709-5284-bb0c-fb043eb48f26"))
+	(wire (pts (xy 335.28 81.28) (xy 332.74 81.28)) (stroke (width 0) (type default)) (uuid "df4505b3-d5f8-59e5-958e-ffa0fcdf79e8"))
+	(label "OVP_CMP" (at 332.74 81.28 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "df28a660-1e18-53f3-bda3-5f3f54c16416"))
+	(wire (pts (xy 342.9 81.28) (xy 345.44 81.28)) (stroke (width 0) (type default)) (uuid "7d93227f-b96d-5165-bf90-ef169781288c"))
+	(label "OVLO" (at 345.44 81.28 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "17ac6630-7efe-5217-8b7a-d484deed58b8"))
+	(wire (pts (xy 360.68 86.36) (xy 360.68 83.82)) (stroke (width 0) (type default)) (uuid "4fcfb285-82f2-52b2-845d-1cff82335c18"))
+	(label "OVLO" (at 360.68 83.82 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "6d908c97-39ad-552e-9a37-cd024f02105a"))
+	(text "Trip 81.9 V (1.242 V x 65.9), release ~80 V.\nTolerance ~80.7-83.1 V (> 79.2 V line max).\nR49: 1206 for voltage rating. Dividers 0.1 %." (exclude_from_sim no) (at 259.08 101.6 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "230d39d4-ab3c-5733-a8eb-8abefac71323"))
+	(rectangle (start 254 35.56) (end 381 121.92) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "93efa3ef-b086-5b92-be4e-e085c8135b12"))
+	(text "Input OVP 82 V (precise, drives LM5069 OVLO)" (exclude_from_sim no) (at 255.27 36.83 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "605b18f5-f989-5a92-ab00-4223092c4823"))
+	(wire (pts (xy 320.04 152.4) (xy 320.04 154.94)) (stroke (width 0) (type default)) (uuid "c21b89cb-623d-5ac8-b147-6fa3f39efe7c"))
+	(text "Bulk (top side): ESR damps cable resonance.\nCharged through Q1 under the power limit." (exclude_from_sim no) (at 259.08 172.72 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "03696660-2401-5614-b142-9849c77ee8b5"))
+	(rectangle (start 254 132.08) (end 381 187.96) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "be5c7e89-1f68-5e99-a9f1-595d51998694"))
+	(text "VBUS bulk" (exclude_from_sim no) (at 255.27 133.35 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "81ef5734-ecfb-520a-a40b-80ccb4c948a3"))
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 35.56 81.28 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5769db94-04b7-555d-8d17-bd34b9e007ce")
+		(property "Reference" "J1" (at 17.78 80.01 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "DC+ 72V" (at 17.78 82.55 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "ECE533_Mods:Wurth_REDCUBE_74650194" (at 35.56 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 35.56 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 35.56 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "74650194R" (at 35.56 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Wurth Elektronik" (at 35.56 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "1a0f34ed-a64f-5729-83f1-97f39c0150d0"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "J1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 35.56 111.76 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "13f3e64b-cfcf-5a97-a8b2-2ab5a62d3867")
+		(property "Reference" "J3" (at 17.78 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "DC- return" (at 17.78 113.03 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "ECE533_Mods:Wurth_REDCUBE_74650194" (at 35.56 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 35.56 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 35.56 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "74650194R" (at 35.56 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Wurth Elektronik" (at 35.56 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "4a61b8c9-c965-5bf3-a7ed-7b3e7a9dbbdd"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "J3") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 50.8 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7fdc3d1-9eb3-5991-b60e-e822f1ed6ad5")
+		(property "Reference" "#PWR0001" (at 50.8 116.84 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 50.8 115.062 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 50.8 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 50.8 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 50.8 111.76 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "c04fe8fc-7a8a-50c5-b2a2-5d89110c68f2"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0001") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 46.99 81.28 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3eadf33f-0128-573c-8c79-f30270440bd3")
+		(property "Reference" "F1" (at 44.45 78.74 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "25A" (at 44.45 85.09 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "ECE533_Mods:Fuse_Littelfuse_NANO2_456" (at 46.99 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 46.99 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Fuse" (at 46.99 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "0456025.ER" (at 46.99 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Littelfuse" (at 46.99 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C315877" (at 46.99 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "2df66620-ba9b-52c4-a621-040613210e30"))
+		(pin "2" (uuid "b47a3366-954e-5442-aa6a-7ca8a568c659"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "F1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:D_TVS")
+		(at 58.42 87.63 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cf413e77-3356-5606-af0e-7a4c9e04a597")
+		(property "Reference" "D6" (at 60.96 86.36 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "SMDJ85CA" (at 60.96 88.9 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Diode_SMD:D_SMC" (at 58.42 87.63 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 58.42 87.63 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Bidirectional transient-voltage-suppression diode" (at 58.42 87.63 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "SMDJ85CA" (at 58.42 87.63 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Littelfuse" (at 58.42 87.63 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C1978008" (at 58.42 87.63 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "7f0c7c6b-4469-5920-a253-4033ba6afbc0"))
+		(pin "2" (uuid "dc66a0f6-9255-5f14-b4a5-32128ab53b5c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "D6") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 58.42 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "babce8a8-8703-5e9a-a766-5ee068099af4")
+		(property "Reference" "#PWR0002" (at 58.42 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 58.42 94.742 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 58.42 91.44 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 58.42 91.44 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 58.42 91.44 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "49b1284f-115d-5e6a-8c55-627790d84297"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0002") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Transistor_FET:IPT015N10N5")
+		(at 68.58 78.74 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6b0996e8-7bcf-5982-9d6e-ce11fbe11d23")
+		(property "Reference" "Q2" (at 68.58 67.85 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "IPT015N10N5" (at 68.58 69.85 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1" (at 68.58 78.74 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "http://www.infineon.com/dgdl/Infineon-IPT015N10N5-DS-v02_01-EN.pdf?fileId=5546d4624a75e5f1014ac94680661aff" (at 68.58 78.74 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8" (at 68.58 78.74 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "IPT015N10N5" (at 68.58 78.74 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Infineon" (at 68.58 78.74 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C108964" (at 68.58 78.74 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "7ec14202-8b29-52ab-9df8-f584ce50d6ab"))
+		(pin "2" (uuid "d63cb6a1-213e-5c85-8bc1-25fca233af4a"))
+		(pin "3" (uuid "93f8ecf9-b0f5-5df5-848d-a9edd3ffbdfd"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "Q2") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:VOM1271")
+		(at 48.26 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6b252f46-b338-51ef-a593-b5d4b841eb21")
+		(property "Reference" "U13" (at 40.64 46.99 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "VOM1271T" (at 40.64 55.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_SO:SOP-4_3.8x4.1mm_P2.54mm" (at 48.26 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "https://www.vishay.com/docs/83469/vom1271.pdf" (at 48.26 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Photovoltaic MOSFET driver with integrated fast turn-off, 4.5 kVrms" (at 48.26 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "VOM1271T" (at 48.26 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Vishay" (at 48.26 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C146286" (at 48.26 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "30a3fa6f-ee33-597e-875a-aa39a1e879fb"))
+		(pin "2" (uuid "6ed1fd65-9bea-589d-afb2-9e2d9a03c58d"))
+		(pin "4" (uuid "d28b9f38-559b-5cb4-966e-0c26c531bc09"))
+		(pin "3" (uuid "3fac7a08-4cc1-58d0-93f1-2ef28864ce71"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "U13") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 24.13 50.8 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b909dfe-95a1-531e-86f6-f54505e1405c")
+		(property "Reference" "R43" (at 21.59 48.26 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "330" (at 21.59 54.61 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 24.13 50.8 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 24.13 50.8 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 24.13 50.8 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-07330RL" (at 24.13 50.8 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 24.13 50.8 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "0077507d-2bc8-5959-8748-d12fd536d4e6"))
+		(pin "2" (uuid "01f396ca-951b-5db4-af65-a31db3401e9e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R43") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 111.76 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "2b3faf1a-60e0-52f3-a2be-d5dfb6c0bd37")
+		(property "Reference" "#FLG0003" (at 111.76 79.375 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PWR_FLAG" (at 111.76 77.47 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 111.76 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 111.76 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Special symbol for telling ERC where power comes from" (at 111.76 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "1c8b3b3f-1519-57da-8404-d3130193abea"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#FLG0003") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 111.76 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d7697695-7e37-55fc-9426-2d162580d81a")
+		(property "Reference" "C70" (at 114.3 86.36 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/100V" (at 114.3 88.9 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM21BR72A105KA01L" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "e30a48bd-553e-5dd6-a8ea-549d8928a994"))
+		(pin "2" (uuid "bb9ee4f7-12d5-552d-b2b9-6a8afb909334"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "C70") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 111.76 91.44 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "27334cee-ecca-5cd3-be64-e4e0c10e65b8")
+		(property "Reference" "#PWR0004" (at 111.76 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 111.76 94.742 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 111.76 91.44 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 111.76 91.44 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 111.76 91.44 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "60b34158-6565-5938-98c2-854ea4d7c351"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0004") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R_Shunt")
+		(at 121.92 81.28 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "86675607-010b-509a-ac45-68f6cd29ce07")
+		(property "Reference" "RS1" (at 119.38 78.74 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "2m" (at 119.38 85.09 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "ECE533_Mods:R_2512_Kelvin" (at 121.92 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 121.92 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Shunt resistor with Kelvin connections" (at 121.92 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "CSS2H-2512R-2L00F" (at 121.92 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Bourns" (at 121.92 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "083e7783-8188-51a5-abb3-44bf62e0fc0d"))
+		(pin "2" (uuid "c9c93d68-3d08-5fbc-b748-b74652fdf3ae"))
+		(pin "3" (uuid "5a064d86-ecc5-5cf3-9b2b-2326739915a9"))
+		(pin "4" (uuid "c911cec5-ff7a-5245-bfd6-8106803f86fa"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "RS1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Transistor_FET:IPT015N10N5")
+		(at 134.62 83.82 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3dac0edc-46d2-56a3-b754-c12aa9954fdd")
+		(property "Reference" "Q1" (at 134.62 75.47 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "IPT015N10N5" (at 134.62 77.47 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1" (at 134.62 83.82 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "http://www.infineon.com/dgdl/Infineon-IPT015N10N5-DS-v02_01-EN.pdf?fileId=5546d4624a75e5f1014ac94680661aff" (at 134.62 83.82 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "300A Id, 100V Vds, OptiMOS N-Channel Power MOSFET, 1.5mOhm Ron, Qg (typ) 169.0nC, PG-HSOF-8" (at 134.62 83.82 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "IPT015N10N5" (at 134.62 83.82 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Infineon" (at 134.62 83.82 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C108964" (at 134.62 83.82 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "d723c2a3-8125-5762-b354-4eddad1f94d9"))
+		(pin "2" (uuid "28cc947b-4e89-5641-a447-d748e7642eeb"))
+		(pin "3" (uuid "a9c4c7f9-ef43-5652-9e4b-d2a9d9341748"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "Q1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:VBUS")
+		(at 149.86 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "422535b0-b960-5020-ba7f-8687898cf450")
+		(property "Reference" "#PWR0005" (at 149.86 85.09 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "VBUS" (at 149.86 77.724 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 149.86 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 149.86 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "72 V input bus after hot-swap (HV domain)" (at 149.86 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "1bad6da9-48f2-5370-ab11-252e860ac044"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0005") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 149.86 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "367b09fd-00bd-597e-bff2-e2c5db1a87f0")
+		(property "Reference" "#FLG0006" (at 149.86 79.375 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PWR_FLAG" (at 149.86 77.47 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 149.86 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 149.86 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Special symbol for telling ERC where power comes from" (at 149.86 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "7430b238-c5c7-5396-822a-d90940bab101"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#FLG0006") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 134.62 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "435c34a1-2a32-590c-b38b-6ad876b16ac0")
+		(property "Reference" "R44" (at 137.16 93.98 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10" (at 137.16 96.52 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 134.62 95.25 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 134.62 95.25 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 134.62 95.25 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-0710RL" (at 134.62 95.25 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 134.62 95.25 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "2714c178-ee1c-552c-bf8a-5accbeb5af5f"))
+		(pin "2" (uuid "387d9115-78b6-55b7-b42d-86145e4ff24a"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R44") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Power_Management:LM5069MM-2")
+		(at 157.48 142.24 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77f3de89-ae5d-56c1-bc82-be0922727c58")
+		(property "Reference" "U12" (at 147.32 125.73 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "LM5069MM-2" (at 147.32 161.29 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_SO:MSOP-10_3x3mm_P0.5mm" (at 157.48 142.24 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm5069.pdf" (at 157.48 142.24 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Hot swap & Inrush current controller with power limiting, auto retry on fault, 9V to 80Vin, UVLO & OVLO, VSSOP-10" (at 157.48 142.24 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "LM5069MM-2/NOPB" (at 157.48 142.24 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "TI" (at 157.48 142.24 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "6" (uuid "84e39fad-e198-5a4b-8cee-9edae7654bb5"))
+		(pin "1" (uuid "7074adb3-f760-5478-a55f-66f8a48eecc0"))
+		(pin "2" (uuid "18baafd5-0b7b-55d8-b800-d0022151ee3a"))
+		(pin "3" (uuid "2c95aafb-1e72-5c47-83b5-59e08f0a1a43"))
+		(pin "4" (uuid "147053d7-bf1d-50a7-8633-84a52ed57b34"))
+		(pin "5" (uuid "77901717-faf5-5195-b810-6f02bd28148c"))
+		(pin "7" (uuid "6a6b25ab-266f-5f61-acc8-acb6266cd6a8"))
+		(pin "8" (uuid "f7d608d7-ac9b-5729-b1e2-3c0eca657a2a"))
+		(pin "9" (uuid "727ed238-01bc-5e65-976b-efcf078a4b99"))
+		(pin "10" (uuid "ef78c9bd-35f8-512f-ab5e-4c784f6a9d72"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "U12") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:VBUS")
+		(at 165.1 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a008212c-0db6-5045-8bc3-e05967629710")
+		(property "Reference" "#PWR0007" (at 165.1 135.89 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "VBUS" (at 165.1 128.524 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 165.1 132.08 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 165.1 132.08 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "72 V input bus after hot-swap (HV domain)" (at 165.1 132.08 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "24f23ea1-2b5c-5296-982c-bab0aee43946"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0007") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 157.48 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "24108fc0-fe28-5a21-8099-c18c2af8c65c")
+		(property "Reference" "#PWR0008" (at 157.48 160.02 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 157.48 158.242 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 157.48 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 157.48 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "13e9f0cc-37c2-5fc5-8145-898668788d14"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0008") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 127 105.41 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8e3c3b99-93e1-5d08-aeee-9d5c4b193c1b")
+		(property "Reference" "C71" (at 129.54 104.14 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/100V" (at 129.54 106.68 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM21BR72A105KA01L" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "9e83ba6c-0b57-5755-be4b-3783d79c1856"))
+		(pin "2" (uuid "790beba9-212d-5ae9-935b-847e432c3c64"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "C71") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 127 109.22 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "534024c7-e0b0-5e24-a5bb-a7550d0e3b6e")
+		(property "Reference" "#PWR0009" (at 127 114.3 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 127 112.522 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 127 109.22 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 127 109.22 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 127 109.22 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "3771030a-d562-50b7-82fa-7e9858cb0fb6"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0009") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 132.08 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "60f657f7-fc29-5643-b43b-33f0064cd45e")
+		(property "Reference" "#FLG0010" (at 132.08 104.775 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PWR_FLAG" (at 132.08 102.87 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 132.08 106.68 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 132.08 106.68 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Special symbol for telling ERC where power comes from" (at 132.08 106.68 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "da5a5bfe-0a8f-5a3f-bfaa-a28217919cf6"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#FLG0010") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 120.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1bbeb9f9-08cf-5dd4-bc59-3726cbfc6d5d")
+		(property "Reference" "R45" (at 114.3 119.38 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "95.3k" (at 114.3 121.92 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 111.76 120.65 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 111.76 120.65 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 111.76 120.65 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC1206FR-0795K3L" (at 111.76 120.65 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 111.76 120.65 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "65a98aa1-28cf-5661-8c55-43d717267a6c"))
+		(pin "2" (uuid "fc8fa83c-c440-5b5b-8680-ddbb786c41d4"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R45") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5564ad20-6d84-5705-813a-64c783fa8c60")
+		(property "Reference" "R46" (at 114.3 127 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "4.12k" (at 114.3 129.54 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 111.76 128.27 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 111.76 128.27 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 111.76 128.27 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-074K12L" (at 111.76 128.27 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 111.76 128.27 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "89867efc-a9c6-5892-b00b-a2aaffe2be0f"))
+		(pin "2" (uuid "64fab410-6e1b-5abc-943f-b323276c9ef4"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R46") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 111.76 132.08 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "37467921-8c93-5d7c-9216-e5e75b0e17cb")
+		(property "Reference" "#PWR0011" (at 111.76 137.16 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 111.76 135.382 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 111.76 132.08 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 111.76 132.08 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 111.76 132.08 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "fbfe90d0-dfd9-5d87-87aa-48872be78a9d"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0011") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 198.12 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "978856ea-009c-54ce-b79a-015d33ff1bb7")
+		(property "Reference" "C72" (at 200.66 139.7 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "470n/25V" (at 200.66 142.24 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71E474KA12D" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "c90adb59-8713-579c-aef2-42adda472490"))
+		(pin "2" (uuid "47652e0b-402b-5025-b02a-eb779b8d994e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "C72") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 198.12 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "706cd3a0-4058-5ebf-9317-5b375ce47692")
+		(property "Reference" "#PWR0012" (at 198.12 149.86 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 198.12 148.082 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 198.12 144.78 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 198.12 144.78 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 198.12 144.78 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "c133dd36-2ce8-5cb7-8bc6-fff267839d41"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0012") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 208.28 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "19934116-e4cd-5dc7-ac5d-456a915dea7b")
+		(property "Reference" "R47" (at 210.82 139.7 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "13.0k" (at 210.82 142.24 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-0713K0L" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "b31ed204-a71f-56ff-9e36-abb2848cee7e"))
+		(pin "2" (uuid "a70fd5d9-187e-588a-a5c5-9bb2039590ce"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R47") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 208.28 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f46e001-622e-5513-9d63-1d9e04fd9c25")
+		(property "Reference" "#PWR0013" (at 208.28 149.86 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 208.28 148.082 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 208.28 144.78 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 208.28 144.78 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 208.28 144.78 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "26835be6-5eff-53aa-a9a7-499f15c1a7f1"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0013") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 223.52 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6d27104c-15f4-5abd-a09a-303492b34b31")
+		(property "Reference" "R48" (at 226.06 124.46 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10k" (at 226.06 127 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 223.52 125.73 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 223.52 125.73 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 223.52 125.73 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-0710KL" (at 223.52 125.73 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 223.52 125.73 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "46c16095-d951-555b-88f7-f239e6e617a1"))
+		(pin "2" (uuid "789c6a6d-d47b-5aeb-85ef-2c19ce1860ed"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R48") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_PWR")
+		(at 223.52 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e86e377f-1300-5ec8-a144-f10547c5a411")
+		(property "Reference" "#PWR0014" (at 223.52 125.73 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_PWR" (at 223.52 118.364 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 223.52 121.92 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 223.52 121.92 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)" (at 223.52 121.92 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "5c762a53-d8ef-5e37-b33d-93c018648192"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0014") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 269.24 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ff9e075-9491-550d-872a-44c9f8dce31f")
+		(property "Reference" "R49" (at 271.78 53.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "649k 0.1%" (at 271.78 55.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric" (at 269.24 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 269.24 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 269.24 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "ERA-8AEB6493V" (at 269.24 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Panasonic" (at 269.24 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "b12b3840-4841-528b-aa54-147b85b6f69f"))
+		(pin "2" (uuid "0771b9b2-b300-5e2f-8262-2178a0a0952b"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R49") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 269.24 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c75e1b72-dd74-5acc-aac3-a40da3352ef4")
+		(property "Reference" "R50" (at 271.78 60.96 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10.0k 0.1%" (at 271.78 63.5 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 269.24 62.23 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 269.24 62.23 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 269.24 62.23 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "ERA-3AEB1002V" (at 269.24 62.23 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Panasonic" (at 269.24 62.23 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "b2827bc9-ff00-524b-9904-b05c20c70a3b"))
+		(pin "2" (uuid "982f5222-8b1f-5b14-9ece-efe33fe2b348"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R50") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 269.24 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f2a0b1c-5e84-5f0b-9574-0a947fe1b7c4")
+		(property "Reference" "#PWR0015" (at 269.24 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 269.24 69.342 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 269.24 66.04 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 269.24 66.04 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 269.24 66.04 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "a3187483-c261-5edf-a685-08bdc6adcd0c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0015") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:TLV3012")
+		(at 309.88 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7f2f32bb-7a58-5a36-b537-d5a90093a109")
+		(property "Reference" "U22" (at 304.8 57.15 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "TLV3012" (at 304.8 87.63 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6" (at 309.88 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlv3012.pdf" (at 309.88 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Nanopower push-pull comparator with integrated 1.242 V reference" (at 309.88 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "TLV3012AIDBVR" (at 309.88 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "TI" (at 309.88 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C62505" (at 309.88 71.12 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "3" (uuid "7096d7ba-241e-5ffd-aa67-00096c0b44b3"))
+		(pin "4" (uuid "84d8832b-da93-53eb-b920-26cc43af62e7"))
+		(pin "1" (uuid "a400b81f-7ee6-5652-8e75-edb276da3d08"))
+		(pin "5" (uuid "f6ad72f5-01a7-5b09-b988-bbdefeb20fbf"))
+		(pin "6" (uuid "570a492d-a024-58cf-94ff-7a34334d5609"))
+		(pin "2" (uuid "d34a8248-d87c-57e2-838a-288ea3dafe3c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "U22") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_PWR")
+		(at 309.88 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "9ee478f4-dd24-5294-8663-20a630f0af5f")
+		(property "Reference" "#PWR0016" (at 309.88 67.31 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_PWR" (at 309.88 59.944 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 309.88 63.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 309.88 63.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)" (at 309.88 63.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "c3f6c73f-96d3-5af0-87fd-bfbf2f1be80a"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0016") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 309.88 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "79c39cf3-d184-522c-a4c1-a6a6051c33fd")
+		(property "Reference" "#PWR0017" (at 309.88 86.36 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 309.88 84.582 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 309.88 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 309.88 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 309.88 81.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "49ca4497-ba32-5678-8770-3fa7c4dbd318"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0017") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 288.29 45.72 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "11d8e44f-e763-5d88-b06a-f0a968476a9c")
+		(property "Reference" "R51" (at 285.75 43.18 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1.69M" (at 285.75 49.53 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 288.29 45.72 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 288.29 45.72 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 288.29 45.72 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-071M69L" (at 288.29 45.72 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 288.29 45.72 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "eba31e19-d255-55f0-b009-25cfca752826"))
+		(pin "2" (uuid "77348b38-b9ea-5b93-9d16-641d9e9d24c0"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R51") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 340.36 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "14599066-21f4-58b5-9b1b-b89d1579744e")
+		(property "Reference" "C73" (at 342.9 53.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 342.9 55.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "a883d244-0265-55c6-a75a-4946b79995fd"))
+		(pin "2" (uuid "3740582a-e360-5dd2-8535-fa3a85c0091c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "C73") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_PWR")
+		(at 340.36 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c85962e6-fbe9-5cb4-9e14-556de0ac94b3")
+		(property "Reference" "#PWR0018" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_PWR" (at 340.36 47.244 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 340.36 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 340.36 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)" (at 340.36 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "35888cc8-1602-5407-9cdc-b6185f71b9e0"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0018") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 340.36 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4b738fe-98a3-5bba-9d04-c3e465b609ad")
+		(property "Reference" "#PWR0019" (at 340.36 63.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 340.36 61.722 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 340.36 58.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 340.36 58.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 340.36 58.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "47b435d4-5695-5c75-9c5a-7f9642908102"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0019") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 339.09 81.28 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2b4e9f46-ad76-5934-8486-3bee4b1422c8")
+		(property "Reference" "R52" (at 336.55 78.74 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10k" (at 336.55 85.09 90) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 339.09 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 339.09 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 339.09 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-0710KL" (at 339.09 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 339.09 81.28 90) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "3f645bfb-017a-56f1-851f-968b1d0c14b4"))
+		(pin "2" (uuid "63bce802-73ca-55a7-9f7f-36410c4f6948"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R52") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 360.68 90.17 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3a0ee15c-0a1f-5acc-aa2d-18ee65eac48e")
+		(property "Reference" "R53" (at 363.22 88.9 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10k" (at 363.22 91.44 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 360.68 90.17 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 360.68 90.17 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 360.68 90.17 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-0710KL" (at 360.68 90.17 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 360.68 90.17 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "8ed97c72-5fec-5b97-9308-ce02486e937e"))
+		(pin "2" (uuid "7f96b742-edbf-5224-a92b-2f8af5a9ced4"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "R53") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 360.68 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a062eccd-2927-504c-9ac9-955949c45074")
+		(property "Reference" "#PWR0020" (at 360.68 99.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 360.68 97.282 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 360.68 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 360.68 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 360.68 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "55500d2c-ea89-58fc-8fe9-231c6d1e315e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0020") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 269.24 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2438fde9-c919-5ad8-9dee-d676341245f2")
+		(property "Reference" "C5" (at 271.78 149.86 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "110u/160V" (at 271.78 152.4 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Polarized capacitor" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "EGXF161ELL111MK25S" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Chemi-Con" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C1598290" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "af09767b-b14f-5e00-8f5c-6b5f0e7420cd"))
+		(pin "2" (uuid "927ebb63-3c3f-5a3a-8114-aa19c1ae7334"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "C5") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:VBUS")
+		(at 269.24 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d372e910-6560-5dc3-9527-3d2998a324ef")
+		(property "Reference" "#PWR0021" (at 269.24 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "VBUS" (at 269.24 143.764 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 269.24 147.32 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 269.24 147.32 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "72 V input bus after hot-swap (HV domain)" (at 269.24 147.32 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "03a9bd85-fbf4-53d5-a2a1-1395c4f15a09"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0021") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 269.24 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "f25902ef-7d33-557c-b4de-d4ae2cf49126")
+		(property "Reference" "#PWR0022" (at 269.24 160.02 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 269.24 158.242 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 269.24 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 269.24 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 269.24 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "a8a0d86c-86b6-57b3-8049-5d4b1fba33c8"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0022") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 287.02 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6d7e4c5b-d754-5044-a756-6a8d62c5c326")
+		(property "Reference" "C6" (at 289.56 149.86 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "110u/160V" (at 289.56 152.4 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Polarized capacitor" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "EGXF161ELL111MK25S" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Chemi-Con" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C1598290" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "fdfbd292-5475-58d9-ae5e-5512e627788f"))
+		(pin "2" (uuid "bd9dd492-a01a-56af-accd-9c8b04f4fd09"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "C6") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:VBUS")
+		(at 287.02 147.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "bc56d734-6d72-5257-b06a-33d7cc6bb1f5")
+		(property "Reference" "#PWR0023" (at 287.02 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "VBUS" (at 287.02 143.764 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 287.02 147.32 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 287.02 147.32 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "72 V input bus after hot-swap (HV domain)" (at 287.02 147.32 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "f4a6999e-51c4-55a1-abfb-7f89bb73ada6"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0023") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 287.02 154.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "56ae15b0-6a2e-5592-984a-3e8b8e017292")
+		(property "Reference" "#PWR0024" (at 287.02 160.02 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 287.02 158.242 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 287.02 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 287.02 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 287.02 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "9020be3b-771e-54c9-972c-e0762ca5616e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0024") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 320.04 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9375353-0879-5fe8-bd1b-fc13e652c50a")
+		(property "Reference" "TP1" (at 322.58 151.13 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "VBUS" (at 322.58 153.67 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 320.04 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 320.04 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "test point" (at 320.04 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "Test pad (bare copper)" (at 320.04 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "-" (at 320.04 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "27077f80-37c7-56a6-b9ee-ba83655de941"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "TP1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:VBUS")
+		(at 320.04 154.94 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "9643c605-c563-56af-bd3e-3ddd91881307")
+		(property "Reference" "#PWR0025" (at 320.04 151.13 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "VBUS" (at 320.04 158.496 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 320.04 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 320.04 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "72 V input bus after hot-swap (HV domain)" (at 320.04 154.94 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "2e88c89e-1a7f-59e4-b7a3-334e64015e35"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0025") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 335.28 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8683db03-194e-5eaa-9b8d-38af69842037")
+		(property "Reference" "TP11" (at 337.82 151.13 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "PGND" (at 337.82 153.67 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "test point" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "Test pad (bare copper)" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "-" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "e656b5e8-47cb-5162-be5b-728ea5aa1ade"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "TP11") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 335.28 152.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5934b8b6-6cfe-5bcf-91ac-cae5df3b714a")
+		(property "Reference" "#PWR0026" (at 335.28 157.48 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 335.28 155.702 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 335.28 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "2f39d0b8-5158-5d2b-bca5-ee355762b126"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/27028dcf-ec67-5ade-9ed6-3ce4b615d3f0" (reference "#PWR0026") (unit 1))
+		))
+	)
+	(embedded_fonts no)
+)
