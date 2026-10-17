@@ -23,7 +23,7 @@ FP = {
     'SOT23': 'Package_TO_SOT_SMD:SOT-23',
     'SOT23-5': 'Package_TO_SOT_SMD:SOT-23-5',
     'TOLL': 'Package_TO_SOT_SMD:Infineon_PG-HSOF-8-1',
-    'TP': 'TestPoint:TestPoint_Pad_D1.5mm',
+    'TP': 'TestPoint:TestPoint_Pad_D1.0mm',
     'NETTIE': 'NetTie:NetTie-2_SMD_Pad0.5mm',
     'SHUNT2512': 'ECE533_Mods:R_2512_Kelvin',
     'REDCUBE': 'ECE533_Vendor:Wurth_REDCUBE_74650194',

@@ -2996,7 +2996,7 @@
 		(uuid "30eefe43-8f08-5018-b63a-52076db043b5")
 		(property "Reference" "TP2" (at 261.62 95.25 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Value" "VOUT" (at 261.62 97.79 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 259.08 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 259.08 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 259.08 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "test point" (at 259.08 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "Test pad (bare copper)" (at 259.08 96.52 0) (hide yes) (effects (font (size 1.27 1.27))))

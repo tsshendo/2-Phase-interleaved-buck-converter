@@ -183,7 +183,7 @@ def eruc23():
     f.rect(-13.4, -6.9, 13.4, 6.9, 'F.Fab', 0.1)
     f.line(-13.55, -7.25, 13.55, -7.25, 'F.SilkS', 0.12)
     f.line(-13.55, 7.25, 13.55, 7.25, 'F.SilkS', 0.12)
-    f.circle(-6.2, -7.75, 0.2, 'F.SilkS', 0.12, fill=True)          # pin 1
+    f.circle(-1.6, -7.75, 0.2, 'F.SilkS', 0.12, fill=True)          # pin 1
     f.rect(-14.0, -7.6, 14.0, 7.6, 'F.CrtYd', 0.05)
     # TDK STEP: z is height with the terminals at +z, y is depth 0..13.9 mm -> flip about x
     f.model(f'{VPATH}/TDK_ERUC23/b82559sxm023_eruc23_14.0mm_max_public_tkd-pc.step',

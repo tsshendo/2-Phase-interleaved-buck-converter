@@ -1,14 +1,14 @@
 # Progress log
 
 ## Current stage
-**Stage 2: Schematic + ERC (done, awaiting review)** on branch `stage-2-schematic`.
-Next: Stage 2 review, then Stage 3 (custom footprints + placement).
+**Stage 3: Footprints + placement (done, awaiting review)** on branch `stage-3-placement`.
+Next: placement review (`docs/design/placement_stage3.md`), then Stage 4 (routing + DRC).
 
 ## Stage checklist
 - [x] 0. Repo set up (structure, CLAUDE.md, CI, issues)
 - [x] 1. Architecture: controller IC, control-supply IC, protection parts, stack-up, calculations (PR #7)
-- [x] 2. Schematic + ERC, BOM updated (awaiting review)
-- [ ] 3. Placement (bottom: power stage; top: inductor + controls), reviewed
+- [x] 2. Schematic + ERC, BOM updated (PR #8)
+- [x] 3. Placement (bottom: power stage; top: inductor + controls), awaiting review
 - [ ] 4. Routing + DRC (JLCPCB 4-layer rules)
 - [ ] 5. Outputs: Gerbers, drill, CPL/BOM, 3D render, design note
 
@@ -47,15 +47,22 @@ Next: Stage 2 review, then Stage 3 (custom footprints + placement).
 | 2026-10-16 | Bulk C5/C6 = 2 × EGXF 110 µF | Matches CLAUDE.md C5/C6; resolves the "×5" BOM discrepancy |
 | 2026-10-16 | LM5069 VIN without series resistor | Series R would offset the 55 mV current-limit sense |
 | 2026-10-16 | BOM generated from the schematic (`kicad/tools/make_bom.py`); previous BOM kept as a sheet | One source of truth |
+| 2026-10-16 | Own footprints for EPC2304, ERUC23, CSS2H shunts, NANO2 fuse drawn from datasheets; vendor STEP models (and Würth/SamacSys footprints) kept local in `kicad/lib/vendor` | SamacSys EPC2304/ERUC23 footprints wrong; licenses forbid redistribution |
+| 2026-10-16 | F1 not fitted (option); R96 CSS2H-2512C-000 link; LM5069 breaker = eFuse | 0456025.ER only 72 VDC; no ≥ 25 A / ≥ 100 VDC SMD fuse found (user decision) |
+| 2026-10-16 | D15/D16 footprint SOT-323 (was SOD-323) | BAT54W is SOT-323; pin 3 had no pad |
+| 2026-10-17 | Test points 1.0 mm pads, all on top | Bottom is under the heatsink; 1.5 mm pads did not fit |
+| 2026-10-17 | Half-bridge: LS above HS, strips aligned (SW on L4 only), LS gate at the driver, HS gate at the far end | Smallest commutation loop and SW area; bottom-mounted Si8274 is mirrored |
+| 2026-10-17 | Heatsink pedestal 3.0 mm (was ~2.5); hot-swap stage on the bottom under the heatsink | Fits SOIC-16W/SMC/TOLL under the heatsink; top side full |
+| 2026-10-17 | Heatsink screws at (36.8, 3.7/50.3) and (68.7, 20/34) | Corners hold the barrier column and terminals |
+| 2026-10-17 | Stack-up written to the board (4 × 70 µm, 3313, 1.60 mm, ENIG); JLC rules + 2.5 mm LV_ISO barrier rule in `ECE533_Guide.kicad_dru` | Stage 1 stack-up; isolation enforced by DRC |
 
 ## Open questions
 - PS1 output voltage at 130–176 mA vs AMC3330 4.5 V min / LTC3861 5.5 V max (bench check).
 - ERUC23-3R2K saturation definition per winding vs the 31 A peak (TDK datasheet).
-- Fuse 0456025.ER DC voltage rating (Littelfuse datasheet).
 - Starting values to confirm in SPICE/bench: compensation, LM5012 ripple injection, dead time,
   LM5069 power limit vs Q1 SOA (`docs/design/schematic_stage2.md` §7).
-- Vendor footprints for EPC2304/ERUC23 aren't on this machine (`kicad/lib/vendor/` is empty):
-  Stage 3 will draw them from the datasheets in `ECE533_Mods.pretty`.
+- PS1 SIP-4 pin 2–3 spacing (0.92 mm) across the barrier: accept, slot, or other module (placement note §7).
+- High-side gate path at the far end of each FET pair (placement note §3).
 
 ## Known discrepancies (resolved in Stage 2)
 - C1–C4 value is 2.2 µF (GRM21BD72A225KE01L). Done.
@@ -80,3 +87,17 @@ supply/fan, protection, parts list). Review decisions recorded above. PR #7 merg
 - CI now installs KiCad's default library tables and blocks on ERC errors.
 - BOM regenerated from the schematic: 94 lines / 248 parts, 47 LCSC numbers verified.
 - Notes: `docs/design/schematic_stage2.md`.
+
+### 2026-10-16/17: Stage 3 footprints and placement
+- Footprints: EPC2304, TDK ERUC23, Bourns CSS2H (Kelvin + 2-terminal), NANO2 456 drawn from the
+  datasheets (`kicad/tools/gen_footprints.py`); Würth REDCUBE and Murata NME1S from the vendor
+  libraries (local `ECE533_Vendor`). Every 3D model aligned and checked by rendering (from below
+  through a board cut-out for the EPC2304 and ERUC23).
+- `check_footprints.py`: 273/273 symbol pins match their pads (found the D15/D16 SOT-323 error).
+- F1 fuse decision (DNP option + R96 link), test points 1.0 mm.
+- Board built from the netlist with `kicad/tools/build_pcb.py`: outline, stack-up, layer names, net
+  classes, JLC rules + isolation rule (`ECE533_Guide.kicad_dru`), heatsink/pedestal/duct outlines,
+  barrier rule area, placement of all 273 footprints (134 on the bottom).
+- DRC with schematic parity: 0 errors, 0 parity issues, 1 silkscreen warning, 499 unrouted (Stage 4).
+  ERC: 0 violations.
+- Notes and renders: `docs/design/placement_stage3.md`.

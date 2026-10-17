@@ -14,6 +14,8 @@ Stage 1 (architecture, issue #1). Read in this order:
    (superseded by the generated BOM)
 8. [schematic_stage2.md](schematic_stage2.md): Stage 2 sheet structure, conventions, refdes, changes,
    ERC/netlist verification, BOM notes, open items for Stage 3
+9. [placement_stage3.md](placement_stage3.md): Stage 3 footprints (sources, 3D checks), floor plan,
+   half-bridge arrangement, heatsink/pedestal, board set-up and DRC, open issues
 
 ## Stage 1 review outcome
 - **Kept:** ERUC23-3R2K inductor and EPC2304 FETs, because the simulations depend on them. Per-phase
