@@ -3155,8 +3155,9 @@
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "Unpolarized capacitor" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
-		(property "MPN" "GRM21BR72A105KA01L" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
-		(property "Manufacturer" "Murata" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "CC0805KKX7R0BB105" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C5370002" (at 111.76 87.63 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "e30a48bd-553e-5dd6-a8ea-549d8928a994"))
 		(pin "2" (uuid "bb9ee4f7-12d5-552d-b2b9-6a8afb909334"))
 		(instances (project "ECE533_Guide"
@@ -3372,8 +3373,9 @@
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "Unpolarized capacitor" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
-		(property "MPN" "GRM21BR72A105KA01L" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
-		(property "Manufacturer" "Murata" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "CC0805KKX7R0BB105" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "YAGEO" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C5370002" (at 127 105.41 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "9e83ba6c-0b57-5755-be4b-3783d79c1856"))
 		(pin "2" (uuid "790beba9-212d-5ae9-935b-847e432c3c64"))
 		(instances (project "ECE533_Guide"
@@ -3497,6 +3499,7 @@
 		(property "Description" "Unpolarized capacitor" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71E474KA12D" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77052" (at 198.12 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "c90adb59-8713-579c-aef2-42adda472490"))
 		(pin "2" (uuid "47652e0b-402b-5025-b02a-eb779b8d994e"))
 		(instances (project "ECE533_Guide"
@@ -3536,7 +3539,7 @@
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "Resistor" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
-		(property "MPN" "RC0603FR-0713K0L" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "RC0603FR-0713KL" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "YAGEO" (at 208.28 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "b31ed204-a71f-56ff-9e36-abb2848cee7e"))
 		(pin "2" (uuid "a70fd5d9-187e-588a-a5c5-9bb2039590ce"))
@@ -3770,6 +3773,7 @@
 		(property "Description" "Unpolarized capacitor" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71H104KA93D" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 340.36 54.61 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "a883d244-0265-55c6-a75a-4946b79995fd"))
 		(pin "2" (uuid "3740582a-e360-5dd2-8535-fa3a85c0091c"))
 		(instances (project "ECE533_Guide"

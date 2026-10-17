@@ -95,6 +95,10 @@ class Part:
         self.x, self.y, self.r = x, y, r
         self.mirror = mirror
         self.fields = fields or {}
+        if 'MPN' in self.fields and 'LCSC' not in self.fields:
+            from parts import LCSC_BY_MPN
+            if self.fields['MPN'] in LCSC_BY_MPN:
+                self.fields['LCSC'] = LCSC_BY_MPN[self.fields['MPN']]
         self.footprint = footprint
         self.dnp, self.in_bom = dnp, in_bom
         self.ref_pos, self.val_pos = ref_pos, val_pos

@@ -136,6 +136,17 @@ def main(path):
             fails += 1
         else:
             print(f'ok   {name:<28} {net}')
+    # every reference designator must be unique
+    refs = {}
+    tree = parse(open(path, encoding='utf-8').read())
+    for comp in find(tree, 'comp'):
+        r = child(comp, 'ref')
+        if r and not r[1].startswith('#'):
+            refs[r[1]] = refs.get(r[1], 0) + 1
+    dups = sorted(r for r, n in refs.items() if n > 1)
+    if dups:
+        print(f'FAIL duplicate reference designators: {dups}')
+        fails += 1
     # the two grounds must never merge
     if pin2net.get('PS1.1') == pin2net.get('PS1.3'):
         print('FAIL: PGND and GND_ISO are the same net!')

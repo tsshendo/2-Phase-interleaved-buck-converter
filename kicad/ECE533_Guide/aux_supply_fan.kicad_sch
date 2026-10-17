@@ -2936,6 +2936,7 @@
 		(property "Description" "Unpolarized capacitor" (at 71.12 72.39 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R72A104KA35D" (at 71.12 72.39 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 71.12 72.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77058" (at 71.12 72.39 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "9eb4eb98-23fa-53a2-a769-6a062b0b1ef3"))
 		(pin "2" (uuid "6ffe26f4-b735-575f-98b2-32b064cd1ed0"))
 		(instances (project "ECE533_Guide"
@@ -3081,6 +3082,7 @@
 		(property "Description" "Unpolarized capacitor" (at 142.24 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71H222KA01D" (at 142.24 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 142.24 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86023" (at 142.24 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "89615fb0-7632-55f7-b728-555084332df8"))
 		(pin "2" (uuid "15eadcb1-36cf-502d-abb3-386ba142b62b"))
 		(instances (project "ECE533_Guide"
@@ -3204,6 +3206,7 @@
 		(property "Description" "Unpolarized capacitor" (at 203.2 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM31CR71A226KE15L" (at 203.2 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 203.2 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C91604" (at 203.2 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "cc9ec3da-a625-5bad-8489-99e38886296a"))
 		(pin "2" (uuid "09460304-8293-57cd-baec-4755a3b09915"))
 		(instances (project "ECE533_Guide"
@@ -3245,6 +3248,7 @@
 		(property "Description" "Unpolarized capacitor" (at 213.36 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM31CR71A226KE15L" (at 213.36 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 213.36 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C91604" (at 213.36 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "4651af58-136d-579f-9e59-0d75689c0683"))
 		(pin "2" (uuid "11920c4b-5062-51fc-86e2-dca9cad07468"))
 		(instances (project "ECE533_Guide"
@@ -3286,6 +3290,7 @@
 		(property "Description" "Unpolarized capacitor" (at 223.52 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71H104KA93D" (at 223.52 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 223.52 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 223.52 69.85 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "19c9e1f0-993c-5f04-ae92-d475dd8a532f"))
 		(pin "2" (uuid "ccf215c4-41e2-585a-8aa5-667dd51d5c63"))
 		(instances (project "ECE533_Guide"
@@ -3412,6 +3417,7 @@
 		(property "Description" "Unpolarized capacitor" (at 193.04 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71H472KA01D" (at 193.04 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 193.04 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77057" (at 193.04 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "396ca46b-ef22-5ead-80c5-9a8bd29f5420"))
 		(pin "2" (uuid "10ac8aac-8a06-5661-a0d3-27fcd46a2292"))
 		(instances (project "ECE533_Guide"
@@ -3453,6 +3459,7 @@
 		(property "Description" "Unpolarized capacitor" (at 213.36 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71H473KA61D" (at 213.36 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 213.36 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86027" (at 213.36 100.33 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "d19e8b7d-f675-5c72-be18-c17a887035bb"))
 		(pin "2" (uuid "7159c36e-0a5c-5e4b-9f71-c66ae32abb58"))
 		(instances (project "ECE533_Guide"
@@ -3602,6 +3609,7 @@
 		(property "Description" "Unpolarized capacitor" (at 25.4 166.37 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM188R71E105KA12D" (at 25.4 166.37 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 25.4 166.37 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86020" (at 25.4 166.37 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "56273c8c-2b76-5459-a3e4-5666e617632b"))
 		(pin "2" (uuid "f5877dae-2fed-5d92-b900-4aa22c3d663f"))
 		(instances (project "ECE533_Guide"
@@ -3765,6 +3773,7 @@
 		(property "Description" "Unpolarized capacitor" (at 132.08 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "GRM21BR71A106KE51L" (at 132.08 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Murata" (at 132.08 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86038" (at 132.08 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(pin "1" (uuid "b375d04e-dd0b-5cea-bb7f-de9916dfe6d0"))
 		(pin "2" (uuid "c8a94723-17a1-56bd-b5e6-2133f81609ac"))
 		(instances (project "ECE533_Guide"

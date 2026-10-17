@@ -780,7 +780,7 @@ def build_fault(sh):
            nets={'+': 'OVP_REF', '-': 'VSOUT', 'REF': 'OVP_REFOUT', 'OUT': 'OVP_N',
                  'V+': '~+5V_ISO', 'V-': '~GND_ISO'})
     div(sh, 'R84', '10k', 'R85', '11.8k', g(20), g(17), 'OVP_REFOUT', 'OVP_REF', '~GND_ISO')
-    C(sh, 'C114', '100n', '50V', '0603', g(44), g(18), '~+5V_ISO', '~GND_ISO')
+    C(sh, 'C119', '100n', '50V', '0603', g(44), g(18), '~+5V_ISO', '~GND_ISO')
     sh.add('74xGxx:74LVC1G08', 'U25', '74LVC1G08', g(62), yl,
            footprint=FP['SOT23-5'], fields={'MPN': 'SN74LVC1G08DBVR', 'Manufacturer': 'TI', 'LCSC': 'C7666'},
            nets={'1': '>OTP_ISO_N:input', '2': 'OVP_N', '4': 'FLT_SET_N', 'VCC': '~+5V_ISO', 'GND': '~GND_ISO'})

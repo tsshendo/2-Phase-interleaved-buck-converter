@@ -46,6 +46,7 @@ def _code(val):
         v = v[:-1]
     if '.' in v:
         a, b = v.split('.')
+        b = b.rstrip('0')
         return f'{a}{mult}{b}'
     return f'{v}{mult}' if mult == 'R' else f'{v}{mult}'
 
@@ -59,6 +60,8 @@ def _e96code(val):
     elif v[-1] in 'mM':
         mult, v = 1e6, v[:-1]
     ohms = float(v) * mult
+    if ohms <= 0:
+        raise ValueError('no precision code for 0 ohm')
     exp = 0
     while ohms >= 1000:
         ohms /= 10
@@ -77,39 +80,43 @@ def res(val, size='0603', prec=False, power=None):
         mfr = 'Panasonic'
         text = f'{val} 0.1%'
     else:
-        mpn = f'RC{size}FR-07{_code(val)}L'
+        mpn = f'RC{size}FR-07{_code(val)}L' if val != '0' else f'RC{size}JR-070RL'
         mfr = 'YAGEO'
         text = val
     return text, FP['R' + size], {'MPN': mpn, 'Manufacturer': mfr}
 
 
+# LCSC numbers below were read from lcsc.com search results (2026-10-16); '' = not found / not checked
 CAPS = {
-    # (value, voltage, size): (MPN, LCSC)
-    ('100n', '50V', '0603'): ('GRM188R71H104KA93D', ''),
-    ('100n', '100V', '0603'): ('GRM188R72A104KA35D', ''),
-    ('1u', '25V', '0603'): ('GRM188R71E105KA12D', ''),
-    ('1u', '100V', '0805'): ('GRM21BR72A105KA01L', ''),
-    ('10u', '10V', '0805'): ('GRM21BR71A106KE51L', ''),
-    ('10u', '50V', '1210'): ('GRM32ER71H106KA12L', ''),
-    ('22u', '10V', '1206'): ('GRM31CR71A226KE15L', ''),
-    ('2.2u', '100V', '0805'): ('GRM21BD72A225KE01L', 'C2981733'),
-    ('10n', '100V', '0603'): ('GRM188R72A103KA01D', ''),
-    ('1n', '100V', '0603'): ('GRM1885C2A102JA01D', ''),
-    ('1n', '200V', '0805'): ('GRM21A5C2D102JW01D', ''),
-    ('1n', '50V', '0603'): ('GRM1885C1H102JA01D', ''),
-    ('2.2n', '50V', '0603'): ('GRM188R71H222KA01D', ''),
-    ('4.7n', '50V', '0603'): ('GRM188R71H472KA01D', ''),
-    ('10n', '50V', '0603'): ('GRM188R71H103KA01D', ''),
-    ('47n', '50V', '0603'): ('GRM188R71H473KA61D', ''),
-    ('100p', '50V', '0603'): ('GRM1885C1H101JA01D', ''),
-    ('330p', '50V', '0603'): ('GRM1885C1H331JA01D', ''),
-    ('470n', '25V', '0603'): ('GRM188R71E474KA12D', ''),
+    # (value, voltage, size): (MPN, LCSC, manufacturer)
+    ('100n', '50V', '0603'): ('GRM188R71H104KA93D', 'C77055', 'Murata'),
+    ('100n', '100V', '0603'): ('GRM188R72A104KA35D', 'C77058', 'Murata'),
+    ('1u', '25V', '0603'): ('GRM188R71E105KA12D', 'C86020', 'Murata'),
+    ('1u', '100V', '0805'): ('CC0805KKX7R0BB105', 'C5370002', 'YAGEO'),
+    ('10u', '10V', '0805'): ('GRM21BR71A106KE51L', 'C86038', 'Murata'),
+    ('10u', '50V', '1210'): ('GRM32ER71H106KA12L', 'C77102', 'Murata'),
+    ('22u', '10V', '1206'): ('GRM31CR71A226KE15L', 'C91604', 'Murata'),
+    ('2.2u', '100V', '0805'): ('GRM21BD72A225KE01L', 'C2981733', 'Murata'),
+    ('10n', '100V', '0603'): ('GRM188R72A103KA01D', 'C162275', 'Murata'),
+    ('1n', '200V', '0805'): ('C0805C102J2GAC7800', 'C2170811', 'KEMET'),
+    ('1n', '50V', '0603'): ('GRM1885C1H102JA01D', 'C77026', 'Murata'),
+    ('2.2n', '50V', '0603'): ('GRM188R71H222KA01D', 'C86023', 'Murata'),
+    ('4.7n', '50V', '0603'): ('GRM188R71H472KA01D', 'C77057', 'Murata'),
+    ('10n', '50V', '0603'): ('GRM188R71H103KA01D', 'C77053', 'Murata'),
+    ('47n', '50V', '0603'): ('GRM188R71H473KA61D', 'C86027', 'Murata'),
+    ('100p', '50V', '0603'): ('GRM1885C1H101JA01D', 'C71664', 'Murata'),
+    ('470n', '25V', '0603'): ('GRM188R71E474KA12D', 'C77052', 'Murata'),
+}
+
+LCSC_BY_MPN = {
+    'LTST-C191KGKT': 'C125098', 'LTST-C191KRKT': 'C125099', 'BAT54W-7-F': 'C134417',
+    'BLM18KG601SN1D': 'C85833', '2N7002LT1G': 'C16338',
 }
 
 
 def cap(val, volt, size):
-    mpn, lcsc = CAPS[(val, volt, size)]
-    f = {'MPN': mpn, 'Manufacturer': 'Murata'}
+    mpn, lcsc, mfr = CAPS[(val, volt, size)]
+    f = {'MPN': mpn, 'Manufacturer': mfr}
     if lcsc:
         f['LCSC'] = lcsc
     return f'{val}/{volt}', FP['C' + size], f
@@ -118,6 +125,7 @@ def cap(val, volt, size):
 def part(mpn, mfr, fp_key_or_name, lcsc=None, **extra):
     fp = FP.get(fp_key_or_name, fp_key_or_name)
     f = {'MPN': mpn, 'Manufacturer': mfr}
+    lcsc = lcsc or LCSC_BY_MPN.get(mpn)
     if lcsc:
         f['LCSC'] = lcsc
     f.update(extra)
