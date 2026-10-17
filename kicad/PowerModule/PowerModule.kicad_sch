@@ -3540,7 +3540,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "110u/160V"
+		(property "Value" "62u/160V"
 			(at 207.01 128.2762 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3551,7 +3551,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
 			(at 204.47 127 0)
 			(hide yes)
 			(show_name no)
@@ -3584,7 +3584,7 @@
 				)
 			)
 		)
-		(property "MPN" "EGXF161ELL111MK25S"
+		(property "MPN" "EGXF161ELL620MJ25S"
 			(at 204.47 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3606,7 +3606,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1598290"
+		(property "LCSC" ""
 			(at 204.47 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4784,7 +4784,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "110u/160V"
+		(property "Value" "62u/160V"
 			(at 219.71 71.2469 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4795,7 +4795,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
 			(at 217.17 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -4828,7 +4828,7 @@
 				)
 			)
 		)
-		(property "MPN" "EGXF161ELL111MK25S"
+		(property "MPN" "EGXF161ELL620MJ25S"
 			(at 217.17 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4850,7 +4850,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1598290"
+		(property "LCSC" ""
 			(at 217.17 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5638,6 +5638,430 @@
 			(project "PowerModule"
 				(path "/09d3e748-966b-486a-bab2-fcfca6077673"
 					(page "2")
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 212.09 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "396978c9-e7ee-4f54-a215-502cc9dff87e")
+		(property "Reference" "C15"
+			(at 214.63 125.736 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "62u/160V"
+			(at 214.63 128.276 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
+			(at 212.09 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 212.09 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EGXF161ELL620MJ25S"
+			(at 212.09 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Chemi-Con"
+			(at 212.09 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 212.09 127 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "864560f0-fa76-4187-902c-ce3affeabeda")
+		)
+		(pin "2"
+			(uuid "4b73b39a-adf2-4b35-9af7-b2c751b03bbb")
+		)
+		(instances
+			(project "PowerModule"
+				(path "/09d3e748-966b-486a-bab2-fcfca6077673"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VOUT"
+		(at 204.47 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "298c1f06-0be9-417f-8500-8acb149a6a99")
+	)
+	(label "VOUT"
+		(at 212.09 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d0fe702c-41ee-4b14-bef1-95f3cbe0d89b")
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 212.09 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fa6d2ae0-5905-49c9-88d1-429ef14f93a7")
+		(property "Reference" "#PWR055"
+			(at 212.09 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 211.328 133.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 212.09 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c590fe90-ba9f-4cc7-bbca-497950816db7")
+		)
+		(instances
+			(project "PowerModule"
+				(path "/09d3e748-966b-486a-bab2-fcfca6077673"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small_US")
+		(at 224.79 69.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c548c352-8c6d-4071-b0ad-abc4e0f889fc")
+		(property "Reference" "C16"
+			(at 227.33 68.7069 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "62u/160V"
+			(at 227.33 71.2469 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
+			(at 224.79 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "capacitor, small US symbol"
+			(at 224.79 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EGXF161ELL620MJ25S"
+			(at 224.79 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Chemi-Con"
+			(at 224.79 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 224.79 69.85 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "186dfb02-5f9b-4b02-bd77-284a5996c5f6")
+		)
+		(pin "2"
+			(uuid "003e9331-d9a8-41f2-87b6-46b8ad8cf0ed")
+		)
+		(instances
+			(project "PowerModule"
+				(path "/09d3e748-966b-486a-bab2-fcfca6077673"
+					(reference "C16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(label "VIN"
+		(at 217.17 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e6a07bf9-b846-4cef-9889-249c80012025")
+	)
+	(label "VIN"
+		(at 224.79 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fdb9c004-8fdf-4d30-91e3-543ddfa8d562")
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 224.79 72.39 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "15e9cc18-94d6-469b-9f13-9eb18b1854c2")
+		(property "Reference" "#PWR059"
+			(at 224.79 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 224.028 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 224.79 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "70d51e39-3f91-4daa-a986-7168754a307a")
+		)
+		(instances
+			(project "PowerModule"
+				(path "/09d3e748-966b-486a-bab2-fcfca6077673"
+					(reference "#PWR059")
+					(unit 1)
 				)
 			)
 		)

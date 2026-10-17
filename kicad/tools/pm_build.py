@@ -27,13 +27,13 @@ PCB = os.path.join(PRJ, 'PowerModule.kicad_pcb')
 W, H = bp.W, bp.H
 BAR = (16.3, 19.7)                          # isolation barrier band (J4 side | power side)
 HS_X = (19.0, 79.0)                         # Z60-12.7B on the bottom, 60 x 60, 3 mm overhang top/bottom
-HOLES = ((21.5, 4.0), (21.5, 50.0), (69.6, 18.0), (69.6, 36.0))
+HOLES = ((21.5, 4.0), (28.4, 50.6), (69.6, 18.0), (69.6, 36.0))
 PH_Y = {1: 19.1, 2: 34.9}
 HS_XC, LS_XC = 33.0, 39.6                   # FET centres
 L1_C = (50.0, 30.95)
 LV_REFS = {'J4', 'C11', 'C12'}
 BARRIER_REFS = {'AT1', 'AT2', 'PS1'}
-HV_SW = ('Net-(J1-Pin_1)', '/Gate_Drive/KS1', '/Gate_Drive/KS2')
+HV_SW = ('/VIN', '/Gate_Drive/KS1', '/Gate_Drive/KS2')
 LV_NETS = ('GND', '+5V', 'Net-(AT1-A1)', 'Net-(AT1-A2)', 'Net-(AT2-A1)', 'Net-(AT2-A2)')
 
 DRV_X = 27.15
@@ -61,7 +61,9 @@ def barrier(board):
     ps = board.FindFootprintByReference('PS1')
     p2 = [p for p in ps.Pads() if p.GetNumber() == '2'][0].GetBoundingBox()
     p3 = [p for p in ps.Pads() if p.GetNumber() == '3'][0].GetBoundingBox()
-    gx0, gx1 = p2.GetRight() / 1e6 - bp.X0 + 0.05, p3.GetLeft() / 1e6 - bp.X0 - 0.05
+    # from pin-2 centre to pin-3 centre: tracks reach each pin only from its own side (>= 1.5 mm)
+    gx0 = (p2.GetLeft() + p2.GetRight()) / 2e6 - bp.X0 + 0.12
+    gx1 = (p3.GetLeft() + p3.GetRight()) / 2e6 - bp.X0 - 0.12
     py = (p2.GetTop() / 1e6 - bp.Y0, p2.GetBottom() / 1e6 - bp.Y0)
     y0, y1 = py[0] - 1.6, py[1] + 1.6
     bp.keepout(board, BAR[0], -0.5, BAR[1], y0, 'ISOLATION_BARRIER_A')
@@ -105,10 +107,15 @@ def floor_plan(P):
         P.fixed(ref, T, 79.0, y)
     # bulk capacitors: input next to DC+, output next to the inductor output pads
     # (C6 '-' pin downwards, onto a PGND tongue cut through the VBUS strip)
-    P.fixed('C6', T, 64.0, 4.6, cond=lambda p, c: abs(p(1)[0] - p(2)[0]) < 0.01 and p(2)[1] > p(1)[1] + 1)
-    P.fixed('C5', T, 62.0, 46.6, cond=lambda p, c: p(1)[0] < p(2)[0] - 1)
+    # each bulk capacitor is two parallel parts (C6 + C16 input, C5 + C15 output)
+    vert = lambda p, c: abs(p(1)[0] - p(2)[0]) < 0.01 and p(2)[1] > p(1)[1] + 1
+    P.fixed('C6', T, 53.0, 5.9, cond=vert, by_court=True)
+    P.fixed('C16', T, 63.8, 5.9, cond=vert, by_court=True)
+    horiz = lambda p, c: p(1)[0] < p(2)[0] - 1 and abs(p(1)[1] - p(2)[1]) < 0.01
+    P.fixed('C5', T, 63.3, 27.0, cond=horiz, by_court=True)
+    P.fixed('C15', T, 63.3, 47.6, cond=horiz, by_court=True)
     # control connector on the left edge, isolators and PS1 across the barrier
-    P.fixed('PS1', T, 14.19, 27.0, cond=lambda p, c: p(1)[0] < p(4)[0] - 5 and abs(p(1)[1] - p(4)[1]) < 0.01)
+    P.fixed('PS1', T, 14.19, 48.0, cond=lambda p, c: p(1)[0] < p(4)[0] - 5 and abs(p(1)[1] - p(4)[1]) < 0.01)
     at_ok = lambda p, c: p(1)[0] < c[0] - 1 and p(1)[1] < p(4)[1]
     P.fixed('AT1', T, 18.0, 17.0, cond=at_ok)
     P.fixed('AT2', T, 18.0, 37.0, cond=at_ok)
@@ -147,6 +154,9 @@ def floor_plan(P):
     # supply diodes: low side next to their drivers' R10 / R12, high side in the column
     P.fixed('D2', T, LS_DRV_X + 4.3, 28.3, rot=0)
     P.fixed('D4', T, LS_DRV_X, 39.4, rot=0)
+    # isolator input-side decoupling, clear of the J4 lanes
+    P.fixed('C11', T, 12.6, 13.9, rot=180)
+    P.fixed('C12', T, 8.6, 48.0, rot=0)
     P.fixed('D1', T, 27.4, 22.4, rot=0)
     P.fixed('D3', T, DRV_X, 43.8, rot=0)
 
@@ -263,20 +273,28 @@ def silk_labels(board):
     return missing
 
 
-def name_block(board):
-    """Owner text on the bottom silkscreen (credit-card name size, about 2.5 mm), in the free band
-    between the FET block and the terminals, reading along the long side when the board is turned."""
+def name_block(board, band=(42.9, 59.4), span=(10.6, 52.4)):
+    """Owner text on the bottom silkscreen, as large as fits (credit-card name size is about
+    2.5 mm): the clear strip between the FET block and the bulk capacitors, lines along the long side
+    (vias are tented, so the strip under the inductor's via field is usable)."""
     t = pcbnew.PCB_TEXT(board)
     t.SetText('\n'.join(NAME_BLOCK))
     t.SetLayer(pcbnew.B_SilkS)
-    t.SetTextSize(pcbnew.VECTOR2I(bp.mm(1.6), bp.mm(2.3)))
-    t.SetTextThickness(bp.mm(0.3))
     t.SetMirrored(True)
     t.SetTextAngleDegrees(90)
     t.SetHorizJustify(pcbnew.GR_TEXT_H_ALIGN_CENTER)
     t.SetVertJustify(pcbnew.GR_TEXT_V_ALIGN_CENTER)
-    t.SetPosition(bp.V(56.7, 27.5))
     board.Add(t)
+    h = 2.5
+    while h > 1.2:
+        t.SetTextSize(pcbnew.VECTOR2I(bp.mm(h), bp.mm(h)))
+        t.SetTextThickness(bp.mm(0.15 * h))
+        t.SetPosition(bp.V((band[0] + band[1]) / 2, (span[0] + span[1]) / 2))
+        x0, y0, x1, y1 = _bb(t)
+        if x1 - x0 <= band[1] - band[0] and y1 - y0 <= span[1] - span[0]:
+            break
+        h -= 0.05
+    print(f'name block text height {h:.2f} mm')
     return _bb(t)
 
 
@@ -290,7 +308,7 @@ def place_j4(P):
         if abs(p1[0] - p6[0]) < 0.01 and (c[0] + c[2]) / 2 < p1[0]:
             break
     c = P.court(f)
-    P.set(f, 'T', r, 0.35 - c[0], 41.0 - (c[1] + c[3]) / 2)
+    P.set(f, 'T', r, 0.35 - c[0], 27.0 - (c[1] + c[3]) / 2)     # centred on the edge
     P.commit('J4', 'T')
 
 

@@ -586,7 +586,7 @@
       },
       {
         "netclass": "HV_SW",
-        "pattern": "Net-(J1-Pin_1)"
+        "pattern": "/VIN"
       },
       {
         "netclass": "HV_SW",

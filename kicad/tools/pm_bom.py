@@ -44,6 +44,8 @@ def main(net, out):
             note = 'Report part (base schematic)'
             if mpn in MAIN_BOM:
                 note = 'Same part as the main board BOM'
+            if mpn == 'EGXF161ELL620MJ25S':
+                note = 'Bulk split into 2 x half value per position (GXF 160 V, 10 x 25 mm); Digi-Key PN and stock to confirm'
             if mpn == '1EDN7550BXTSA1':
                 note = 'Report driver (base schematic); Digi-Key PN and stock to confirm'
             w.writerow([i, len(refs), ','.join(refs), val, mpn, f.get('Manufacturer', ''),

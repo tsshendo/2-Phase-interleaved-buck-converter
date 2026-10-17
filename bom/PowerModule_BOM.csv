@@ -1,7 +1,7 @@
 Item,Qty,Reference designators,Value,Manufacturer part number,Manufacturer,Digi-Key PN,LCSC PN,Footprint,Side,Notes
 1,2,"AT1,AT2",SI86S620BC-IS,SI86S620BC-IS,Skyworks,863-SI86S620BC-IS-ND,C7363570,SOIC-8_3.9x4.9mm_P1.27mm,Top,Report part (base schematic)
 2,4,"C1,C2,C3,C4",2.2u/100V,GRM21BD72A225KE01L,Murata,490-GRM21BD72A225KE01LCT-ND,C2981733,C_0805_2012Metric,Bottom,Report part (base schematic)
-3,2,"C5,C6",110u/160V,EGXF161ELL111MK25S,Chemi-Con,565-EGXF161ELL111MK25S-ND,C1598290,CP_Radial_D12.5mm_P5.00mm,Top,Report part (base schematic)
+3,4,"C5,C6,C15,C16",62u/160V,EGXF161ELL620MJ25S,Chemi-Con,,,CP_Radial_D10.0mm_P5.00mm,Top,"Bulk split into 2 x half value per position (GXF 160 V, 10 x 25 mm); Digi-Key PN and stock to confirm"
 4,6,"C7,C8,C9,C10,C11,C13",100n/50V,GRM188R71H104KA93D,Murata,,C77055,C_0603_1608Metric,Top,Same part as the main board BOM
 5,2,"C12,C14",10u/10V,GRM21BR71A106KE51L,Murata,,C86038,C_0805_2012Metric,Top,Same part as the main board BOM
 6,4,"D1,D2,D3,D4",SS110HL,SS110HL-TP,MCC,353-SS110HL-TPCT-ND,C19996385,D_SOD-123F,Top,Report part (base schematic)

@@ -8,7 +8,7 @@ board (`kicad/ECE533_Guide`, Stages 1–5) is a different project and is not aff
 |---|---|
 | Schematic | Base files from the report (commit `57d8ca5`): `PowerModule.kicad_sch` (power stage) + `gate_drive.kicad_sch`. The circuit is unchanged (see §2) |
 | Board | 85.60 × 53.98 mm ID-1 (R3.18), 4 × 2 oz, 1.6 mm, ENIG, JLCPCB 4-layer |
-| Parts | 54, the same parts as the report: 4 × EPC2304, ERUC23-3R2K, 4 × 1EDN7550B, 2 × SI86S620BC, NME1S0505SC, REDCUBE terminals |
+| Parts | 56, the same parts as the report (bulk caps split, §2): 4 × EPC2304, ERUC23-3R2K, 4 × 1EDN7550B, 2 × SI86S620BC, NME1S0505SC, REDCUBE terminals |
 | Checks | ERC: 0 errors, 6 warnings (off-grid wire ends in the base drawing). DRC with schematic parity: **0 violations, 0 unconnected, 0 parity issues** |
 | Scripts | `kicad/tools/pm_assign.py`, `pm_flags.py`, `pm_build.py`, `pm_route.py`, `pm_bom.py` (see §8) |
 
@@ -17,7 +17,10 @@ board (`kicad/ECE533_Guide`, Stages 1–5) is a different project and is not aff
 ## 1. What the module does
 - 72 V in (J1 DC+, J3 DC−), 24 V / 46 A out (J2, return through J3), two phases 180° apart and one
   coupled inductor. No controller on board.
-- **J4 (Molex Nano-Fit 105313-1206)** brings in the four gate commands and their 5 V supply:
+- **J4 (Molex Nano-Fit 105313-1206)**, centred on the left edge between the isolators, brings in
+  the four gate commands and their 5 V supply. The AT1 pair runs on L4 and the AT2 pair on L1 in
+  fixed lanes (each pair swaps order at the isolator, so one signal per pair changes layer once):
+  15–19 mm per line:
 
 | J4 pin | Net | Function |
 |---|---|---|
@@ -40,7 +43,10 @@ The base schematic is used as given. The only additions are:
 1. **Footprints, catalog values and part numbers** (`pm_assign.py`). Every passive is 0603 or
    larger, and the values follow the BOM:
    - C1–C4: 2.2 µF (base: 2.5 µF);
-   - C5/C6: EGXF 110 µF each (base: C6 440 µF; per the Stage 2 decision);
+   - bulk: each bulk position is **two parallel EGXF 62 µF / 160 V** (EGXF161ELL620MJ25S, 10 × 25 mm):
+     C5 + C15 on the output, C6 + C16 on the input (user request: half values for lower ESR; the GXF
+     160 V series has no 55 µF part, so 2 × 62 µF = 124 µF per position, ≥ the former 110 µF).
+     C15/C16 are joined with `VOUT` / `VIN` labels (`pm_split_bulk.py`). Base schematic: C6 440 µF;
    - R13/R14/R19/R20: 5.6 Ω (base: 6 Ω).
 2. **`SHIELD` label** joining the two centre taps (C1/C2 and C3/C4). This is the interstitial-shield
    return terminal described in the report (p. 18).
@@ -97,7 +103,8 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
     had LS 11–14 mm).
 - **Input path:** J1 → VBUS strip (L1 + L4 along the top edge, C6 on a PGND tongue) → VBUS column
   down the left of the FET block → the HS combs. **Output path:** inductor pads → L1 VOUT plane → J2,
-  with C5. **Return:** L4 PGND under the inductor → J3.
+  with C5 + C15. **Return:** L4 PGND under the inductor → J3. Input bulk C6 + C16 sit on the
+  VBUS strip with PGND tongues under their '−' pins.
 
 | L1 (1st Cu plane) | L2 (shield) |
 |---|---|
@@ -111,7 +118,7 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
 - Z60-12.7B on the bottom at x 19–79 mm: flush with neither edge, 3 mm overhang top and bottom.
   There is a 3.0 mm pedestal over the FET block and an insulating TIM (HS and LS share the
   heatsink), drawn on Dwgs.User / B.Fab.
-- **4 × M3 holes** (NPTH, 3.4 mm copper keep-out): (21.5, 4.0), (21.5, 50.0), (69.6, 18.0),
+- **4 × M3 holes** (NPTH, 3.4 mm copper keep-out): (21.5, 4.0), (28.4, 50.6), (69.6, 18.0),
   (69.6, 36.0) mm. Screw heads stay clear of the top parts.
 - Only the FETs and C1–C4 are on the bottom. THT leads under the heatsink (C5, C6, PS1 pins 3–4,
   J1–J3) must be trimmed to ≤ 2.5 mm (pedestal 3.0 mm).
@@ -137,19 +144,20 @@ runs warmer than the main board. See §7.
    additional ceramics if overshoot is high.
 3. **1EDN7550B high side:** Stage 1 judged its static common-mode range marginal at a 79 V high side.
    This is why the main board moved to the Si8274. Kept here because the module reproduces the report.
-4. **PS1 SIP-4 pitch** across the barrier: same issue as the main board. A DRC exception allows 0.9 mm
-   between the pins and 1.5 mm for copper entering PS1 (≈ 1.4 mm needed for functional isolation
-   at ≤ 80 V, PD2).
+4. **PS1 SIP-4 pitch** across the barrier: same issue as the main board. PS1 now sits at the bottom
+   left (J4 took its place). The barrier keep-out at PS1 runs from pin-2 centre to pin-3 centre, so
+   copper reaches each pin only from its own side; a DRC exception allows 0.9 mm between the pins and
+   1.5 mm for copper entering PS1 (≈ 1.4 mm needed for functional isolation at ≤ 80 V, PD2).
 5. There is no gate pull-down in the base schematic.
 6. The LS Kelvin return runs on L1 and joins PGND through the fill.
 7. Stock: the Digi-Key numbers come from the main BOM where the part is shared. The 1EDN7550BXTSA1
-   Digi-Key PN and its stock still need to be confirmed.
+   Digi-Key PN and its stock still need to be confirmed, as do those of EGXF161ELL620MJ25S.
 8. J4 has no 3D model in KiCad's library (renders as an outline).
 
 ## 8. Regenerating
 Run each command with KiCad's Python (`C:\Program Files\KiCad\10.0\bin\python.exe`) from `kicad/tools`.
 ```
-python pm_assign.py ; python pm_flags.py            # once, on the base sheets (already applied)
+python pm_assign.py ; python pm_flags.py ; python pm_split_bulk.py   # once (already applied)
 kicad-cli sch export netlist -o pm.net ../PowerModule/PowerModule.kicad_sch
 python pm_build.py pm.net                            # board, outline, stack-up, placement
 python pm_route.py power                             # report pours, vias, Kelvin islands, hops

@@ -23,8 +23,8 @@ def rng(prefix, *nums):
 # ref list -> (value, footprint, MPN, manufacturer, LCSC)
 PARTS = [
     (rng('C', 1, 2, 3, 4), ('2.2u/100V', C0805, 'GRM21BD72A225KE01L', 'Murata', 'C2981733')),
-    (rng('C', 5, 6), ('110u/160V', 'Capacitor_THT:CP_Radial_D12.5mm_P5.00mm', 'EGXF161ELL111MK25S',
-                      'Chemi-Con', 'C1598290')),
+    (rng('C', 5, 6, 15, 16), ('62u/160V', 'Capacitor_THT:CP_Radial_D10.0mm_P5.00mm', 'EGXF161ELL620MJ25S',
+                              'Chemi-Con', '')),     # each bulk cap = 2 x half value (user)
     (rng('C', 7, 8, 9, 10, 11, 13), ('100n/50V', C0603, 'GRM188R71H104KA93D', 'Murata', 'C77055')),
     (rng('C', 12, 14), ('10u/10V', C0805, 'GRM21BR71A106KE51L', 'Murata', 'C86038')),
     (rng('R', *range(1, 9)), ('51k', R0603, 'RC0603FR-0751KL', 'YAGEO', '')),

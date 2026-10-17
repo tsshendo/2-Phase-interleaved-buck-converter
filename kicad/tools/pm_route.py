@@ -23,13 +23,54 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 PCB = os.path.normpath(os.path.join(HERE, '..', 'PowerModule', 'PowerModule.kicad_pcb'))
 F, B, L2, L3 = pcbnew.F_Cu, pcbnew.B_Cu, pcbnew.In1_Cu, pcbnew.In2_Cu
 W, H = rp.W, rp.H
-VBUS, VOUT, PGND, SHIELD, GND = 'Net-(J1-Pin_1)', 'Net-(J2-Pin_1)', 'GNDPWR', '/SHIELD', 'GND'
+VBUS, VOUT, PGND, SHIELD, GND = '/VIN', '/VOUT', 'GNDPWR', '/SHIELD', 'GND'
 SW = {1: '/Gate_Drive/KS1', 2: '/Gate_Drive/KS2'}
-HOLES = ((21.5, 4.0), (21.5, 50.0), (69.6, 18.0), (69.6, 36.0))
+HOLES = ((21.5, 4.0), (28.4, 50.6), (69.6, 18.0), (69.6, 36.0))
 VIA_STD = rp.VIA_STD
 VIA_PAD = (0.2, 0.5)            # via-in-pad, filled and capped (JLC: 0.2 drill, 0.15 ring)
 LV_X = 16.1                     # barrier band 16.3-19.7
 HV_X0 = 19.9
+
+
+def control_lanes(R):
+    """J4 -> isolator inputs, shortest without crossings. J4 (centred, pin 1 at the bottom) has the
+    AT2 pins above the AT1 pins, so the AT1 pair runs up on L4 and the AT2 pair down on L1; each
+    pair also swaps order at the isolator, so one signal per pair changes layer once. +5V runs on L4
+    in a third lane next to the barrier."""
+    def c(ref, num):
+        x0, y0, x1, y1 = R.pad(ref, num)
+        return (x0 + x1) / 2, (y0 + y1) / 2
+    inner, outer, p5 = 12.85, 13.6, 15.4
+    w = 0.3
+    # AT1: A2 (J4.3) inner lane, A1 (J4.2) outer lane, on L4; up to vias left of AT1
+    for num, lane, at in (('3', inner, '3'), ('2', outer, '2')):
+        net = f'Net-(AT1-A{int(at) - 1})'
+        jx, jy = c('J4', num)
+        ax, ay = c('AT1', at)
+        R.track(net, B, [(jx, jy), (lane, jy), (lane, ay)], w)
+        R.via(net, lane, ay, VIA_PAD, check=False)
+        R.track(net, F, [(lane, ay), (ax, ay)], w)
+    # AT2: A1 (J4.4) inner, A2 (J4.5) outer, on L1; A1 crosses under A2 on L4 at the isolator
+    jx, jy = c('J4', '4')
+    ax, ay = c('AT2', '2')
+    R.track('Net-(AT2-A1)', F, [(jx, jy), (inner, jy), (inner, ay)], w)
+    R.via('Net-(AT2-A1)', inner, ay, VIA_PAD, check=False)
+    R.track('Net-(AT2-A1)', B, [(inner, ay), (14.2, ay)], w)
+    R.via('Net-(AT2-A1)', 14.2, ay, VIA_PAD, check=False)
+    R.track('Net-(AT2-A1)', F, [(14.2, ay), (ax, ay)], w)
+    jx, jy = c('J4', '5')
+    ax, ay = c('AT2', '3')
+    R.track('Net-(AT2-A2)', F, [(jx, jy), (outer, jy), (outer, ay), (ax, ay)], w)
+    # +5V: J4.1 -> L4 lane -> AT1.1, AT2.1 (vias beside the pads) and PS1.2
+    jx, jy = c('J4', '1')
+    a1, a2, ps = c('AT1', '1'), c('AT2', '1'), c('PS1', '2')
+    R.track('+5V', B, [(jx, jy), (p5, jy), (p5, a1[1] - 0.9)], 0.4)
+    R.via('+5V', p5, a1[1] - 0.9, VIA_PAD, check=False)
+    R.track('+5V', F, [(p5, a1[1] - 0.9), a1], 0.4)
+    R.track('+5V', B, [(p5, jy), (p5, a2[1] - 0.9)], 0.4)
+    R.via('+5V', p5, a2[1] - 0.9, VIA_PAD, check=False)
+    R.track('+5V', F, [(p5, a2[1] - 0.9), a2], 0.4)
+    R.track('+5V', B, [(p5, a2[1] - 0.9), (p5, ps[1]), (ps[0] - 0.25, ps[1])], 0.4)   # from the LV side
 
 
 def circle_keepouts(board, r=3.4):
@@ -84,9 +125,12 @@ def power(R):
     R.zone(PGND, B, [(38.5, 20.0), (42.55, 20.0), (42.55, 21.6), (85.2, 21.6), (85.2, 50.6), (82.4, 53.4),
                      (38.5, 53.4)], prio=4, name='PGND_L4')
     R.rect(PGND, B, 36.5, 32.4, 38.6, 34.0, prio=3, name='PGND_Q5_SK')
-    # PGND tongue through the VBUS strip to the input bulk capacitor's '-' pin (L1 and L4)
-    R.rect(PGND, B, 62.4, 8.0, 65.6, 21.8, prio=6, name='PGND_C6_L4')
-    R.rect(PGND, F, 62.4, 8.0, 65.6, 20.6, prio=6, name='PGND_C6_L1')
+    # PGND tongues through the VBUS strip to the input bulk capacitors' '-' pins (L1 and L4)
+    for ref in ('C6', 'C16'):
+        x0, y0, x1, y1 = R.pad(ref, 2)
+        xc = (x0 + x1) / 2
+        R.rect(PGND, B, xc - 1.6, y0 - 0.4, xc + 1.6, 21.8, prio=6, name=f'PGND_{ref}_L4')
+        R.rect(PGND, F, xc - 1.6, y0 - 0.4, xc + 1.6, 20.6, prio=6, name=f'PGND_{ref}_L1')
     # ---- L1: 1st Cu plane -----------------------------------------------------------------------
     R.rect(SW[1], F, 42.6, 14.4, 46.9, 21.2, prio=6, name='SW1_L1')
     R.rect(SW[2], F, 42.6, 32.8, 46.9, 39.6, prio=6, name='SW2_L1')
@@ -178,15 +222,16 @@ def vias(R):
     px, py = (x0 + x1) / 2, (y0 + y1) / 2
     x0, y0, x1, y1 = R.pad('AT1', 8)
     ax, ay = (x0 + x1) / 2, (y0 + y1) / 2
-    R.track('+5V_iso', B, [(px, py), (px, 21.3), (20.5, 20.0), (20.5, ay)], 0.3)
+    R.track('+5V_iso', B, [(px, py), (px, 22.4), (20.5, 22.4), (20.5, ay)], 0.3)
     R.via('+5V_iso', 20.5, ay, VIA_PAD, check=False)              # in AT1 pad 8 (filled)
     x0, y0, x1, y1 = R.pad('AT2', 8)
     bx, by = (x0 + x1) / 2, (y0 + y1) / 2
     R.track('+5V_iso', B, [(px, py), (px, by)], 0.3)
     R.via('+5V_iso', px, by, VIA_PAD, check=False)
     R.track('+5V_iso', F, [(px, by), (bx, by)], 0.3)
+    control_lanes(R)
     for t in R.b.GetTracks():
-        if t.GetNetname() == '+5V_iso':
+        if t.GetNetname() in ('+5V_iso', '+5V') or t.GetNetname().startswith('Net-(AT1-A')                 or t.GetNetname().startswith('Net-(AT2-A'):
             t.SetLocked(True)
     # single-point Kelvin junction: island -> switch-node band, next to the HS FET
     R.track(SW[1], B, [(29.4, 16.0), (31.9, 16.0)], 0.4)

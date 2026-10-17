@@ -114,6 +114,10 @@ through J4. Note: `docs/design/power_module.md`.
 | 2026-10-17 | Base schematic kept; only added footprints/values/MPNs, a SHIELD label joining the centre taps, PWR_FLAGs; orphan `connectors.kicad_sch` dropped | "Schematic ready as given" |
 | 2026-10-17 | EPC2304 15-pin footprint variant (pins 8–15 stacked on pads 1–7) | Base SamacSys symbol has 15 pins |
 | 2026-10-17 | Kelvin island under each HS driver on L4, tied to the switch node once at the FET | Gate return under the gate trace; SK pad kept off the power path |
+| 2026-10-17 | LS drivers moved between the phases next to the LS FETs (driver→gate 4.8 mm, was 11–14 mm) | User: gate traces too long |
+| 2026-10-17 | Bulk caps split: C5+C15, C6+C16 = 2 × EGXF 62 µF / 160 V each | User: half values for lower ESR; GXF 160 V has no 55 µF, 62 µF keeps ≥ 110 µF per position |
+| 2026-10-17 | J4 centred on the left edge, PS1 moved to the bottom left, H2 screw to (28.4, 50.6) | User: centred connector, shorter control traces |
+| 2026-10-17 | All reference designators on silkscreen; owner block on the bottom silkscreen (2.0 mm) | User request |
 
 Status: ERC 0 errors (6 off-grid warnings from the base drawing); DRC with schematic parity 0 / 0 / 0.
 Open items: VOUT copper on one layer and the 2.6 mm VBUS neck (thermal); loop inductance not

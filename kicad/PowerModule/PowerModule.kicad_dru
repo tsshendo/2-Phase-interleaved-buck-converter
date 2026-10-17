@@ -50,7 +50,7 @@
 # open issue as the main board; functional isolation at <= 80 V needs about 1.4 mm, IEC 60664-1 PD2):
 # docs/design/power_module.md.
 (rule "Isolation barrier: copper entering PS1"
-	(condition "A.NetClass == 'LV_ISO' && B.NetClass != 'LV_ISO' && (A.intersectsCourtyard('PS1') || B.intersectsCourtyard('PS1'))")
+	(condition "A.NetClass == 'LV_ISO' && B.NetClass != 'LV_ISO' && (A.Parent == 'PS1' || B.Parent == 'PS1' || A.intersectsCourtyard('PS1') || B.intersectsCourtyard('PS1'))")
 	(constraint clearance (min 1.5mm)))
 
 (rule "Isolation barrier: PS1 pin pitch exception"
