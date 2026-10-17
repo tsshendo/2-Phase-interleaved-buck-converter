@@ -17,6 +17,11 @@ Stage 1 (architecture, issue #1). Read in this order:
 9. [placement_stage3.md](placement_stage3.md): Stage 3 footprints (sources, 3D checks), floor plan,
    half-bridge arrangement, heatsink/pedestal, board set-up and DRC, open issues
 
+Separate project (branch `power-module`):
+- [power_module.md](power_module.md): power-stage-only module board (`kicad/PowerModule`) laid out
+  like the report's SolidWorks/Q3D model: J4 control connector, layer use, layout, mechanics,
+  current estimates, open issues
+
 ## Stage 1 review outcome
 - **Kept:** ERUC23-3R2K inductor and EPC2304 FETs, because the simulations depend on them. Per-phase
   ripple is accepted at about 53–70 % (output ripple < 10 %).
