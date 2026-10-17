@@ -37,9 +37,8 @@ HV_SW = ('Net-(J1-Pin_1)', '/Gate_Drive/KS1', '/Gate_Drive/KS2')
 LV_NETS = ('GND', '+5V', 'Net-(AT1-A1)', 'Net-(AT1-A2)', 'Net-(AT2-A1)', 'Net-(AT2-A2)')
 
 DRV_X = 27.15
-CELLS = [dict(u='U2', y=11.6, src='R13', snk='R14', inp='R5', inm='R6', c='C8', rv='R10'),
-         dict(u='U1', y=17.0, src='R15', snk='R16', inp='R1', inm='R2', c='C7', rv='R9'),
-         dict(u='U4', y=31.4, src='R19', snk='R20', inp='R3', inm='R4', c='C10', rv='R12'),
+LS_DRV_X = 35.4
+CELLS = [dict(u='U1', y=17.0, src='R15', snk='R16', inp='R1', inm='R2', c='C7', rv='R9'),
          dict(u='U3', y=38.6, src='R17', snk='R18', inp='R7', inm='R8', c='C9', rv='R11')]
 PHASES = {1: dict(hs='Q3', ls='Q4', drv_h='U1', drv_l='U2', caps=('C1', 'C2')),
           2: dict(hs='Q6', ls='Q5', drv_h='U3', drv_l='U4', caps=('C3', 'C4'))}
@@ -113,8 +112,8 @@ def floor_plan(P):
     at_ok = lambda p, c: p(1)[0] < c[0] - 1 and p(1)[1] < p(4)[1]
     P.fixed('AT1', T, 18.0, 17.0, cond=at_ok)
     P.fixed('AT2', T, 18.0, 37.0, cond=at_ok)
-    # gate drivers, one per FET, in a column left of the FET block (outputs face the FETs); the
-    # high-side drivers sit level with their FET row, the low-side drivers on the outside
+    # high-side drivers in the column left of the FET block, level with their FET row (outputs face
+    # the FETs)
     out_right = lambda p, c: p(5)[0] > c[0] + 0.5 and p(6)[1] < p(4)[1]
     for d in CELLS:
         ux, uy = DRV_X, d['y']
@@ -125,11 +124,160 @@ def floor_plan(P):
         P.fixed(d['inp'], T, ux - 3.85, uy + 0.9, rot=180)
         P.fixed(d['c'], T, ux + 1.6, uy + 2.65, rot=0)         # VDD | driver GND
         P.fixed(d['rv'], T, ux - 1.6, uy + 2.65, rot=0)        # D cathode | VDD
-    # bootstrap / supply diodes and the PS1 output capacitors
-    for ref, x, y in (('D2', DRV_X, 8.4), ('D1', 27.4, 22.4), ('D4', 27.4, 27.9), ('D3', DRV_X, 43.8)):
-        P.fixed(ref, T, x, y, rot=0)
-    P.fixed('C13', T, 26.3, 25.1, rot=0)
-    P.fixed('C14', T, 29.7, 25.2, rot=0)
+    # low-side drivers on the top between the two phases, right at the LS gate pads: outputs face
+    # the gate via (U2 up to phase 1, U4 down to phase 2), gate resistors vertical, VDD cap at VDD
+    pin1_top = lambda p, c: p(1)[1] < p(2)[1] - 1
+    pin1_bot = lambda p, c: p(1)[1] > p(2)[1] + 1
+    pin1_right = lambda p, c: p(1)[0] > p(2)[0] + 1
+    pin1_left = lambda p, c: p(1)[0] < p(2)[0] - 1
+    P.fixed('U2', T, LS_DRV_X, 25.3, cond=lambda p, c: p(5)[1] < c[1] - 0.5 and p(6)[0] < p(4)[0])
+    P.fixed('R14', T, LS_DRV_X - 0.8, 21.6, cond=pin1_top)
+    P.fixed('R13', T, LS_DRV_X + 0.8, 21.6, cond=pin1_top)
+    P.fixed('C8', T, LS_DRV_X + 3.3, 24.4, cond=pin1_left)
+    P.fixed('R10', T, LS_DRV_X + 3.3, 26.1, cond=lambda p, c: p(2)[0] < p(1)[0] - 1)
+    P.fixed('R6', T, LS_DRV_X - 3.3, 25.6, cond=pin1_right)
+    P.fixed('R5', T, LS_DRV_X - 3.3, 27.2, cond=pin1_right)
+    P.fixed('U4', T, LS_DRV_X, 31.2, cond=lambda p, c: p(5)[1] > c[1] + 0.5 and p(6)[0] > p(4)[0])
+    P.fixed('R20', T, LS_DRV_X + 0.8, 34.85, cond=pin1_bot)
+    P.fixed('R19', T, LS_DRV_X - 0.8, 34.85, cond=pin1_bot)
+    P.fixed('C10', T, LS_DRV_X - 3.2, 34.6, cond=pin1_right)
+    P.fixed('R12', T, LS_DRV_X - 0.4, 37.3, cond=lambda p, c: p(2)[0] < p(1)[0] - 1)
+    P.fixed('R3', T, LS_DRV_X - 3.3, 29.6, cond=pin1_right)     # B1 above B2, as at the AT2 pins
+    P.fixed('R4', T, LS_DRV_X - 3.3, 31.2, cond=pin1_right)
+    # supply diodes: low side next to their drivers' R10 / R12, high side in the column
+    P.fixed('D2', T, LS_DRV_X + 4.3, 28.3, rot=0)
+    P.fixed('D4', T, LS_DRV_X, 39.4, rot=0)
+    P.fixed('D1', T, 27.4, 22.4, rot=0)
+    P.fixed('D3', T, DRV_X, 43.8, rot=0)
+
+
+NAME_BLOCK = ('Tanishq Shendokar', 'MS Electrical Engineering', 'NC State University',
+              'tsshendo@ncsu.edu', '+1 (336) 405-3942')
+
+
+def _bb(item):
+    r = item.GetBoundingBox()
+    return (r.GetLeft() / 1e6 - bp.X0, r.GetTop() / 1e6 - bp.Y0, r.GetRight() / 1e6 - bp.X0,
+            r.GetBottom() / 1e6 - bp.Y0)
+
+
+def _hit(a, b, m=0.0):
+    return a[0] < b[2] + m and a[2] > b[0] - m and a[1] < b[3] + m and a[3] > b[1] - m
+
+
+def silk_labels(board):
+    """Every reference designator on the silkscreen (0.8 mm, JLC minimum), on the side of its part,
+    at the first spot around the courtyard that clears pads, other labels and the board edge."""
+    side_pads = {'T': [], 'B': []}
+    courts = {'T': [], 'B': []}
+    for f in board.GetFootprints():
+        s = 'B' if f.IsFlipped() else 'T'
+        f.BuildCourtyardCaches()
+        cy = f.GetCourtyard(pcbnew.B_CrtYd if s == 'B' else pcbnew.F_CrtYd)
+        if cy.OutlineCount():
+            bb = cy.BBox()
+            courts[s].append((bb.GetLeft() / 1e6 - bp.X0, bb.GetTop() / 1e6 - bp.Y0,
+                              bb.GetRight() / 1e6 - bp.X0, bb.GetBottom() / 1e6 - bp.Y0, f.GetReference()))
+        for p in f.Pads():
+            if p.HasHole() or p.IsOnLayer(pcbnew.B_Cu if s == 'B' else pcbnew.F_Cu):
+                for ss in ('T', 'B') if p.HasHole() else (s,):
+                    side_pads[ss].append(_bb(p))
+    for x, y in HOLES:
+        for s in ('T', 'B'):
+            side_pads[s].append((x - 3.0, y - 3.0, x + 3.0, y + 3.0))
+    for f in board.GetFootprints():          # other parts' silkscreen outlines
+        for g in f.GraphicalItems():
+            if g.GetLayer() in (pcbnew.F_SilkS, pcbnew.B_SilkS) and g.GetClass() != 'PCB_FIELD':
+                side_pads['B' if g.GetLayer() == pcbnew.B_SilkS else 'T'].append(_bb(g))
+    placed = {'T': [], 'B': []}
+    fps = sorted([f for f in board.GetFootprints() if not f.GetReference().startswith('H')],
+                 key=lambda f: -f.GetArea())
+    missing = []
+    for f in fps:
+        s = 'B' if f.IsFlipped() else 'T'
+        ref = f.Reference()
+        ref.SetLayer(pcbnew.B_SilkS if s == 'B' else pcbnew.F_SilkS)
+        ref.SetTextSize(pcbnew.VECTOR2I(bp.mm(0.8), bp.mm(0.8)))
+        ref.SetTextThickness(bp.mm(0.15))
+        ref.SetVisible(True)
+        c = [cc for cc in courts[s] if cc[4] == f.GetReference()]
+        x0, y0, x1, y1 = c[0][:4] if c else _bb(f)
+        cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+        done = False
+        for strict in (True, False):
+            for ang in (0, 90):
+                ref.SetTextAngleDegrees(ang)
+                ref.SetPosition(bp.V(cx, cy))
+                tb = _bb(ref)
+                tw, th = tb[2] - tb[0], tb[3] - tb[1]
+                cands = []
+                for g in (0.15, 0.7, 1.4):
+                    cands += [(cx, y0 - th / 2 - g), (cx, y1 + th / 2 + g), (x0 - tw / 2 - g, cy),
+                              (x1 + tw / 2 + g, cy), (x0 + tw / 2, y0 - th / 2 - g),
+                              (x1 - tw / 2, y0 - th / 2 - g), (x0 + tw / 2, y1 + th / 2 + g),
+                              (x1 - tw / 2, y1 + th / 2 + g)]
+                for px, py in cands:
+                    box = (px - tw / 2, py - th / 2, px + tw / 2, py + th / 2)
+                    if box[0] < 0.6 or box[1] < 0.6 or box[2] > W - 0.6 or box[3] > H - 0.6:
+                        continue
+                    if any(_hit(box, q, 0.15) for q in side_pads[s] + placed[s]):
+                        continue
+                    if strict and any(_hit(box, q[:4], -0.05) for q in courts[s] if q[4] != f.GetReference()):
+                        continue
+                    ref.SetPosition(bp.V(px, py))
+                    placed[s].append(box)
+                    done = True
+                    break
+                if done:
+                    break
+            if done:
+                break
+        if not done:                        # nearest free spot within 4 mm (dense driver area)
+            best = None
+            for ang in (0, 90):
+                ref.SetTextAngleDegrees(ang)
+                ref.SetPosition(bp.V(cx, cy))
+                tb = _bb(ref)
+                tw, th = tb[2] - tb[0], tb[3] - tb[1]
+                for i in range(-24, 25):
+                    for j in range(-24, 25):
+                        px, py = cx + i * 0.25, cy + j * 0.25
+                        d = (i * i + j * j) ** 0.5 * 0.25
+                        if best and d >= best[0]:
+                            continue
+                        box = (px - tw / 2, py - th / 2, px + tw / 2, py + th / 2)
+                        if box[0] < 0.6 or box[1] < 0.6 or box[2] > W - 0.6 or box[3] > H - 0.6:
+                            continue
+                        if any(_hit(box, q, 0.15) for q in side_pads[s] + placed[s]):
+                            continue
+                        best = (d, ang, px, py, box)
+            if best:
+                ref.SetTextAngleDegrees(best[1])
+                ref.SetPosition(bp.V(best[2], best[3]))
+                placed[s].append(best[4])
+                done = True
+        if not done:
+            missing.append(f.GetReference())
+            ref.SetTextAngleDegrees(0)
+            ref.SetPosition(bp.V(cx, cy))
+    return missing
+
+
+def name_block(board):
+    """Owner text on the bottom silkscreen (credit-card name size, about 2.5 mm), in the free band
+    between the FET block and the terminals, reading along the long side when the board is turned."""
+    t = pcbnew.PCB_TEXT(board)
+    t.SetText('\n'.join(NAME_BLOCK))
+    t.SetLayer(pcbnew.B_SilkS)
+    t.SetTextSize(pcbnew.VECTOR2I(bp.mm(1.6), bp.mm(2.3)))
+    t.SetTextThickness(bp.mm(0.3))
+    t.SetMirrored(True)
+    t.SetTextAngleDegrees(90)
+    t.SetHorizJustify(pcbnew.GR_TEXT_H_ALIGN_CENTER)
+    t.SetVertJustify(pcbnew.GR_TEXT_V_ALIGN_CENTER)
+    t.SetPosition(bp.V(56.7, 27.5))
+    board.Add(t)
+    return _bb(t)
 
 
 def place_j4(P):
@@ -194,6 +342,8 @@ def main(net):
     place_j4(P)
     P.auto_all(lambda ref: (8.0, 27.0, 'T') if dom[ref] == 'LV' else (28.0, 27.0, 'T'))
     barrier(board)
+    print('labels not placed:', silk_labels(board))
+    print('name block bbox:', [round(v, 2) for v in name_block(board)])
     board.BuildConnectivity()
     pcbnew.SaveBoard(PCB, board)
     bp.write_stackup(PCB)

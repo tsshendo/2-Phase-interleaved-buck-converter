@@ -86,13 +86,15 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
   - The centre taps of both phases form one `SHIELD` island between the rows, stitched to L2/L3.
     That is the shield's single return terminal (report p. 18).
 - **Gate drive:**
-  - The drivers are on the top, in the report's column left of the FETs.
+  - The HS drivers are on the top, in the report's column left of the FETs, level with their FET
+    row. The **LS drivers sit on the top between the two phases**, right at the LS gate pads, with
+    their outputs facing the gate vias and the gate resistors running straight to them.
   - Gate pads and the LS Kelvin pads go up through filled via-in-pad.
   - Each HS driver sits over a **Kelvin island** on L4. The island connects to the HS SK pad and joins
     the switch node only once, at a tie next to the FET. It is the driver's reference and the return
     under its gate trace.
-  - Trace lengths: HS 3.8–4.7 mm, LS 8.9–11.9 mm. The LS FET is the far one in each row, as in the
-    report's gate-trace figure.
+  - Driver output → gate resistor → gate pad, total: **LS 4.8 mm, HS 5.9–6.8 mm** (the first layout
+    had LS 11–14 mm).
 - **Input path:** J1 → VBUS strip (L1 + L4 along the top edge, C6 on a PGND tongue) → VBUS column
   down the left of the FET block → the HS combs. **Output path:** inductor pads → L1 VOUT plane → J2,
   with C5. **Return:** L4 PGND under the inductor → J3.
@@ -100,6 +102,10 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
 | L1 (1st Cu plane) | L2 (shield) |
 |---|---|
 | ![L1](img/pm_L1.png) | ![L2](img/pm_L2.png) |
+
+- **Silkscreen:** every reference designator is on the silkscreen (0.8 mm, on the part's side).
+  The bottom carries the owner block (name, degree, university, e-mail, phone) at 2.3 mm, between
+  the FET block and the terminals. Note that the heatsink covers it once mounted.
 
 ## 5. Mechanics and thermal
 - Z60-12.7B on the bottom at x 19–79 mm: flush with neither edge, 3 mm overhang top and bottom.
@@ -134,8 +140,7 @@ runs warmer than the main board. See §7.
 4. **PS1 SIP-4 pitch** across the barrier: same issue as the main board. A DRC exception allows 0.9 mm
    between the pins and 1.5 mm for copper entering PS1 (≈ 1.4 mm needed for functional isolation
    at ≤ 80 V, PD2).
-5. **LS gate loop** is longer than the HS one (layout of the report). There is no gate pull-down in
-   the base schematic.
+5. There is no gate pull-down in the base schematic.
 6. The LS Kelvin return runs on L1 and joins PGND through the fill.
 7. Stock: the Digi-Key numbers come from the main BOM where the part is shared. The 1EDN7550BXTSA1
    Digi-Key PN and its stock still need to be confirmed.

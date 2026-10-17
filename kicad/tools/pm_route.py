@@ -98,8 +98,9 @@ def power(R):
            name='PGND_J3_L1')
     # ---- L2 / L3: interstitial shield -----------------------------------------------------------
     for lay, nm in ((L2, 'SHIELD_L2'), (L3, 'SHIELD_L3')):
-        R.zone(SHIELD, lay, [(HV_X0, 0.6), (82.4, 0.6), (85.2, 3.4), (85.2, 50.6), (82.4, 53.4),
-                             (HV_X0, 53.4)], prio=0, solid=False, name=nm)
+        z = R.zone(SHIELD, lay, [(HV_X0, 0.6), (82.4, 0.6), (85.2, 3.4), (85.2, 50.6), (82.4, 53.4),
+                                 (HV_X0, 53.4)], prio=0, solid=False, name=nm)
+        z.SetLocalClearance(rp.mm(0.25))    # small antipads: via rows must not chop the shield
     vias(R)
 
 
@@ -120,6 +121,11 @@ def catch_all(R):
             x, y = HV_X0 + 0.6 + i * 1.6, 1.2 + j * 1.6
             if not near(x, y):
                 R.via(PGND, x, y, stitch=True)
+    for i in range(int((85.0 - HV_X0) / 3.2)):       # shield L2-L3 ties (islands cut by via rows)
+        for j in range(17):
+            x, y = HV_X0 + 1.4 + i * 3.2, 2.0 + j * 3.2
+            if not near(x, y):
+                R.via(SHIELD, x, y, stitch=True)
     for i in range(9):
         for j in range(33):
             x, y = 1.4 + i * 1.6, 1.2 + j * 1.6
@@ -167,22 +173,6 @@ def vias(R):
                 break
     # isolator outputs: each B2 output feeds IN+ of one driver and IN- of the other, so it has to
     # cross B1 once; locked L4 hop beside the isolator
-    hops = {'Net-(AT1-B2)': ('R1', 'R6', 21.2, 19.75, False), 'Net-(AT2-B2)': ('R7', 'R4', 20.54, 0.95, True)}
-    for net, (near_r, far_r, xh, yv, under) in hops.items():
-        x0, y0, x1, y1 = R.pad(near_r, 2)
-        ax, ay = (x0 + x1) / 2, (y0 + y1) / 2
-        x0, y0, x1, y1 = R.pad(far_r, 2)
-        bx, by = (x0 + x1) / 2, (y0 + y1) / 2
-        if under:       # via right under the near pad, the dog-leg on L4 (keeps AT2 pin 5 open on L1)
-            v1 = (ax, ay + yv)
-            segs = [(F, [(ax, ay), v1]), (B, [v1, (xh, v1[1]), (xh, by)]), (F, [(xh, by), (bx, by)])]
-        else:
-            v1 = (xh, yv)
-            segs = [(F, [(ax, ay), (ax, yv), v1]), (B, [v1, (xh, by)]), (F, [(xh, by), (bx, by)])]
-        for lay, pts in segs:
-            R.track(net, lay, pts, 0.25)
-        for v in (v1, (xh, by)):
-            R.via(net, v[0], v[1], VIA_PAD, check=False)
     # +5V_iso from PS1 pin 4 (THT) to the isolator output supplies, on L4 beside the hops
     x0, y0, x1, y1 = R.pad('PS1', 4)
     px, py = (x0 + x1) / 2, (y0 + y1) / 2
@@ -196,14 +186,19 @@ def vias(R):
     R.via('+5V_iso', px, by, VIA_PAD, check=False)
     R.track('+5V_iso', F, [(px, by), (bx, by)], 0.3)
     for t in R.b.GetTracks():
-        if t.GetNetname() in ('Net-(AT1-B2)', 'Net-(AT2-B2)', '+5V_iso'):
+        if t.GetNetname() == '+5V_iso':
             t.SetLocked(True)
     # single-point Kelvin junction: island -> switch-node band, next to the HS FET
     R.track(SW[1], B, [(29.4, 16.0), (31.9, 16.0)], 0.4)
     R.track(SW[2], B, [(29.4, 40.0), (31.9, 40.0)], 0.4)
     # shield return: the centre-tap island to L2 / L3
-    for y in (25.0, 27.0, 29.0):
-        R.via(SHIELD, 36.8, y)
+    n = 0
+    for x in (37.7, 36.8, 35.9, 38.0):     # first free spots (the LS driver cells sit above)
+        for k in range(10):
+            if n < 6 and R.via(SHIELD, x, 22.5 + k * 1.0):
+                n += 1
+    if n < 3:
+        raise SystemExit(f'only {n} SHIELD vias in the centre-tap island')
     # VBUS L1 / L4 strip stitching, PGND stitching (L1 fills to L4)
     for x in range(42, 84, 2):
         for y in (2.0, 4.0, 10.0, 12.2):
