@@ -1,0 +1,52 @@
+(version 1)
+# JLCPCB 4-layer, 1.6 mm, 2 oz copper on all layers (JLC04161H-3313), ENIG.
+# Values from the JLCPCB capability pages, checked 2026-10-15 (docs/design/stackup_ipc2152.md).
+
+(rule "JLC 2 oz: minimum track width"
+	(constraint track_width (min 0.15mm)))
+
+(rule "JLC 2 oz: minimum clearance"
+	(constraint clearance (min 0.15mm)))
+
+(rule "JLC: via drill"
+	(condition "A.Type == 'Via'")
+	(constraint hole_size (min 0.2mm)))
+
+(rule "JLC: via annular ring"
+	(condition "A.Type == 'Via'")
+	(constraint annular_width (min 0.15mm)))
+
+(rule "JLC: PTH annular ring"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'")
+	(constraint annular_width (min 0.2mm)))
+
+(rule "JLC: hole to hole"
+	(constraint hole_to_hole (min 0.5mm)))
+
+(rule "JLC: hole to copper"
+	(constraint hole_clearance (min 0.25mm)))
+
+(rule "JLC: copper to board edge"
+	(constraint edge_clearance (min 0.3mm)))
+
+(rule "JLC: silkscreen text"
+	(layer "?.Silkscreen")
+	(constraint text_thickness (min 0.15mm))
+	(constraint text_height (min 0.8mm)))
+
+# 72 V bus and switch nodes: IPC-2221B B4 (solder-mask coated, 51-100 V) needs 0.13 mm; 0.25 mm used.
+(rule "HV: bus and switch nodes"
+	(condition "A.NetClass == 'HV_SW' && A.Net != B.Net && A.Parent != B.Parent")
+	(constraint clearance (min 0.25mm)))
+
+# Isolation barrier (docs/design/isolation_architecture.md section 6): >= 2.5 mm on every layer
+# between the control domain (net class LV_ISO) and everything else.
+(rule "Isolation barrier"
+	(condition "A.NetClass == 'LV_ISO' && B.NetClass != 'LV_ISO' && B.Type != 'Zone'")
+	(constraint clearance (min 2.5mm)))
+
+# PS1 (NME1S0505SC, SIP-4 2.54 mm pitch) has only about 0.92 mm between its input pin 2 and output
+# pin 3 on the board. Accepted for review: see the Stage 3 placement note (open issue).
+(rule "Isolation barrier: PS1 pin pitch exception"
+	(condition "A.Parent == 'PS1' && B.Parent == 'PS1'")
+	(constraint clearance (min 0.9mm)))

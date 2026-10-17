@@ -176,7 +176,7 @@ def build():
     # Murata NME1S0505SC SIP-4
     syms.append(box_symbol(
         'NME1S0505SC', 'PS', 'NME1S0505SC',
-        footprint='ECE533_Mods:Murata_NME1S_SIP-4',
+        footprint='ECE533_Vendor:Murata_NME1S_SIP-4',
         datasheet='https://www.murata.com/products/productdata/8822286319646/KDC-NME1.pdf',
         description='1 W isolated DC/DC module, 5 V in, 5 V out, 1 kVDC',
         keywords='isolated dc-dc module',

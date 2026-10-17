@@ -1002,7 +1002,7 @@
 					(justify right)
 				)
 			)
-			(property "Footprint" "ECE533_Mods:Murata_NME1S_SIP-4"
+			(property "Footprint" "ECE533_Vendor:Murata_NME1S_SIP-4"
 				(at 0 -10.16 0)
 				(effects
 					(font
@@ -2266,7 +2266,7 @@
 		(uuid "2429755c-49cd-5bca-b657-6afa88e14e94")
 		(property "Reference" "PS1" (at 195.58 52.07 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Value" "NME1S0505SC" (at 195.58 60.96 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "ECE533_Mods:Murata_NME1S_SIP-4" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "ECE533_Vendor:Murata_NME1S_SIP-4" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "https://www.murata.com/products/productdata/8822286319646/KDC-NME1.pdf" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "1 W isolated DC/DC module, 5 V in, 5 V out, 1 kVDC" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "NME1S0505SC" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
@@ -2474,7 +2474,7 @@
 		(uuid "d6957427-3d74-574f-82b8-399b0e8e0d6f")
 		(property "Reference" "TP15" (at 266.7 49.53 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Value" "+5V_ISO" (at 266.7 52.07 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "test point" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "Test pad (bare copper)" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
@@ -2514,7 +2514,7 @@
 		(uuid "23dd4c34-3be2-56b4-899c-2c9308d71eb9")
 		(property "Reference" "TP16" (at 276.86 49.53 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Value" "GND_ISO" (at 276.86 52.07 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "test point" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "MPN" "Test pad (bare copper)" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))

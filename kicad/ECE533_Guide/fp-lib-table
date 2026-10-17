@@ -1,4 +1,5 @@
 (fp_lib_table
 	(version 7)
-	(lib (name "ECE533_Mods") (type "KiCad") (uri "${KIPRJMOD}/ECE533_Mods.pretty") (options "") (descr ""))
+	(lib (name "ECE533_Mods") (type "KiCad") (uri "${KIPRJMOD}/ECE533_Mods.pretty") (options "") (descr "Project footprints drawn from manufacturer datasheets (committed)"))
+	(lib (name "ECE533_Vendor") (type "KiCad") (uri "${KIPRJMOD}/../lib/vendor/ECE533_Vendor.pretty") (options "") (descr "Vendor footprints, local only (git-ignored); run kicad/tools/gen_footprints.py"))
 )
