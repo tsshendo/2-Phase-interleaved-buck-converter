@@ -51,7 +51,7 @@ flowchart LR
   subgraph BAR["Isolation barrier (≥ 2.5 mm keep-out, all layers)"]
     DRV["U1/U2 Si8274GB1<br/>isolated half-bridge drivers"]
     AMP["U6/U7 AMC3301 (I1, I2)<br/>U8 AMC3330 (VOUT)"]
-    ISO["AT1/AT2 SI86S620BC<br/>OCP1, OCP2, OTP, TACH"]
+    ISO["AT1/AT2 SI86S620BC<br/>OCP1, OCP2, OTP, BUS_PG"]
     PS["PS1 isolated 5 V module"]
   end
   subgraph LV["LV control domain (GND_ISO)"]
@@ -74,14 +74,14 @@ flowchart LR
 |---|---|---|---|---|
 | 1 | PWM1 → Q3 (HS) / Q4 (LS) | LV → HV | U1 Si8274GB1-IS1 | One PWM input, built-in dead time (10–200 ns via R_DT), overlap protection, 3 V output UVLO, 2.5 kVrms, 200 kV/µs CMTI. HS output floats on SW1 from the bootstrap. |
 | 2 | PWM2 → Q5 / Q6 | LV → HV | U2 Si8274GB1-IS1 | As above |
-| 3 | Driver disable | LV side pin | U1/U2 ENABLE | Driven by `RUN_OK` = PWMEN · no-fault (both FETs off when low) |
+| 3 | Driver disable | LV side pin | U1/U2 ENABLE | Driven by LTC3861 PWMEN1/PWMEN2 (low when PWM is three-stated: RUN low, hiccup, start-up). 10 kΩ pull-downs R94/R95 |
 | 4 | I1 (shunt RS2 at 24 V CM) | HV → LV | U6 AMC3301 | ±250 mV in, gain 8.2, 334 kHz BW, built-in isolated DC-DC (no floating supply). 4.25 kVrms reinforced. Feeds LTC3861 ISNS1 (current sharing + average OCP) |
 | 5 | I2 (RS3) | HV → LV | U7 AMC3301 | Same, ISNS2 |
 | 6 | VOUT (divider 1/30) | HV → LV | U8 AMC3330 | ±1 V in, gain 2, ±0.2 % gain error, built-in isolated DC-DC. Feeds LTC3861 VSNSP/N and output OVP |
 | 7 | OCP1 alert (INA301) | HV → LV | AT1 ch A (SI86S620BC) | Cycle-by-cycle limit, about 1 µs response |
 | 8 | OCP2 alert | HV → LV | AT1 ch B | |
 | 9 | OTP (80 °C) | HV → LV | AT2 ch A | Latches on the LV side |
-| 10 | Fan tach | HV → LV | AT2 ch B | Optional; a tach test point stays on the HV side too |
+| 10 | Hot-swap bus good (LM5069 PGD) | HV → LV | AT2 ch B | Holds RUN_OK low until VBUS is fully charged, so switching never starts during inrush. Fan tach stays on the HV side (TP14) |
 | 11 | Power | HV → LV | PS1 | Isolated 5 V module from `+5V_PWR` (§5) |
 
 No other copper crosses the barrier. The SI86S620BC is 2 forward / 0 reverse channels, so both AT1 and
@@ -102,7 +102,7 @@ INA301 OCPx (36 A peak, <1 µs) ──AT1──► cycle latch x (74LVC1G74: set
                                                          cleared by OCPx) ─► AND (74LVC1G08) with PWMx ─► Si8274 PWM
 NTC + TLV3012 (80 °C) ───────────AT2──► ┐
 AMC3330 → LTC3861 VSNSOUT → TLV3012 (27 V) ┤─► FAULT latch (74LVC1G74, POR-cleared) ─► RUN1/RUN2 low,
-                                         ┘                                             Si8274 ENABLE low, FAULT LED/J4
+                                         ┘                                             PWMEN low -> Si8274 ENABLE low, FAULT LED/J4
 LTC3861 average OC (28 A/phase via AMC3301, 128-cycle counter) ─► 3-state PWM, 131 ms hiccup, auto-retry
 LM5069: UVLO 62/60 V, OVLO driven by U22 TLV3012 (82 V), inrush/power limit, 27.5 A current limit, 53 A circuit breaker (auto-retry, -2)
 ```
@@ -116,7 +116,9 @@ LM5069: UVLO 62/60 V, OVLO driven by U22 TLV3012 (82 V), inrush/power limit, 27.
 - **Shoot-through:** prevented by Si8274 overlap protection plus dead time. A real shoot-through
   current doesn't flow through the output shunts, so it's backed up by the LM5069 53 A circuit breaker
   (fast gate pull-down) and F1.
-- **One common fault line:** `RUN_OK` (open-drain wired-AND) disables both drivers and holds RUN low.
+- **One common fault line:** `RUN_OK` (diode wired-AND, pull-up R87) holds LTC3861 RUN1/RUN2 low.
+  The controller then three-states PWM and drops PWMEN, which disables both Si8274 drivers. Sources:
+  fault latch (D15), hot-swap bus not good (D16), J4 EN low (R88).
   LTC3861 PGOOD drives the PGOOD LED and the J4 PGOOD output.
 
 ## 5. Power-up sequence
@@ -152,6 +154,6 @@ bidirectional TVS doesn't conduct. Nothing downstream sees a negative voltage.
 |---|---|
 | 1EDN7550 ×4 (U1–U4) → **Si8274GB1-IS1 ×2** | Isolated half-bridge driver with dead time; no 1EDN common-mode limit at 79 V |
 | SS110HL ×4 → ×2 (high-side bootstrap only) + 5.1 V Zener clamp on each bootstrap | Si8274 low side is supplied directly; the Zener stops bootstrap over-charge during GaN reverse conduction (EPC2304 VGS ≤ 6 V) |
-| AT1/AT2 SI86S620BC kept, new role | HV → LV fault and tach flags |
+| AT1/AT2 SI86S620BC kept, new role | HV → LV flags: OCP1, OCP2 (AT1); OTP, bus-good (AT2) |
 | PS1 NME1S0505SC kept as the isolated control supply (Stage 1 review) | Runs at 65 % (typ) to 88 % (max) load; output voltage checked in Stage 2 |
 | New: LTC3861, AMC3301 ×2, AMC3330, INA301A3 ×2, LM5012, LM5069-2, VOM1271, logic, TPS2553 | See parts list |

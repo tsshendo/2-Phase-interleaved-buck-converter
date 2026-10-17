@@ -49,7 +49,7 @@ Charge drawn from the HF ceramics during one high-side on-time at 72 V:
 (23 − 16.1 A) × 1.33 µs ≈ 9.2 µC. C1–C4 (4 × GRM21BD72A225KE01L, 2.2 µF 100 V X7T 0805) keep about
 40 % of their value at 72 V DC bias, roughly 3.5 µF together, giving about 2.6 V p-p on the HF caps.
 
-Recommendation (an improvement over the report): **2 × 2.2 µF per half-bridge right at the FET pads**
+Recommendation (an improvement over the report): **4 × 2.2 µF per half-bridge right at the FET pads**
 (8 total, C1–C4 plus C15–C18). That halves the HF ripple and the current per capacitor (about 1.4 A rms
 each), and lowers the loop inductance (parallel ESL). Bulk: Chemi-Con EGXF 160 V 110 µF; the BOM has
 5, which is reconciled in Stage 2. They carry the low-frequency share and damp cable resonance with

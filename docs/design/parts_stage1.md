@@ -1,5 +1,10 @@
 # Stage 1 — Proposed part list
 
+> **Superseded in Stage 2** by `bom/PCB_BOM.xlsx` / `bom/PCB_BOM.csv`, which are generated from the
+> schematic. Some reference designators changed when the schematic was drawn; see
+> `schematic_stage2.md` §3. This file stays as the record of the Stage 1 selection and the rejected
+> candidates.
+
 Checked **2026-10-15**.
 - **Digi-Key:** stock and Digi-Key PNs are handled by the user (Stage 1 review). Automatic checks
   were blocked by bot verification. Lifecycle status below comes from the manufacturer pages (TI,
