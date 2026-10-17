@@ -415,7 +415,7 @@ def build_input(sh):
     (j3x, j3y), _ = j3.pin_at('1')
     sh.wire(j3x, j3y, j3x + g(4), j3y)
     sh.power('PGND', j3x + g(4), j3y)      # PGND is driven by U8 DCDC_HGND (power out): no flag
-    ffp, ff = part('0456025.ER', 'Littelfuse', 'FUSE456', 'C315877')
+    ffp, ff = part('not fitted', '', 'FUSE456')  # optional fuse, see R96 (Stage 3)
     (jx, jy), _ = j1.pin_at('1')
     rh(sh, 'Device:Fuse', 'F1', '25A', jx + g(1), y0, None, None, ffp, dict(ff))
     sh.wire(jx, jy, jx + g(1), y0)

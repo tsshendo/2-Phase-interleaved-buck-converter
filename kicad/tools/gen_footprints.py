@@ -218,6 +218,22 @@ def r2512_kelvin():
     return f
 
 
+def r2512_css2h():
+    """Same Bourns solder pads without sense strips (CSS2H-2512C-000 0 ohm / 100 A link)."""
+    f = FP('R_2512_CSS2H', 'Bourns CSS2H-2512 2-terminal land pattern per datasheet (1.80 x 3.40 mm pads, '
+           '3.40 mm gap)', 'resistor jumper 2512 CSS2H')
+    f.datasheet = 'https://www.bourns.com/docs/product-datasheets/css2h-2512.pdf'
+    f.ref_y, f.val_y = -2.7, 2.7
+    for num, x in (('1', -2.6), ('2', 2.6)):
+        f.pad(num, x, 0, 1.8, 3.4, ['F.Cu', 'F.Paste', 'F.Mask'], rr=0.05)
+    f.rect(-3.175, -1.525, 3.175, 1.525, 'F.Fab', 0.1)
+    f.line(-1.45, -1.95, 1.45, -1.95, 'F.SilkS', 0.12)
+    f.line(-1.45, 1.95, 1.45, 1.95, 'F.SilkS', 0.12)
+    f.rect(-3.75, -2.0, 3.75, 2.0, 'F.CrtYd', 0.05)
+    f.model('${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_2512_6332Metric.step')
+    return f
+
+
 # ---------------------------------------------------------------------------------------------
 # Littelfuse NANO2 456 (20/25/30 A), recommended pad layout: 3.25 x 3.43 mm pads, 6.10 mm gap,
 # 12.60 mm overall. Body 10.08 x 3.05 x 3.05 mm, end caps 1.70 mm.
@@ -389,7 +405,7 @@ def fuse_step():
 
 
 if __name__ == '__main__':
-    for fn in (epc2304, eruc23, r2512_kelvin, fuse456):
+    for fn in (epc2304, eruc23, r2512_kelvin, r2512_css2h, fuse456):
         fn().write(MODS)
     fuse_step()
     redcube()
