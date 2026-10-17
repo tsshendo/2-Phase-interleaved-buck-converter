@@ -11,6 +11,9 @@ Stage 1 (architecture, issue #1). Read in this order:
 5. [control_supply_fan.md](control_supply_fan.md): +5V_PWR and +5V_ISO budgets, fan output
 6. [protection.md](protection.md): thresholds, dividers, fault line, EMI items
 7. [parts_stage1.md](parts_stage1.md): proposed parts with status/stock, removed parts, rejected candidates
+   (superseded by the generated BOM)
+8. [schematic_stage2.md](schematic_stage2.md): Stage 2 sheet structure, conventions, refdes, changes,
+   ERC/netlist verification, BOM notes, open items for Stage 3
 
 ## Stage 1 review outcome
 - **Kept:** ERUC23-3R2K inductor and EPC2304 FETs, because the simulations depend on them. Per-phase

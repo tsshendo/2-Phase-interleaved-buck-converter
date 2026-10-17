@@ -1,0 +1,3441 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "c02393e6-3c14-5ac9-8862-ba84f243c19b")
+	(paper "A3")
+	(title_block
+		(title "Isolation barrier crossings")
+		(date "2026-10-16")
+		(rev "A")
+		(company "ECE533 MeGaNism - 72 V to 24 V 1.1 kW 2-phase GaN buck")
+	)
+	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:+24V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+24V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "24 V / 46 A output (HV domain)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+24V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+24V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+24V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:+5V_ISO"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V_ISO"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "5 V isolated LV-domain rail from PS1"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_ISO_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_ISO_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+5V_ISO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:+5V_PWR"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V_PWR"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_PWR_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_PWR_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+5V_PWR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:GND_ISO"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND_ISO"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Isolated control ground (LV domain)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_ISO_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_ISO_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "GND_ISO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:NME1S0505SC"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "PS"
+				(at -7.62 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "NME1S0505SC"
+				(at 7.62 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "ECE533_Mods:Murata_NME1S_SIP-4"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Datasheet" "https://www.murata.com/products/productdata/8822286319646/KDC-NME1.pdf"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Description" "1 W isolated DC/DC module, 5 V in, 5 V out, 1 kVDC"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "ki_keywords" "isolated dc-dc module"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(symbol "NME1S0505SC_0_1"
+				(rectangle
+					(start -7.62 2.54)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "NME1S0505SC_1_1"
+				(pin power_in line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "+VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "-VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "+VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "-VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ECE533:PGND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PGND"
+				(at 0 -3.302 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PGND_0_1"
+				(polyline
+					(pts
+						(xy -1.016 -1.27)
+						(xy -1.27 -2.032)
+						(xy -1.27 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -1.27)
+						(xy -0.762 -2.032)
+						(xy -0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27)
+						(xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27)
+						(xy -0.254 -2.032)
+						(xy -0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 -1.27)
+						(xy 0.254 -2.032)
+						(xy 0.254 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27)
+						(xy -1.016 -1.27)
+						(xy -1.016 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 -1.27)
+						(xy 0.762 -2.032)
+						(xy 0.762 -2.032)
+						(xy 0.762 -2.032)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PGND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "PGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ECE533:SI86S620"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "AT"
+				(at -10.16 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SI86S620BC-IS"
+				(at 10.16 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Datasheet" "https://www.skyworksinc.com/-/media/SkyWorks/SL/documents/public/data-sheets/si86xx-datasheet.pdf"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "Description" "2-channel digital isolator, 2 forward / 0 reverse"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(property "ki_keywords" "digital isolator"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+				(hide yes)
+			)
+			(symbol "SI86S620_0_1"
+				(rectangle
+					(start -10.16 5.08)
+					(end 10.16 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SI86S620_1_1"
+				(pin power_in line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "VDD1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -12.7 -5.08 0)
+					(length 2.54)
+					(name "GND1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "VDD2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "B1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "B2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 12.7 -5.08 180)
+					(length 2.54)
+					(name "GND2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Isolator_Analog:AMC3330"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -1.27 22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "AMC3330"
+				(at 0 20.32 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm"
+				(at 31.75 41.91 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/amc3330.pdf"
+				(at 33.02 39.37 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Reinforced Isolated Amplifier With Integrated DC/DC Converter, SOIC-16W"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "isolated analog amplifier integrated power supply"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*7.5x10.3mm*P1.27mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "AMC3330_0_1"
+				(rectangle
+					(start -15.24 15.24)
+					(end 15.24 -15.24)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 15.24)
+						(xy 0 13.97)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 13.462)
+						(xy 0 12.192)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 11.684)
+						(xy 0 10.414)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 9.906)
+						(xy 0 8.636)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 8.128)
+						(xy 0 6.858)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 6.35)
+						(xy 0 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 4.572)
+						(xy 0 3.302)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.794)
+						(xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.016)
+						(xy 0 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762)
+						(xy 0 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54)
+						(xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.318)
+						(xy 0 -5.588)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -6.096)
+						(xy 0 -7.366)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -7.874)
+						(xy 0 -9.144)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -9.652)
+						(xy 0 -10.922)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -11.43)
+						(xy 0 -12.7)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -13.208)
+						(xy 0 -14.478)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AMC3330_1_1"
+				(pin power_out line
+					(at -17.78 12.7 0)
+					(length 2.54)
+					(name "DCDC_OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -17.78 7.62 0)
+					(length 2.54)
+					(name "DCDC_HGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -17.78 2.54 0)
+					(length 2.54)
+					(name "HLDO_IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -7.62 -15.24 90)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -17.78 0 0)
+					(length 2.54)
+					(name "HLDO_OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 -5.08 0)
+					(length 2.54)
+					(name "INP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 -12.7 0)
+					(length 2.54)
+					(name "INN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 -17.78 90)
+					(length 2.54)
+					(name "HGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 5.08 -17.78 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 -12.7 180)
+					(length 2.54)
+					(name "OUTN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 -5.08 180)
+					(length 2.54)
+					(name "OUTP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 5.08 17.78 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 17.78 12.7 180)
+					(length 2.54)
+					(name "LDO_OUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 0 180)
+					(length 2.54)
+					(name "DIAG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 17.78 5.08 180)
+					(length 2.54)
+					(name "DCDC_GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 17.78 10.16 180)
+					(length 2.54)
+					(name "DCDC_IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "HV POWER DOMAIN (PGND)" (exclude_from_sim no) (at 30.48 20.32 0) (effects (font (size 2.0 2.0) (bold yes)) (justify left top)) (uuid "db22d96c-aa88-5a68-8b89-a6c1ea57c02e"))
+	(text "LV CONTROL DOMAIN (GND_ISO)" (exclude_from_sim no) (at 213.36 20.32 0) (effects (font (size 2.0 2.0) (bold yes)) (justify left top)) (uuid "b9b048e0-6d68-5fc8-a3b0-8d7dbc6624cf"))
+	(text "All barrier crossings except the per-phase Si8274 drivers and AMC3301 amplifiers (phase sheets)." (exclude_from_sim no) (at 30.48 27.94 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "a606a2c1-eea0-5ecb-8e8c-8a29dafdb92f"))
+	(wire (pts (xy 193.04 55.88) (xy 190.5 55.88)) (stroke (width 0) (type default)) (uuid "4de8e04c-07bc-5819-9311-c650d62b75a1"))
+	(global_label "+5V_PWR" (shape passive) (at 190.5 55.88 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "0611703e-0e38-5183-9076-26f8a26230bc") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 190.5 55.88 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 193.04 58.42) (xy 190.5 58.42)) (stroke (width 0) (type default)) (uuid "c124aac1-1d9e-5ab0-9b9e-d2011661ab3b"))
+	(global_label "PGND" (shape passive) (at 190.5 58.42 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "371717e8-644b-5daa-a803-ac7f390e1328") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 190.5 58.42 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 213.36 55.88) (xy 215.9 55.88)) (stroke (width 0) (type default)) (uuid "c9798828-b159-5bc5-bd3d-8ce121856630"))
+	(global_label "+5V_ISO" (shape passive) (at 215.9 55.88 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "9107690e-723b-5917-a304-b2291799b61f") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 215.9 55.88 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 213.36 58.42) (xy 215.9 58.42)) (stroke (width 0) (type default)) (uuid "05835f73-b24f-59e9-9869-a78c278eaa1b"))
+	(global_label "GND_ISO" (shape passive) (at 215.9 58.42 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "5d5a60b0-5425-55fc-8276-c3efaf98adbe") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 215.9 58.42 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 264.16 50.8) (xy 264.16 53.34)) (stroke (width 0) (type default)) (uuid "771ee7ed-b8a9-50db-bf82-a20475433fdc"))
+	(text "1 W, 1 kVDC. LV load 130 mA typ / 176 mA max.\nUnregulated: check VOUT at load in bring-up." (exclude_from_sim no) (at 213.36 71.12 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "d277ac67-74a1-51de-9627-3021053d51a7"))
+	(rectangle (start 147.32 35.56) (end 289.56 81.28) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "4800760b-c9a2-51fc-9dc5-c0eef42343e0"))
+	(text "PS1 - isolated control supply" (exclude_from_sim no) (at 148.59 36.83 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "0c800fd7-83f5-5095-8efb-359cb6364fd4"))
+	(wire (pts (xy 190.5 99.06) (xy 187.96 99.06)) (stroke (width 0) (type default)) (uuid "f2b2bad6-13c4-50f9-8175-6b3fd40dbc85"))
+	(global_label "+5V_PWR" (shape passive) (at 187.96 99.06 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "806c826f-4e47-545d-9162-946994cd17d8") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 187.96 99.06 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 190.5 106.68) (xy 187.96 106.68)) (stroke (width 0) (type default)) (uuid "05e60b77-ce89-5149-bc51-a1eb4e9d9e69"))
+	(global_label "PGND" (shape passive) (at 187.96 106.68 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "c8d063ce-5714-549a-8a8f-c535fc0cac58") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 187.96 106.68 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 190.5 101.6) (xy 187.96 101.6)) (stroke (width 0) (type default)) (uuid "38acd3a8-90f2-5279-ab31-4dbd80cd2818"))
+	(hierarchical_label "OCP1_N" (shape input) (at 187.96 101.6 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "7e3d6107-ed42-5462-98b1-aa637688709a"))
+	(wire (pts (xy 190.5 104.14) (xy 187.96 104.14)) (stroke (width 0) (type default)) (uuid "8752ee8d-a35a-52da-af5f-33f26339eb8b"))
+	(hierarchical_label "OCP2_N" (shape input) (at 187.96 104.14 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "9ec369ae-d37f-5df8-9506-4ee2c3f6458e"))
+	(wire (pts (xy 215.9 99.06) (xy 218.44 99.06)) (stroke (width 0) (type default)) (uuid "77d16629-deee-5049-96ff-48d6b8441928"))
+	(global_label "+5V_ISO" (shape passive) (at 218.44 99.06 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "a62bfe2c-43a6-5bcc-9435-1f47c72ff416") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 218.44 99.06 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 215.9 106.68) (xy 218.44 106.68)) (stroke (width 0) (type default)) (uuid "e6cfe2c4-3371-5ba3-b2e2-55136a073eca"))
+	(global_label "GND_ISO" (shape passive) (at 218.44 106.68 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "d1524dd3-57ed-57fc-8491-7f54174d9271") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 218.44 106.68 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 215.9 101.6) (xy 218.44 101.6)) (stroke (width 0) (type default)) (uuid "265f986f-4e73-5277-89da-c730f66a432e"))
+	(hierarchical_label "OCP1_ISO_N" (shape output) (at 218.44 101.6 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "29928db3-5c54-523f-88d7-3dd411f98e2a"))
+	(wire (pts (xy 215.9 104.14) (xy 218.44 104.14)) (stroke (width 0) (type default)) (uuid "10c6d11f-683a-55fd-8098-6a3c94555a25"))
+	(hierarchical_label "OCP2_ISO_N" (shape output) (at 218.44 104.14 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "db6bb7a2-f8d2-56a7-b1cf-4045d217b42c"))
+	(wire (pts (xy 190.5 132.08) (xy 187.96 132.08)) (stroke (width 0) (type default)) (uuid "43a3ba29-fcc9-501d-a38a-33679d1e389d"))
+	(global_label "+5V_PWR" (shape passive) (at 187.96 132.08 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "757dc0f9-b851-51d6-b4d2-7e67476519d1") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 187.96 132.08 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 190.5 139.7) (xy 187.96 139.7)) (stroke (width 0) (type default)) (uuid "fac5c14a-7829-514b-a30d-ed1587298332"))
+	(global_label "PGND" (shape passive) (at 187.96 139.7 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "3c9e4fb2-d557-529b-b620-6c72e2e18fde") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 187.96 139.7 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 190.5 134.62) (xy 187.96 134.62)) (stroke (width 0) (type default)) (uuid "befc252a-cbdf-5b13-87ea-619534111306"))
+	(hierarchical_label "OTP_N" (shape input) (at 187.96 134.62 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "d020643e-7523-588e-a2b5-7c9bb1cdfbbe"))
+	(wire (pts (xy 190.5 137.16) (xy 187.96 137.16)) (stroke (width 0) (type default)) (uuid "e9f5aa3d-65c2-5e6c-94e9-67d6be82ef17"))
+	(hierarchical_label "BUS_PG" (shape input) (at 187.96 137.16 180) (effects (font (size 1.27 1.27)) (justify right)) (uuid "908b5bdb-78c9-5569-ba59-1c2d5d93a9d1"))
+	(wire (pts (xy 215.9 132.08) (xy 218.44 132.08)) (stroke (width 0) (type default)) (uuid "3c931297-1713-5a39-a685-60b730da925a"))
+	(global_label "+5V_ISO" (shape passive) (at 218.44 132.08 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "bb2e9760-f000-5bec-9f5a-673d85b07ff3") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 218.44 132.08 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 215.9 139.7) (xy 218.44 139.7)) (stroke (width 0) (type default)) (uuid "59b30b24-e2f5-568f-9d06-4ed4a3141d98"))
+	(global_label "GND_ISO" (shape passive) (at 218.44 139.7 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "654e9170-24f9-578f-b79b-2d3b37b1f0b9") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 218.44 139.7 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 215.9 134.62) (xy 218.44 134.62)) (stroke (width 0) (type default)) (uuid "14eee0f3-b02f-5e78-8a65-537968efcb0d"))
+	(hierarchical_label "OTP_ISO_N" (shape output) (at 218.44 134.62 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "9dd25eae-ba34-5482-8897-d0d311e976b4"))
+	(wire (pts (xy 215.9 137.16) (xy 218.44 137.16)) (stroke (width 0) (type default)) (uuid "f04b7873-b41c-566b-9244-f4c39d421e37"))
+	(hierarchical_label "BUS_PG_ISO" (shape output) (at 218.44 137.16 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "fc28c472-bca6-5183-8a99-1889fb546ea2"))
+	(text "AT1: per-phase cycle-by-cycle OCP flags (INA301 ALERT, active low).\nAT2: OTP flag (latched on LV side) and hot-swap bus-good (LM5069 PGD)." (exclude_from_sim no) (at 147.32 149.86 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "e64c763d-c5db-5898-8c28-0ba4784cbf6c"))
+	(rectangle (start 142.24 86.36) (end 289.56 160.02) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "e5239e90-d40f-528e-afaa-ec060d561460"))
+	(text "HV -> LV flags (SI86S620BC: 2 forward / 0 reverse)" (exclude_from_sim no) (at 143.51 87.63 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "b0884bbd-e215-5c1f-899b-87f2dda06f22"))
+	(wire (pts (xy 185.42 213.36) (xy 182.88 213.36)) (stroke (width 0) (type default)) (uuid "a5e85c66-8003-5c06-869c-a37a6aefca8d"))
+	(label "VS_DIV" (at 182.88 213.36 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "fb5ca03a-702c-5466-9344-1be5e6a4d6d3"))
+	(wire (pts (xy 185.42 220.98) (xy 182.88 220.98)) (stroke (width 0) (type default)) (uuid "39365e91-b135-53df-a017-9da1dabd7efe"))
+	(global_label "PGND" (shape passive) (at 182.88 220.98 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "70e2fbe3-3e80-5dea-b907-929fb1aa6922") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 182.88 220.98 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 185.42 200.66) (xy 182.88 200.66)) (stroke (width 0) (type default)) (uuid "d0722ede-d9b3-55cf-9a91-16c355749da0"))
+	(global_label "PGND" (shape passive) (at 182.88 200.66 180) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify right)) (uuid "3afef195-f705-5625-b42c-97279a4a6c96") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 182.88 200.66 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 185.42 195.58) (xy 182.88 195.58)) (stroke (width 0) (type default)) (uuid "25edce85-f916-5e83-9d60-19128170337d"))
+	(label "V_HDCDC" (at 182.88 195.58 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "d880e767-61e2-5a6b-944c-8aae41fa78a2"))
+	(wire (pts (xy 185.42 205.74) (xy 182.88 205.74)) (stroke (width 0) (type default)) (uuid "90737ab2-d2b8-5c9e-ba26-2c0b53e37761"))
+	(label "V_HDCDC" (at 182.88 205.74 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "89da31d8-1eb3-57f9-9c44-be48a6bff483"))
+	(wire (pts (xy 185.42 208.28) (xy 182.88 208.28)) (stroke (width 0) (type default)) (uuid "fc2a3032-bce2-5926-99bb-2fe123432e48"))
+	(label "V_HLDO" (at 182.88 208.28 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "46a9d173-1668-5d44-b8e8-c7202c6fe368"))
+	(wire (pts (xy 220.98 203.2) (xy 223.52 203.2)) (stroke (width 0) (type default)) (uuid "db40bda4-a421-5a97-837d-1d53d12b525a"))
+	(global_label "GND_ISO" (shape passive) (at 223.52 203.2 0) (fields_autoplaced yes) (effects (font (size 1.27 1.27)) (justify left)) (uuid "f2adf528-cac8-5db0-8c2d-5b7d2753a857") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 223.52 203.2 0) (effects (font (size 1.27 1.27)) (hide yes))))
+	(wire (pts (xy 220.98 198.12) (xy 223.52 198.12)) (stroke (width 0) (type default)) (uuid "60d6ec83-bcc6-526d-98c4-53c52850b4d1"))
+	(label "V_LDCDC" (at 223.52 198.12 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "55cf17cb-4092-5507-821e-a85d88f1e027"))
+	(wire (pts (xy 220.98 195.58) (xy 223.52 195.58)) (stroke (width 0) (type default)) (uuid "988cee1a-c2c7-5079-b56d-dd1610954c3a"))
+	(label "V_LDCDC" (at 223.52 195.58 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "1881d8e9-61d2-5bc6-a099-b5af233beb5f"))
+	(no_connect (at 220.98 208.28) (uuid "4202585d-6573-5eba-b413-ca87a8f857db"))
+	(wire (pts (xy 220.98 213.36) (xy 223.52 213.36)) (stroke (width 0) (type default)) (uuid "b341d69a-7913-5f3d-b507-0d39ddb940d3"))
+	(hierarchical_label "VFB_P" (shape output) (at 223.52 213.36 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "e9604241-8e48-56c6-b35e-919970dddb50"))
+	(wire (pts (xy 220.98 220.98) (xy 223.52 220.98)) (stroke (width 0) (type default)) (uuid "fdca110f-d766-5461-a50d-0343a73549f3"))
+	(hierarchical_label "VFB_N" (shape output) (at 223.52 220.98 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "de440a34-6b1c-542e-9822-74a4f038b3fb"))
+	(junction (at 101.6 195.58) (diameter 0) (color 0 0 0 0) (uuid "e05f3d6f-f508-5bb1-9514-fb01bb405556"))
+	(wire (pts (xy 101.6 195.58) (xy 96.52 195.58)) (stroke (width 0) (type default)) (uuid "51effcd0-80df-5d12-8f79-1f363e39f9ca"))
+	(label "VS_DIV" (at 96.52 195.58 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "69dae073-8814-58be-8ba6-d4e6c75579cb"))
+	(wire (pts (xy 121.92 195.58) (xy 121.92 193.04)) (stroke (width 0) (type default)) (uuid "e24f7ec4-c757-5ec5-8ff2-6d59897b8bdb"))
+	(label "VS_DIV" (at 121.92 193.04 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "9f2ce6ba-f68a-5140-bbe9-866cb3762c4c"))
+	(wire (pts (xy 35.56 177.8) (xy 35.56 175.26)) (stroke (width 0) (type default)) (uuid "3fbe94f7-7fac-5401-90c5-c1a1bd448e91"))
+	(label "V_HDCDC" (at 35.56 175.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "09aac6ab-6dca-592c-a277-ca12395c5413"))
+	(wire (pts (xy 48.26 177.8) (xy 48.26 175.26)) (stroke (width 0) (type default)) (uuid "d7e69e29-4c77-55b1-9e4e-c841807dc545"))
+	(label "V_HDCDC" (at 48.26 175.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "1d222fe3-465c-5532-8f47-9584026c43cf"))
+	(wire (pts (xy 60.96 177.8) (xy 60.96 175.26)) (stroke (width 0) (type default)) (uuid "7ce13be2-15f4-54cd-9d07-6d9ea87e1cf1"))
+	(label "V_HLDO" (at 60.96 175.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "2dc566c3-0f00-5da0-8fcc-c35d77ee05e7"))
+	(wire (pts (xy 73.66 177.8) (xy 73.66 175.26)) (stroke (width 0) (type default)) (uuid "3137a9e2-b7d7-5208-b88c-7725a86e1384"))
+	(label "V_HLDO" (at 73.66 175.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "6a79066c-34ff-5fd5-b157-ff864a9e1347"))
+	(wire (pts (xy 274.32 177.8) (xy 274.32 175.26)) (stroke (width 0) (type default)) (uuid "a707e56c-7d62-5e1a-9119-8ef40e1695fe"))
+	(label "V_LDCDC" (at 274.32 175.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "11e2f06b-b777-5cf5-9cdd-f42fa384a260"))
+	(wire (pts (xy 287.02 177.8) (xy 287.02 175.26)) (stroke (width 0) (type default)) (uuid "13c13149-fee9-5aa1-a923-72f333e33245"))
+	(label "V_LDCDC" (at 287.02 175.26 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "8b8613d3-1d67-5978-8343-9dd692fbc22e"))
+	(text "VOUT x 10/300 = 0.8 V at 24 V (0.9 V at 27 V; +-1 V range).\nVFB_P - VFB_N = 2 x V_in = 1.6 V at 24 V -> LTC3861 VSNSP1/N1." (exclude_from_sim no) (at 35.56 231.14 0) (effects (font (size 1.0 1.0)) (justify left top)) (uuid "e99f8705-940e-58f4-9600-406c68c1640f"))
+	(rectangle (start 30.48 167.64) (end 304.8 246.38) (stroke (width 0.254) (type dash)) (fill (type none)) (uuid "87d34994-5fa1-515d-8ba5-28422691d3a4"))
+	(text "Output voltage feedback (AMC3330, isolated)" (exclude_from_sim no) (at 31.75 168.91 0) (effects (font (size 1.778 1.778) (bold yes)) (justify left top)) (uuid "54b03f82-b60f-5844-b7d5-317d504c863a"))
+	(polyline (pts (xy 203.2 35.56) (xy 203.2 45.72)) (stroke (width 0.6) (type dash) (color 200 0 0 1)) (uuid "ef605ed9-13d3-5118-b52d-3c8d3105ded5"))
+	(polyline (pts (xy 203.2 68.58) (xy 203.2 91.44)) (stroke (width 0.6) (type dash) (color 200 0 0 1)) (uuid "3921faf1-4481-5673-9123-af366d7e1eaf"))
+	(polyline (pts (xy 203.2 114.3) (xy 203.2 124.46)) (stroke (width 0.6) (type dash) (color 200 0 0 1)) (uuid "038205df-9dcc-58f6-8e3f-c37d81ff6f20"))
+	(polyline (pts (xy 203.2 147.32) (xy 203.2 185.42)) (stroke (width 0.6) (type dash) (color 200 0 0 1)) (uuid "5cbe3086-6ece-5857-86ae-114969cb8865"))
+	(polyline (pts (xy 203.2 231.14) (xy 203.2 251.46)) (stroke (width 0.6) (type dash) (color 200 0 0 1)) (uuid "3e18076f-6f38-5f0d-9968-b05c7f7df44b"))
+	(symbol
+		(lib_id "ECE533:NME1S0505SC")
+		(at 203.2 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2429755c-49cd-5bca-b657-6afa88e14e94")
+		(property "Reference" "PS1" (at 195.58 52.07 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "NME1S0505SC" (at 195.58 60.96 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "ECE533_Mods:Murata_NME1S_SIP-4" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "https://www.murata.com/products/productdata/8822286319646/KDC-NME1.pdf" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "1 W isolated DC/DC module, 5 V in, 5 V out, 1 kVDC" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "NME1S0505SC" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C39128444" (at 203.2 55.88 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "2" (uuid "55f77590-8dcc-5d84-9293-0696511783f9"))
+		(pin "1" (uuid "0e7e7c28-0d6b-5943-8bf5-f1763d4ff577"))
+		(pin "4" (uuid "670174be-7ae1-5517-a77d-1f8fcfb74e31"))
+		(pin "3" (uuid "be3a49d2-ca29-5f3d-b917-1d5be1f1274a"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "PS1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 162.56 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "062c3782-199c-5235-9191-c276c0351da5")
+		(property "Reference" "C85" (at 165.1 48.26 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/25V" (at 165.1 50.8 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71E105KA12D" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86020" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "4763f742-f052-5344-88e5-91b04070aee6"))
+		(pin "2" (uuid "1f6fe2e8-095b-5779-b1ff-b4ad2d360739"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C85") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_PWR")
+		(at 162.56 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "9e89402a-3470-5afd-973a-7d6b9ede4ff2")
+		(property "Reference" "#PWR0115" (at 162.56 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_PWR" (at 162.56 42.164 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 162.56 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 162.56 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)" (at 162.56 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "ab5183e2-09ad-5370-9abe-a7c590c88a3d"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0115") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 162.56 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d6319c32-c92a-5f04-b68d-348feddac7b1")
+		(property "Reference" "#PWR0116" (at 162.56 58.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 162.56 56.642 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 162.56 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 162.56 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 162.56 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "92f075be-4382-5644-b2c7-791e5c50a929"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0116") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 238.76 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "26e5e4ae-5908-58ea-937f-e3718df8908a")
+		(property "Reference" "C86" (at 241.3 48.26 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10u/10V" (at 241.3 50.8 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM21BR71A106KE51L" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86038" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "169aa029-008c-5f7d-bf4b-3a441010c451"))
+		(pin "2" (uuid "0d939259-da95-5c7f-b79f-c84b4c82ff2e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C86") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 238.76 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "fda34020-af60-5049-9dc7-b0bc257c9854")
+		(property "Reference" "#PWR0117" (at 238.76 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 238.76 42.164 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 238.76 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 238.76 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 238.76 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "466e8e59-7cd9-5d58-b73b-baad4c0c9a64"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0117") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 238.76 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a668574-bb9d-548d-be6a-fd4da50902aa")
+		(property "Reference" "#PWR0118" (at 238.76 59.69 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 238.76 57.15 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 238.76 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 238.76 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 238.76 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "55020078-a79f-52dc-8114-68fdca595faa"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0118") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 248.92 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1ec36b33-c049-57b7-beb9-d156e78292b9")
+		(property "Reference" "C87" (at 251.46 48.26 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 251.46 50.8 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "24378237-329a-5ae1-9481-2021265a9b84"))
+		(pin "2" (uuid "71395017-bc9c-5788-85cd-c71dc8af807b"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C87") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 248.92 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "16164f11-85c7-5a47-ae1d-96029021ab93")
+		(property "Reference" "#PWR0119" (at 248.92 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 248.92 42.164 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 248.92 45.72 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "c54cd954-3626-5c7f-976e-90c5e3293a90"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0119") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 248.92 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a3baf704-0af8-5ada-85a3-760bc7cff68a")
+		(property "Reference" "#PWR0120" (at 248.92 59.69 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 248.92 57.15 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 248.92 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "4932911f-9bda-56e2-8979-1bbd9d7317be"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0120") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 264.16 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d6957427-3d74-574f-82b8-399b0e8e0d6f")
+		(property "Reference" "TP15" (at 266.7 49.53 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "+5V_ISO" (at 266.7 52.07 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "test point" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "Test pad (bare copper)" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "-" (at 264.16 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "99d4ca7a-1907-5c02-886d-4e4757d9d781"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "TP15") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 264.16 53.34 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8478dc2f-5bb2-5271-84d7-a2788fc55d15")
+		(property "Reference" "#PWR0121" (at 264.16 49.53 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 264.16 56.896 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 264.16 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 264.16 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 264.16 53.34 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "23b083b9-540e-5ae8-aaee-2aef659a22a1"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0121") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 274.32 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "23dd4c34-3be2-56b4-899c-2c9308d71eb9")
+		(property "Reference" "TP16" (at 276.86 49.53 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "GND_ISO" (at 276.86 52.07 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "test point" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "Test pad (bare copper)" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "-" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "5371b2e1-e21b-5174-8d84-a51265b81e8c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "TP16") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 274.32 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "04660b3b-e011-5e83-8a2a-e7fdf84a26ce")
+		(property "Reference" "#PWR0122" (at 274.32 57.15 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 274.32 54.61 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 274.32 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "42da5dec-6924-5a88-a9f1-2f4a3198552d"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0122") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:SI86S620")
+		(at 203.2 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a299870f-aaec-52dd-bd53-283606d56bb5")
+		(property "Reference" "AT1" (at 193.04 95.25 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "SI86S620BC-IS" (at 193.04 109.22 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 203.2 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "https://www.skyworksinc.com/-/media/SkyWorks/SL/documents/public/data-sheets/si86xx-datasheet.pdf" (at 203.2 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "2-channel digital isolator, 2 forward / 0 reverse" (at 203.2 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "SI86S620BC-IS" (at 203.2 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Skyworks" (at 203.2 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C7363570" (at 203.2 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "3a2fb2a1-bc18-5569-a7fe-0667b64fddc1"))
+		(pin "2" (uuid "224e7de7-e993-5654-99e3-21203e029959"))
+		(pin "3" (uuid "51e40f83-6edc-5887-9171-fa21797db1c4"))
+		(pin "4" (uuid "d02ac6b2-af75-5eb5-8bca-a35c0726710e"))
+		(pin "8" (uuid "78239442-29a2-5e78-a763-b296b65b6a89"))
+		(pin "7" (uuid "541be5b9-3da9-5e4e-80a4-e251648c1942"))
+		(pin "6" (uuid "97d194ec-47fc-55fa-96a1-553a0a300089"))
+		(pin "5" (uuid "6a0f2c4b-e844-5489-bd64-1f55d856c16c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "AT1") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 157.48 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4e6d876c-937b-5c17-8e88-ff463a8d99d7")
+		(property "Reference" "C88" (at 160.02 96.52 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 160.02 99.06 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "d1994b24-a511-5593-89d8-30da8a854bcd"))
+		(pin "2" (uuid "e0b41825-e037-5dee-ab81-954825c5b868"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C88") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_PWR")
+		(at 157.48 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b4271faa-7de4-5644-beae-44e73e6e3425")
+		(property "Reference" "#PWR0123" (at 157.48 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_PWR" (at 157.48 90.424 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 157.48 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)" (at 157.48 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "87606b2c-5116-5aa8-9c17-6eaf87366370"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0123") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 157.48 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "261c7920-e710-53e6-bdce-9ec53e662e72")
+		(property "Reference" "#PWR0124" (at 157.48 106.68 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 157.48 104.902 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 157.48 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 157.48 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "05bbcb85-e37b-5509-905a-f65c7f491b4e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0124") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 248.92 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "93049763-03a6-5d78-9f5a-12847a0f872f")
+		(property "Reference" "C89" (at 251.46 96.52 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 251.46 99.06 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "a817ab87-77a9-5275-a84c-b14d6ea1cbdd"))
+		(pin "2" (uuid "7415489b-58cd-5ccf-ad75-e5af4579a535"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C89") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 248.92 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "31dcbfa7-5bfe-5f4f-b181-8b2aa5c2e656")
+		(property "Reference" "#PWR0125" (at 248.92 97.79 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 248.92 90.424 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 248.92 93.98 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "1432652a-ccfa-5079-97a6-627fbaf1061d"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0125") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 248.92 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "31abdb46-41d5-5f32-93cf-50f3c548529e")
+		(property "Reference" "#PWR0126" (at 248.92 107.95 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 248.92 105.41 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 248.92 101.6 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "6d0d0bd9-2b25-5731-a4b3-a3e9205f17d3"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0126") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:SI86S620")
+		(at 203.2 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a537bdfe-7e47-5404-9584-f826a20d480b")
+		(property "Reference" "AT2" (at 193.04 128.27 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "SI86S620BC-IS" (at 193.04 142.24 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 203.2 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "https://www.skyworksinc.com/-/media/SkyWorks/SL/documents/public/data-sheets/si86xx-datasheet.pdf" (at 203.2 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "2-channel digital isolator, 2 forward / 0 reverse" (at 203.2 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "SI86S620BC-IS" (at 203.2 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Skyworks" (at 203.2 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C7363570" (at 203.2 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "e587f313-f97f-57d7-bfc5-24aac9ff0307"))
+		(pin "2" (uuid "4b7772bd-17e3-50a9-a95b-6275a063e20c"))
+		(pin "3" (uuid "2f58d062-11c6-5ad1-8121-3bb7098aa79f"))
+		(pin "4" (uuid "84ea156b-b013-584b-ad7b-6169912eaf8a"))
+		(pin "8" (uuid "c8527310-4957-5bef-9400-4d020557891d"))
+		(pin "7" (uuid "54405b81-36bd-5b53-8aa7-74ee042ad978"))
+		(pin "6" (uuid "6edcc83c-434b-5ab6-9340-69a04a2c8e04"))
+		(pin "5" (uuid "3089a661-2b19-514c-a085-9b8eab82ae5f"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "AT2") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 157.48 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "285c7baf-4a5e-5d34-bcb4-6cfec6e59c55")
+		(property "Reference" "C90" (at 160.02 129.54 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 160.02 132.08 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "6f9e0576-a5f6-57c0-aed8-fe6a4d675aa0"))
+		(pin "2" (uuid "a006bfeb-a0bb-5d6b-aa68-9bae1a763077"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C90") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_PWR")
+		(at 157.48 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ff5404ef-33e4-5c8c-8018-d31bc894ac69")
+		(property "Reference" "#PWR0127" (at 157.48 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_PWR" (at 157.48 123.444 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 157.48 127 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 127 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5.2 V HV-domain rail from LM5012 (gate drive, fan, PS1 input)" (at 157.48 127 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "a1dedf73-c8b4-51c7-a24a-2c24675e1593"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0127") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 157.48 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "97046b9a-2373-56f0-9829-9885b8e550ce")
+		(property "Reference" "#PWR0128" (at 157.48 139.7 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 157.48 137.922 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 157.48 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 157.48 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 157.48 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "907d74d3-1833-580c-aeaa-74aac525d725"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0128") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 248.92 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "257be858-de68-5fbe-a6e9-2a0b31a8c448")
+		(property "Reference" "C91" (at 251.46 129.54 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 251.46 132.08 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "324c2c99-5b6b-592b-a7e9-96ecbeb7a965"))
+		(pin "2" (uuid "aeb7dbe5-36a2-58ef-b3ab-c1ba331adb7a"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C91") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 248.92 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c934513d-1438-59ce-9c6a-9890779816d9")
+		(property "Reference" "#PWR0129" (at 248.92 130.81 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 248.92 123.444 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 127 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 127 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 248.92 127 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "32976f6f-d7d6-51e7-8628-a4410ab33b1d"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0129") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 248.92 134.62 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3e816486-d7e8-50e2-8372-8d411482529a")
+		(property "Reference" "#PWR0130" (at 248.92 140.97 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 248.92 138.43 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 248.92 134.62 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "fb0444c2-ee54-50e1-aeb9-9b3b22a0c1d0"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0130") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Isolator_Analog:AMC3330")
+		(at 203.2 208.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a47273b-e43e-56bc-aaab-5c37620230f7")
+		(property "Reference" "U8" (at 187.96 184.15 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "AMC3330" (at 187.96 232.41 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" (at 203.2 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/amc3330.pdf" (at 203.2 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Reinforced Isolated Amplifier With Integrated DC/DC Converter, SOIC-16W" (at 203.2 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "AMC3330DWER" (at 203.2 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "TI" (at 203.2 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C2999368" (at 203.2 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "99a6aa25-ba33-5238-b659-9350923b3744"))
+		(pin "2" (uuid "0b38b160-91c1-5d61-a1fd-b0f0f70017fb"))
+		(pin "3" (uuid "88006057-491e-5f21-9c8e-d60ae281c3d6"))
+		(pin "4" (uuid "7bcb7450-374d-576d-ae42-bb09cdc1d664"))
+		(pin "5" (uuid "9faf8fb0-ca25-5ac1-980c-6d5b55f1c4c0"))
+		(pin "6" (uuid "1f58ec72-f82e-5a96-9a0e-57f8b0476ba8"))
+		(pin "7" (uuid "c7cb61a8-44de-56e0-a924-3098323438b8"))
+		(pin "8" (uuid "6659a48c-7d3d-5d51-b3f9-65e82276875b"))
+		(pin "9" (uuid "22c7cb86-b7a9-59eb-9dad-8937016d14f0"))
+		(pin "10" (uuid "b2f6e028-e921-586f-a710-363648a6d2fb"))
+		(pin "11" (uuid "12139582-89f2-5817-858f-e6f341b18b12"))
+		(pin "12" (uuid "1001550c-cb45-5d55-9bc4-9c8f7802084b"))
+		(pin "13" (uuid "cf261f86-8722-5f0c-8fc6-768605427c94"))
+		(pin "14" (uuid "a48825c4-4d1a-5efa-8331-c1888c13a678"))
+		(pin "15" (uuid "b086676c-53cb-575e-8d4b-4b6349bac915"))
+		(pin "16" (uuid "5573f7a7-806e-52a4-8c41-9db32c07f5b8"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "U8") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 198.12 226.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ed8ab26-f226-53cb-b221-3d853b87cf06")
+		(property "Reference" "#PWR0131" (at 198.12 231.14 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 198.12 229.362 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 198.12 226.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 198.12 226.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 198.12 226.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "5fb92e89-0915-580f-84df-fce0b4ef33bf"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0131") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 208.28 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "103eb3c9-1434-555b-a238-ff275c143807")
+		(property "Reference" "#PWR0132" (at 208.28 194.31 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 208.28 186.944 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 208.28 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 208.28 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 208.28 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "1f3d1fe5-5728-5392-a2d0-cbf6c3e2086c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0132") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 208.28 226.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "a2bbcca6-1349-5346-9297-ed4a32fb7c90")
+		(property "Reference" "#PWR0133" (at 208.28 232.41 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 208.28 229.87 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 208.28 226.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 208.28 226.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 208.28 226.06 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "bf32163a-33ab-5199-9c32-ba875ad998bc"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0133") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 101.6 191.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "35248351-e044-564e-99b3-2396e8f15df2")
+		(property "Reference" "R64" (at 104.14 190.5 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "290k 0.1%" (at 104.14 193.04 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 101.6 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 101.6 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 101.6 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "ERA-3AEB2903V" (at 101.6 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Panasonic" (at 101.6 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "3aca689a-0cf0-54fa-b0f0-65d7f0d4d47b"))
+		(pin "2" (uuid "fb71e78a-10b1-57b5-b9ce-81cbb30e2311"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "R64") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+24V")
+		(at 101.6 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "13d6cea9-8c85-5adc-8c98-92ca3e5d48e4")
+		(property "Reference" "#PWR0134" (at 101.6 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+24V" (at 101.6 184.404 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 101.6 187.96 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 101.6 187.96 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "24 V / 46 A output (HV domain)" (at 101.6 187.96 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "5bcd67b7-f13e-5604-9127-2ea004bd0085"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0134") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 101.6 199.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1f73749f-8af3-5500-b823-00d4c52a3c6c")
+		(property "Reference" "R65" (at 104.14 198.12 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "10.0k 0.1%" (at 104.14 200.66 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 101.6 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 101.6 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Resistor" (at 101.6 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "ERA-3AEB1002V" (at 101.6 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Panasonic" (at 101.6 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "b1a51fc2-c21c-5ced-b871-e04601295aae"))
+		(pin "2" (uuid "76e8cf8c-9922-5735-bb45-7e4401d1fc5b"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "R65") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 101.6 203.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "be3bfa73-2f5e-52c9-b499-d1ed2b315bd5")
+		(property "Reference" "#PWR0135" (at 101.6 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 101.6 206.502 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 101.6 203.2 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 101.6 203.2 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 101.6 203.2 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "081177a1-ad97-5516-96cd-c1eab0227077"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0135") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 121.92 199.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d59bc3c3-0588-5dd4-a2c6-8e9a6116ce3b")
+		(property "Reference" "C92" (at 124.46 198.12 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100p/50V" (at 124.46 200.66 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 121.92 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 121.92 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 121.92 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM1885C1H101JA01D" (at 121.92 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 121.92 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C71664" (at 121.92 199.39 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "4e6dc805-e1dd-56ea-9f42-a0f61e2d241e"))
+		(pin "2" (uuid "be8ffa5f-d7cc-54ae-94df-0c391fb4680b"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C92") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 121.92 203.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c07856cd-afbf-55dc-8fcf-f8e3a180b6c8")
+		(property "Reference" "#PWR0136" (at 121.92 208.28 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 121.92 206.502 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 121.92 203.2 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 121.92 203.2 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 121.92 203.2 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "004309a5-a5bc-53fd-b331-3dc449a1bb43"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0136") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 35.56 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8d103eb6-e1a3-5965-83a5-32e7eb727826")
+		(property "Reference" "C93" (at 38.1 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/25V" (at 38.1 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 35.56 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 35.56 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 35.56 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71E105KA12D" (at 35.56 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 35.56 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86020" (at 35.56 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "cf5f7cf9-435e-55a3-9a84-c0d32e0a6af9"))
+		(pin "2" (uuid "3a78146c-105c-5f67-bdcc-052693a29ab1"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C93") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 35.56 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "6189daa6-6440-57e1-b7b7-feede246bea5")
+		(property "Reference" "#PWR0137" (at 35.56 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 35.56 188.722 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 35.56 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 35.56 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 35.56 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "93f55b25-f9fc-5ae7-b41d-7d5b7f475692"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0137") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 48.26 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "810d26e5-83a8-5c01-8e4f-e41d10b8c07b")
+		(property "Reference" "C94" (at 50.8 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 50.8 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 48.26 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 48.26 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 48.26 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 48.26 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 48.26 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 48.26 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "87963eb8-03f9-54f9-afb3-0ab587ba4de6"))
+		(pin "2" (uuid "10114e3a-ec97-52b7-8fc7-fd8616114ef2"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C94") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 48.26 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "779ca68f-9ab5-52b8-9092-d0754c3de811")
+		(property "Reference" "#PWR0138" (at 48.26 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 48.26 188.722 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 48.26 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 48.26 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 48.26 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "5cc8d9bf-ecde-5f0f-822c-4c802ff89819"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0138") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 60.96 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "816e87a0-61d2-59b9-b285-fe605a823729")
+		(property "Reference" "C95" (at 63.5 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/25V" (at 63.5 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 60.96 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 60.96 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 60.96 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71E105KA12D" (at 60.96 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 60.96 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86020" (at 60.96 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "ed40ad73-df1a-59b3-b58f-14a0309ee5d6"))
+		(pin "2" (uuid "177eb09f-b449-5a61-8984-f5d24f91a65f"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C95") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 60.96 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "86d30caf-0324-5128-bfdd-e8b091e12fa1")
+		(property "Reference" "#PWR0139" (at 60.96 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 60.96 188.722 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 60.96 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 60.96 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 60.96 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "40736994-b5a9-5697-9c0e-f4ea9e7f0fe6"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0139") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 73.66 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a93ee43-3605-56d0-b29b-dd7054874ebc")
+		(property "Reference" "C96" (at 76.2 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 76.2 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 73.66 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 73.66 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 73.66 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 73.66 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 73.66 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 73.66 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "1ae96678-a285-57ef-aaed-2a8f57228d40"))
+		(pin "2" (uuid "28fb3fa9-8fd5-5329-9ea2-dbc47a1a940e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C96") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:PGND")
+		(at 73.66 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "73b5ba65-0ad5-5974-b237-a62faaabf2d2")
+		(property "Reference" "#PWR0140" (at 73.66 190.5 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "PGND" (at 73.66 188.722 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 73.66 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 73.66 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Power ground: VIN-, VOUT-, power stage return (HV domain)" (at 73.66 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "33bd252a-cd9e-51a2-b883-02ec7a90e667"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0140") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 248.92 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "281be5c8-01d7-5d44-aa52-e41ab9407dd6")
+		(property "Reference" "C97" (at 251.46 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/25V" (at 251.46 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71E105KA12D" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86020" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "4b46255d-c41e-5bfd-b030-5e8076c57086"))
+		(pin "2" (uuid "0c628574-2943-5b19-bce2-dac111ec2c33"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C97") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 248.92 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "539e1ade-b7ba-571d-b478-48c723587d23")
+		(property "Reference" "#PWR0141" (at 248.92 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 248.92 174.244 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 177.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 177.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 248.92 177.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "bf520f7e-5f0b-5cc2-b5f7-aa6b993afe8e"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0141") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 248.92 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "17ed43fa-d246-5339-9098-7669bca279a8")
+		(property "Reference" "#PWR0142" (at 248.92 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 248.92 189.23 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 248.92 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 248.92 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 248.92 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "8bf1cf40-0a56-598e-9162-2f6fbd42a734"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0142") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 261.62 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e720a0d6-fd10-54d1-a926-645fc0eeb7f8")
+		(property "Reference" "C98" (at 264.16 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 264.16 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "3fdc00a7-a2f2-528a-8d0d-ce7edf99aef5"))
+		(pin "2" (uuid "b4c59459-c0e4-5c2e-b4ac-642724cfd744"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C98") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:+5V_ISO")
+		(at 261.62 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "b060ecb3-d441-5a8e-8401-1f311f786990")
+		(property "Reference" "#PWR0143" (at 261.62 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "+5V_ISO" (at 261.62 174.244 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 261.62 177.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 261.62 177.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "5 V isolated LV-domain rail from PS1" (at 261.62 177.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "b75e8e10-f137-5164-8e18-51e21a2dce3d"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0143") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 261.62 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "5430f295-d2f6-5bab-b0b8-b7f53a97cd28")
+		(property "Reference" "#PWR0144" (at 261.62 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 261.62 189.23 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 261.62 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 261.62 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 261.62 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "d82c83d1-b383-5308-9a92-dab7845c5311"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0144") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 274.32 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "045b1090-16fd-5c2d-adf0-b2fa2cc96e71")
+		(property "Reference" "C99" (at 276.86 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "1u/25V" (at 276.86 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 274.32 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 274.32 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 274.32 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71E105KA12D" (at 274.32 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 274.32 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C86020" (at 274.32 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "6c7d84ab-ac8e-568e-bb09-5084b89efe8d"))
+		(pin "2" (uuid "7e92cbcf-ea14-5ecc-968d-2b2f1d3dfa5a"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C99") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 274.32 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8018ddc5-2209-5e0e-9278-2d596e6d5a83")
+		(property "Reference" "#PWR0145" (at 274.32 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 274.32 189.23 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 274.32 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 274.32 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 274.32 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "c1c2ebc9-adb4-5636-a4ff-f781a35cfb1c"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0145") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 287.02 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77a8eab1-ec75-51f6-ab06-5e5455d0e316")
+		(property "Reference" "C100" (at 289.56 180.34 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "100n/50V" (at 289.56 182.88 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 287.02 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 287.02 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Unpolarized capacitor" (at 287.02 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "MPN" "GRM188R71H104KA93D" (at 287.02 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Manufacturer" "Murata" (at 287.02 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "LCSC" "C77055" (at 287.02 181.61 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "18e9194c-864f-536e-bf2d-f2f37ec3156c"))
+		(pin "2" (uuid "0c5bcc07-0814-5627-b009-2e092f6e3ef4"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "C100") (unit 1))
+		))
+	)
+	(symbol
+		(lib_id "ECE533:GND_ISO")
+		(at 287.02 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "26c803d7-e257-5aed-8fec-2e62adb89dae")
+		(property "Reference" "#PWR0146" (at 287.02 191.77 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Value" "GND_ISO" (at 287.02 189.23 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 287.02 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 287.02 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "Isolated control ground (LV domain)" (at 287.02 185.42 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(pin "1" (uuid "b7b43cb5-bdc9-55c2-90c1-8f9e25e128dd"))
+		(instances (project "ECE533_Guide"
+			(path "/3bc94f09-386f-53fd-bc70-05d96028f503/31075ca5-6bab-56e4-aea4-da9a0c9efd4c" (reference "#PWR0146") (unit 1))
+		))
+	)
+	(embedded_fonts no)
+)

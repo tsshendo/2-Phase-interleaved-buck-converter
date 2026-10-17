@@ -475,12 +475,40 @@
   },
   "sheets": [
     [
-      "09d3e748-966b-486a-bab2-fcfca6077673",
+      "3bc94f09-386f-53fd-bc70-05d96028f503",
       "Root"
     ],
     [
-      "e50bb7ab-2c50-48fd-b7e3-eb36d7af3b30",
-      "Gate_Drive"
+      "27028dcf-ec67-5ade-9ed6-3ce4b615d3f0",
+      "Input protection"
+    ],
+    [
+      "07530030-596e-554d-8085-61f75994d38e",
+      "Aux supply and fan"
+    ],
+    [
+      "5d585425-1ad9-5e6c-9378-586c293e9f20",
+      "Power stage (2 phases)"
+    ],
+    [
+      "8122830e-c2d6-58a6-a9d4-7f887c7479ae",
+      "Phase 1"
+    ],
+    [
+      "2d29d7ee-b28f-51d6-9154-1d90d105a3a8",
+      "Phase 2"
+    ],
+    [
+      "31075ca5-6bab-56e4-aea4-da9a0c9efd4c",
+      "Isolation barrier"
+    ],
+    [
+      "d6cd4086-c11b-5611-86b3-40ade4c6962b",
+      "Controller (LV)"
+    ],
+    [
+      "fc36bed8-9c54-58f8-b7ac-38dffeea96ea",
+      "Fault logic and rack I/O"
     ]
   ],
   "text_variables": {},

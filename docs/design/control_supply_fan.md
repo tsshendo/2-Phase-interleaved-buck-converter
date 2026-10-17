@@ -61,6 +61,8 @@ Efficiency at 72 V → 5.2 V is about 82 % → input ≈ 4.0 W (included in the 
   documentation says an open control terminal runs at 100 % duty (full speed). To confirm on the
   9GA0405P6H001 datasheet in Stage 2.
 - **TACH:** open collector (Sanyo spec: 30 V, 5 mA max, 2 pulses/rev). 10 kΩ pull-up to 5.2 V →
-  test point TP_TACH (HV side), optionally to AT2 ch B for the LV side.
+  test point TP14 (HV side). It doesn't cross the barrier: AT2 channel B carries the hot-swap
+  bus-good flag instead (Stage 2).
+- **EN:** U21 EN is pulled up to +5V_PWR (R93), so the fan runs whenever +5V_PWR is up.
 - **ESD:** TVS array on the fan pins (TI TPD4E05U06 class, Stage 2).
 - Airflow and shroud: `thermal.md` §5.

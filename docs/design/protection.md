@@ -37,7 +37,10 @@ Stage 2 and simulated.
 - **Power limit and timer:** R_PWR and C_TIMER are sized in Stage 2 against the IPT015N10N5 SOA. The
   inrush charges C_bus (550 µF bulk + ceramics) to 72 V in about 20–40 ms. The -2 version restarts at
   0.5 % duty.
-- **VIN pin protection:** 10 Ω + 1 µF RC on the LM5069 VIN pin, so TVS clamp spikes above 100 V are
+- **VIN pin:** C71 1 µF/100 V bypass at the pin, taken from the RS1 Kelvin tap. *Changed in Stage 2:*
+  no series resistor, because the LM5069 supply current (1.3 mA) through 10 Ω would add a 13 mV error
+  to the 55 mV current-limit sense. Spikes above the 100 V pin rating are an open coordination item
+  (TVS clamp, see below). The earlier plan read: 10 Ω + 1 µF RC, so TVS clamp spikes above 100 V are
   filtered before they reach the pin.
 
 ### TVS clamp vs 100 V parts (open issue)
@@ -70,10 +73,11 @@ Notes:
 
 ## 3. Common fault/disable line
 
-`RUN_OK` (LV domain, open-drain wired-AND, pull-up to +5V_ISO) is pulled low by: the fault latch
-(OVP, OTP), the J4 EN input (low = off) and the LTC3861 PWMEN outputs (three-state/hiccup). `RUN_OK`
-drives the Si8274 ENABLE pins (both FETs off) and LTC3861 RUN1/RUN2. The cycle-by-cycle OCP acts per
-cycle and doesn't pull `RUN_OK`. Sustained OCP goes to the LTC3861 hiccup.
+`RUN_OK` (LV domain, diode wired-AND, 100 kΩ pull-up to +5V_ISO) is pulled low by the fault latch
+(OVP, OTP) through D15, by the hot-swap bus-not-good flag (AT2 B2) through D16, and by J4 EN low
+(host) through R88. `RUN_OK` drives LTC3861 RUN1/RUN2. RUN low three-states the PWM outputs and
+drops PWMEN1/2, which drive the Si8274 ENABLE pins, so both FETs of each phase turn off. The
+cycle-by-cycle OCP acts per cycle and doesn't pull `RUN_OK`. Sustained OCP goes to the LTC3861 hiccup.
 
 ## 4. Indicators and test points
 
