@@ -4060,7 +4060,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "ECE533_Mods:Murata_NME1S_SIP-4"
+		(property "Footprint" "ECE533_Vendor:Murata_NME1S_SIP-4"
 			(at 0 -10.16 0)
 			(effects
 				(font

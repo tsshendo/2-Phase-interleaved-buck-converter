@@ -798,7 +798,7 @@ def build_fault(sh):
     sh.box(g(8), g(13), g(110), g(56), 'Latched faults: output OVP 27 V, OTP 80 C')
 
     # RUN_OK common fault line
-    bfp, bf = part('BAT54W-7-F', 'Diodes Inc', 'SOD323')
+    bfp, bf = part('BAT54W-7-F', 'Diodes Inc', 'SOT323')
     R(sh, 'R87', '100k', g(122), g(16), '~+5V_ISO', 'RUN_OK')
     C(sh, 'C118', '10n', '50V', '0603', g(128), g(24), 'RUN_OK', '~GND_ISO')
     sh.hlabel('RUN_OK', g(150), g(24), 0, 'output')

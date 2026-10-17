@@ -8,6 +8,9 @@ Scripts used to build and check the Stage 2 schematic. Run them with KiCad's bun
 | `gen_symbols.py` | Writes the project symbol library `ECE533_Guide/ECE533.kicad_sym`: custom IC symbols drawn from the manufacturer datasheets (LTC3861, Si8274, AMC3301, INA301, LM5012, TPS2553, TLV3012, VOM1271, 74LVC1G74, SI86S620, NME1S0505SC, EPC2304, ERUC23) and the named power symbols (PGND, GND_ISO, +5V_PWR, +5V_ISO, VBUS, +24V). |
 | `gen_schematic.py` | Generated the initial hierarchical sheets (root, input protection, power stage, 2 × power phase, aux supply/fan, isolation, controller, fault logic/rack I/O). |
 | `check_netlist.py` | Connectivity checks on an exported netlist (74 checks: every signal path through the hierarchy, Kelvin returns, the two ground domains kept apart). |
+| `gen_footprints.py` | Writes `ECE533_Mods.pretty` (EPC2304, TDK ERUC23, Kelvin 2512 shunt, Littelfuse 456 fuse, drawn from the datasheets), the fuse placeholder STEP, and the git-ignored `lib/vendor/ECE533_Vendor.pretty` (Würth REDCUBE, Murata NME1S). See `lib/vendor/README.md`. |
+| `check_footprints.py` | Checks every symbol pin against the pads of its footprint (and flags unused pads). |
+| `make_bom.py` | Builds `bom/PCB_BOM.xlsx` and `bom/PCB_BOM.csv` from an exported netlist. |
 | `kisch.py`, `kilib.py`, `sexp.py`, `parts.py` | Helpers: schematic writer, symbol builder, S-expression reader, part catalogue (footprints, MPNs). |
 
 **After Stage 2, edit the schematic in KiCad.** Re-running `gen_schematic.py` overwrites the
