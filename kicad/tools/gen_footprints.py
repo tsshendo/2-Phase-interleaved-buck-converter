@@ -1,7 +1,7 @@
 """Write the project footprints (Stage 3).
 
 ECE533_Guide/ECE533_Mods.pretty  (committed) - drawn here from the manufacturer datasheets:
-    EPC2304_QFN-7_3x5mm          EPC2304 datasheet: copper drawing, solder-mask-defined land
+    EPC2304_QFN-7_3x5mm(_15pin)  EPC2304 datasheet: copper drawing, solder-mask-defined land
                                  pattern (mask openings) and stencil drawing (paste), pages 12-13
     TDK_ERUC23                   TDK ERUC23 datasheet "Recommended PCB layout"
     R_2512_Kelvin                Bourns CSS2H-2512 "Recommended Pad Layout" with sense strips,
@@ -164,6 +164,23 @@ def epc2304():
     f.circle(-3.25, -1.6, 0.15, 'F.SilkS', 0.12, fill=True)        # pin 1 (gate)
     f.rect(-3.2, -2.1, 3.2, 2.1, 'F.CrtYd', 0.05)
     f.model(f'{VPATH}/EPC2304/3D/EPC2304.stp', rot=(0, 0, 90))
+    return f
+
+
+# EPC2304 for the SamacSys 15-pin symbol used in the PowerModule base schematic (G_1/G_2, S_1-S_6,
+# D_1-D_7). Same copper as EPC2304_QFN-7_3x5mm; pins 8-15 are stacked on the matching physical pad
+# (same geometry, same net), so the base schematic stays unchanged.
+EPC15 = {'1': ['12'], '2': ['15'], '3': ['8'], '4': ['13'], '5': ['9'], '6': ['14'], '7': ['10', '11']}
+
+
+def epc2304_15pin():
+    f = epc2304()
+    f.name = 'EPC2304_QFN-7_3x5mm_15pin'
+    f.descr += '; pins 8-15 of the SamacSys 15-pin symbol stacked on pads 1-7'
+    for p in list(f.pads):
+        num = p.split('"')[1]
+        for extra in EPC15.get(num, []):
+            f.pads.append(p.replace(f'(pad "{num}"', f'(pad "{extra}"', 1))
     return f
 
 
@@ -404,9 +421,40 @@ def fuse_step():
     ])
 
 
+
+def nanofit_ra_step():
+    """Molex Nano-Fit 105313-1206 (1 x 6, 2.5 mm, right angle) from the KiCad footprint outline and
+    the Molex drawing: housing behind the pin row, open mating face pointing away from the pins (off
+    the board edge), pins bent 90 deg into the housing, two locating pegs. Footprint frame: pins at
+    x = 0, y = 0 ... 12.5; model y = -footprint y."""
+    blk, dark, tin = (0.08, 0.08, 0.08), (0.18, 0.18, 0.18), (0.82, 0.82, 0.76)
+    x0, xm, x1 = 1.0, 8.4, 10.88          # housing back, cavity floor, mating face
+    y0, y1 = -14.72, 2.22                 # housing ends (model y)
+    h, wall = 9.4, 1.0
+    b = [((x0, y0, 0), (xm, y1, h), blk),                       # housing body
+         ((xm, y0, h - wall), (x1, y1, h), blk),                # mating shroud: top
+         ((xm, y0, 0), (x1, y1, wall), blk),                    # bottom
+         ((xm, y0, wall), (x1, y0 + wall, h - wall), blk),      # ends
+         ((xm, y1 - wall, wall), (x1, y1, h - wall), blk),
+         ((xm - 0.01, y0 + wall, wall), (xm, y1 - wall, h - wall), dark)]   # cavity floor
+    for k in range(6):
+        y = -2.5 * k
+        b += [((-0.32, y - 0.32, -3.6), (0.32, y + 0.32, 4.98), tin),          # through-hole leg
+              ((-0.32, y - 0.32, 4.34), (x0, y + 0.32, 4.98), tin),            # 90 deg bend
+              ((xm, y - 0.32, 4.34), (x1 - 0.6, y + 0.32, 4.98), tin)]        # contact in the opening
+    for y in (0.0, -12.5):
+        b.append(((6.62, y - 0.58, -2.2), (7.74, y + 0.58, 0), blk))         # locating pegs
+    step_boxes(os.path.join(SHAPES, 'Molex_Nano-Fit_105313-1206_RA.step'), 'Molex_Nano-Fit_105313-1206_RA', b)
+
+
+from nanofit_fp import nanofit_ra_fp  # noqa: E402
+
+
 if __name__ == '__main__':
-    for fn in (epc2304, eruc23, r2512_kelvin, r2512_css2h, fuse456):
+    for fn in (epc2304, epc2304_15pin, eruc23, r2512_kelvin, r2512_css2h, fuse456):
         fn().write(MODS)
     fuse_step()
+    nanofit_ra_step()
+    nanofit_ra_fp()
     redcube()
     nme1s()

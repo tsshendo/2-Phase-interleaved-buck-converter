@@ -101,3 +101,30 @@ supply/fan, protection, parts list). Review decisions recorded above. PR #7 merg
 - DRC with schematic parity: 0 errors, 0 parity issues, 1 silkscreen warning, 499 unrouted (Stage 4).
   ERC: 0 violations.
 - Notes and renders: `docs/design/placement_stage3.md`.
+
+## Power module (separate project, branch `power-module`)
+A power-stage-only board, `kicad/PowerModule`, made at the user's request (2026-10-17). It uses the
+report's base schematic and parts and the report's SolidWorks/Q3D layout. Gate commands come in
+through J4. Note: `docs/design/power_module.md`.
+
+| Date | Decision | Reason |
+|---|---|---|
+| 2026-10-17 | Board: credit card 85.6 × 53.98 mm; REDCUBE terminals; Z60-12.7B with 4 × M3 holes | User answers |
+| 2026-10-17 | "Two-layer like report": L1 = 1st Cu plane, L4 = 2nd Cu plane (FETs), L2 + L3 = interstitial shield (SHIELD = centre tap of C1/C2, C3/C4) | User answer; L3 used as a second shield layer next to the switch nodes (can be deleted) |
+| 2026-10-17 | Base schematic kept; only added footprints/values/MPNs, a SHIELD label joining the centre taps, PWR_FLAGs; orphan `connectors.kicad_sch` dropped | "Schematic ready as given" |
+| 2026-10-17 | EPC2304 15-pin footprint variant (pins 8–15 stacked on pads 1–7) | Base SamacSys symbol has 15 pins |
+| 2026-10-17 | Kelvin island under each HS driver on L4, tied to the switch node once at the FET | Gate return under the gate trace; SK pad kept off the power path |
+| 2026-10-17 | LS drivers moved between the phases next to the LS FETs (driver→gate 4.8 mm, was 11–14 mm) | User: gate traces too long |
+| 2026-10-17 | Bulk caps split: C5+C15, C6+C16 = 2 × EGXF 62 µF / 160 V each | User: half values for lower ESR; GXF 160 V has no 55 µF, 62 µF keeps ≥ 110 µF per position |
+| 2026-10-17 | J4 centred on the left edge, PS1 moved to the bottom left, H2 screw to (28.4, 50.6) | User: centred connector, shorter control traces |
+| 2026-10-17 | All reference designators on silkscreen; owner block on the bottom silkscreen (2.0 mm) | User request |
+| 2026-10-17 | Bulk caps mirror-symmetric: C6/C16 top edge, C5/C15 bottom edge, x 37.5 / 64.6 | User: symmetric, 2 per edge; inductor body offset forces one pair each side of it |
+| 2026-10-17 | PS1 on J4's centreline; J4 right angle, overhanging the edge 2.2 mm, project footprint + model | User request; KiCad has no Nano-Fit model |
+| 2026-10-17 | 1 kΩ gate pull-downs R21–R24 (gate to Kelvin source): HS on the bottom in the Kelvin island, LS on top over the gate via | As in the report's LTspice model; CLAUDE.md §7 (user approved) |
+| 2026-10-18 | Inductor body centred; gate-drive cells as identical per-phase copies (15.8 mm pitch); isolators, PS1, J4 mirrored | User: symmetric board; EPC gate pad chirality makes mirrored cells give unequal gate loops |
+| 2026-10-18 | Input bulk C6 + C16 grouped on the top edge (input side), output C5 + C15 on the bottom edge (output side, at J2) | User: bunch by role |
+
+Status: ERC 0 errors (6 off-grid warnings from the base drawing); DRC with schematic parity 0 / 0 / 0.
+Open items: VOUT copper on one layer and the 2.6 mm VBUS neck (thermal); loop inductance not
+extracted; 1EDN7550B high-side common-mode margin; PS1 pitch; confirm the 1EDN7550BXTSA1 Digi-Key PN
+and stock (`power_module.md` §7).
