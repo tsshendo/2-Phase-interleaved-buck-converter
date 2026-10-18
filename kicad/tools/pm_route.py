@@ -25,7 +25,7 @@ F, B, L2, L3 = pcbnew.F_Cu, pcbnew.B_Cu, pcbnew.In1_Cu, pcbnew.In2_Cu
 W, H = rp.W, rp.H
 VBUS, VOUT, PGND, SHIELD, GND = '/VIN', '/VOUT', 'GNDPWR', '/SHIELD', 'GND'
 SW = {1: '/Gate_Drive/KS1', 2: '/Gate_Drive/KS2'}
-HOLES = ((21.5, 4.0), (28.4, 50.6), (69.6, 18.0), (69.6, 36.0))
+HOLES = ((21.5, 4.0), (21.5, 50.0), (69.6, 18.0), (69.6, 36.0))
 VIA_STD = rp.VIA_STD
 VIA_PAD = (0.2, 0.5)            # via-in-pad, filled and capped (JLC: 0.2 drill, 0.15 ring)
 LV_X = 16.1                     # barrier band 16.3-19.7
@@ -40,7 +40,7 @@ def control_lanes(R):
     def c(ref, num):
         x0, y0, x1, y1 = R.pad(ref, num)
         return (x0 + x1) / 2, (y0 + y1) / 2
-    inner, outer, p5 = 12.85, 13.6, 15.4
+    inner, outer, p5 = 10.25, 11.0, 11.75
     w = 0.3
     # AT1: A2 (J4.3) inner lane, A1 (J4.2) outer lane, on L4; up to vias left of AT1
     for num, lane, at in (('3', inner, '3'), ('2', outer, '2')):
@@ -67,10 +67,12 @@ def control_lanes(R):
     R.track('+5V', B, [(jx, jy), (p5, jy), (p5, a1[1] - 0.9)], 0.4)
     R.via('+5V', p5, a1[1] - 0.9, VIA_PAD, check=False)
     R.track('+5V', F, [(p5, a1[1] - 0.9), a1], 0.4)
+    c11 = c('C11', '1')
+    R.track('+5V', F, [c11, (c11[0] + 0.5, c11[1]), (a1[0] - 0.5, a1[1] - 0.3)], 0.3)
     R.track('+5V', B, [(p5, jy), (p5, a2[1] - 0.9)], 0.4)
     R.via('+5V', p5, a2[1] - 0.9, VIA_PAD, check=False)
     R.track('+5V', F, [(p5, a2[1] - 0.9), a2], 0.4)
-    R.track('+5V', B, [(p5, a2[1] - 0.9), (p5, ps[1]), (ps[0] - 0.25, ps[1])], 0.4)   # from the LV side
+    R.track('+5V', B, [(p5, ps[1] - 1.4), (ps[0] - 0.7, ps[1] - 1.4), (ps[0] - 0.25, ps[1] - 0.55)], 0.4)
 
 
 def circle_keepouts(board, r=3.4):
@@ -125,18 +127,23 @@ def power(R):
     R.zone(PGND, B, [(38.5, 20.0), (42.55, 20.0), (42.55, 21.6), (85.2, 21.6), (85.2, 50.6), (82.4, 53.4),
                      (38.5, 53.4)], prio=4, name='PGND_L4')
     R.rect(PGND, B, 36.5, 32.4, 38.6, 34.0, prio=3, name='PGND_Q5_SK')
-    # PGND tongues through the VBUS strip to the input bulk capacitors' '-' pins (L1 and L4)
-    for ref in ('C6', 'C16'):
-        x0, y0, x1, y1 = R.pad(ref, 2)
-        xc = (x0 + x1) / 2
-        R.rect(PGND, B, xc - 1.6, y0 - 0.4, xc + 1.6, 21.8, prio=6, name=f'PGND_{ref}_L4')
-        R.rect(PGND, F, xc - 1.6, y0 - 0.4, xc + 1.6, 20.6, prio=6, name=f'PGND_{ref}_L1')
+    # PGND tongues through the VBUS strip to the input bulk capacitors' '-' pins: C16 (right of the
+    # inductor) on L1 + L4 down to the PGND plane; C6 (above the switch node) on L1 only, down past
+    # the LS1 FET to vias into the L4 PGND comb
+    x0, y0, x1, y1 = R.pad('C16', 2)
+    xc = (x0 + x1) / 2
+    R.rect(PGND, B, xc - 1.6, y0 - 0.4, xc + 1.6, 21.8, prio=6, name='PGND_C16_L4')
+    R.rect(PGND, F, xc - 1.6, y0 - 0.4, xc + 1.6, 20.6, prio=6, name='PGND_C16_L1')
+    x0, y0, x1, y1 = R.pad('C6', 2)
+    xc = (x0 + x1) / 2
+    R.zone(PGND, F, [(xc - 1.6, y0 - 0.4), (xc + 1.5, y0 - 0.4), (xc + 1.5, 17.0), (42.4, 17.0), (42.4, 21.6),
+                     (38.3, 21.6), (38.3, 19.6), (xc - 1.6, 19.6)], prio=6, name='PGND_C6_L1')
     # ---- L1: 1st Cu plane -----------------------------------------------------------------------
     R.rect(SW[1], F, 42.6, 14.4, 46.9, 21.2, prio=6, name='SW1_L1')
     R.rect(SW[2], F, 42.6, 32.8, 46.9, 39.6, prio=6, name='SW2_L1')
-    R.zone(VOUT, F, [(52.9, 21.0), (85.2, 21.0), (85.2, 33.6), (72.4, 33.6), (72.4, 53.4), (52.9, 53.4)],
-           prio=5, name='VOUT_L1')
-    R.zone(VBUS, F, [(41.0, 0.6), (82.4, 0.6), (85.2, 3.4), (85.2, 13.7), (41.0, 13.7)], prio=5,
+    R.zone(VOUT, F, [(52.9, 21.0), (85.2, 21.0), (85.2, 33.6), (72.4, 33.6), (72.4, 53.4), (32.4, 53.4),
+                     (32.4, 45.6), (52.9, 45.6)], prio=5, name='VOUT_L1')     # + strip to C5
+    R.zone(VBUS, F, [(31.5, 0.6), (82.4, 0.6), (85.2, 3.4), (85.2, 13.7), (31.5, 13.7)], prio=5,
            name='VBUS_L1')
     R.zone(PGND, F, [(72.8, 34.2), (85.2, 34.2), (85.2, 50.6), (82.4, 53.4), (72.8, 53.4)], prio=4,
            name='PGND_J3_L1')
@@ -236,6 +243,8 @@ def vias(R):
     # single-point Kelvin junction: island -> switch-node band, next to the HS FET
     R.track(SW[1], B, [(29.4, 16.0), (31.9, 16.0)], 0.4)
     R.track(SW[2], B, [(29.4, 40.0), (31.9, 40.0)], 0.4)
+    for x in (39.25, 40.05, 40.85, 41.65):  # C6 tongue (L1) -> L4 PGND comb under LS1
+        R.via(PGND, x, 21.3, VIA_PAD)
     # shield return: the centre-tap island to L2 / L3
     n = 0
     for x in (37.7, 36.8, 35.9, 38.0):     # first free spots (the LS driver cells sit above)

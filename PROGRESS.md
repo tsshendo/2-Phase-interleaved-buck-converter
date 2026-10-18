@@ -118,6 +118,8 @@ through J4. Note: `docs/design/power_module.md`.
 | 2026-10-17 | Bulk caps split: C5+C15, C6+C16 = 2 × EGXF 62 µF / 160 V each | User: half values for lower ESR; GXF 160 V has no 55 µF, 62 µF keeps ≥ 110 µF per position |
 | 2026-10-17 | J4 centred on the left edge, PS1 moved to the bottom left, H2 screw to (28.4, 50.6) | User: centred connector, shorter control traces |
 | 2026-10-17 | All reference designators on silkscreen; owner block on the bottom silkscreen (2.0 mm) | User request |
+| 2026-10-17 | Bulk caps mirror-symmetric: C6/C16 top edge, C5/C15 bottom edge, x 37.5 / 64.6 | User: symmetric, 2 per edge; inductor body offset forces one pair each side of it |
+| 2026-10-17 | PS1 on J4's centreline; J4 right angle, overhanging the edge 2.2 mm, project footprint + model | User request; KiCad has no Nano-Fit model |
 
 Status: ERC 0 errors (6 off-grid warnings from the base drawing); DRC with schematic parity 0 / 0 / 0.
 Open items: VOUT copper on one layer and the 2.6 mm VBUS neck (thermal); loop inductance not

@@ -17,7 +17,10 @@ board (`kicad/ECE533_Guide`, Stages 1–5) is a different project and is not aff
 ## 1. What the module does
 - 72 V in (J1 DC+, J3 DC−), 24 V / 46 A out (J2, return through J3), two phases 180° apart and one
   coupled inductor. No controller on board.
-- **J4 (Molex Nano-Fit 105313-1206)**, centred on the left edge between the isolators, brings in
+- **J4 (Molex Nano-Fit 105313-1206, right angle)**, centred on the left edge between the isolators,
+  mating face 2.2 mm off the board edge (project footprint `ECE533_Mods:Molex_Nano-Fit_105313-1206_RA`
+  with a right-angle model drawn from the footprint outline and the Molex drawing; KiCad's library has
+  no Nano-Fit model). PS1 sits on J4's centreline. J4 brings in
   the four gate commands and their 5 V supply. The AT1 pair runs on L4 and the AT2 pair on L1 in
   fixed lanes (each pair swaps order at the isolator, so one signal per pair changes layer once):
   15–19 mm per line:
@@ -103,8 +106,13 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
     had LS 11–14 mm).
 - **Input path:** J1 → VBUS strip (L1 + L4 along the top edge, C6 on a PGND tongue) → VBUS column
   down the left of the FET block → the HS combs. **Output path:** inductor pads → L1 VOUT plane → J2,
-  with C5 + C15. **Return:** L4 PGND under the inductor → J3. Input bulk C6 + C16 sit on the
-  VBUS strip with PGND tongues under their '−' pins.
+  and a VOUT strip along the bottom edge. **Return:** L4 PGND under the inductor → J3.
+- **Bulk capacitors, mirror-symmetric:** input C6 + C16 on the top edge (VBUS strip), output C5 + C15
+  on the bottom edge (VOUT strip), at the same x (37.5 / 64.6 mm), '+' towards the edge. One pair sits
+  each side of the inductor: its body is 4 mm below the board centre (the switch-node pads are
+  off-centre in the TDK footprint), so two caps cannot fit right of it on the bottom edge. C16's '−'
+  has a PGND tongue on L1 + L4; C6's '−' (above the switch node) a PGND tongue on L1 with vias into
+  the L4 PGND comb.
 
 | L1 (1st Cu plane) | L2 (shield) |
 |---|---|
@@ -118,7 +126,7 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
 - Z60-12.7B on the bottom at x 19–79 mm: flush with neither edge, 3 mm overhang top and bottom.
   There is a 3.0 mm pedestal over the FET block and an insulating TIM (HS and LS share the
   heatsink), drawn on Dwgs.User / B.Fab.
-- **4 × M3 holes** (NPTH, 3.4 mm copper keep-out): (21.5, 4.0), (28.4, 50.6), (69.6, 18.0),
+- **4 × M3 holes** (NPTH, 3.4 mm copper keep-out): (21.5, 4.0), (21.5, 50.0), (69.6, 18.0),
   (69.6, 36.0) mm. Screw heads stay clear of the top parts.
 - Only the FETs and C1–C4 are on the bottom. THT leads under the heatsink (C5, C6, PS1 pins 3–4,
   J1–J3) must be trimmed to ≤ 2.5 mm (pedestal 3.0 mm).
@@ -144,15 +152,14 @@ runs warmer than the main board. See §7.
    additional ceramics if overshoot is high.
 3. **1EDN7550B high side:** Stage 1 judged its static common-mode range marginal at a 79 V high side.
    This is why the main board moved to the Si8274. Kept here because the module reproduces the report.
-4. **PS1 SIP-4 pitch** across the barrier: same issue as the main board. PS1 now sits at the bottom
-   left (J4 took its place). The barrier keep-out at PS1 runs from pin-2 centre to pin-3 centre, so
+4. **PS1 SIP-4 pitch** across the barrier: same issue as the main board. PS1 sits on J4's centreline. The barrier keep-out at PS1 runs from pin-2 centre to pin-3 centre, so
    copper reaches each pin only from its own side; a DRC exception allows 0.9 mm between the pins and
    1.5 mm for copper entering PS1 (≈ 1.4 mm needed for functional isolation at ≤ 80 V, PD2).
 5. There is no gate pull-down in the base schematic.
 6. The LS Kelvin return runs on L1 and joins PGND through the fill.
 7. Stock: the Digi-Key numbers come from the main BOM where the part is shared. The 1EDN7550BXTSA1
    Digi-Key PN and its stock still need to be confirmed, as do those of EGXF161ELL620MJ25S.
-8. J4 has no 3D model in KiCad's library (renders as an outline).
+8. J4's 3D model is a dimensioned placeholder (boxes); swap in Molex's STEP if a full mechanical model is needed.
 
 ## 8. Regenerating
 Run each command with KiCad's Python (`C:\Program Files\KiCad\10.0\bin\python.exe`) from `kicad/tools`.

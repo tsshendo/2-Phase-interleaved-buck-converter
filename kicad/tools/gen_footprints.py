@@ -421,9 +421,40 @@ def fuse_step():
     ])
 
 
+
+def nanofit_ra_step():
+    """Molex Nano-Fit 105313-1206 (1 x 6, 2.5 mm, right angle) from the KiCad footprint outline and
+    the Molex drawing: housing behind the pin row, open mating face pointing away from the pins (off
+    the board edge), pins bent 90 deg into the housing, two locating pegs. Footprint frame: pins at
+    x = 0, y = 0 ... 12.5; model y = -footprint y."""
+    blk, dark, tin = (0.08, 0.08, 0.08), (0.18, 0.18, 0.18), (0.82, 0.82, 0.76)
+    x0, xm, x1 = 1.0, 8.4, 10.88          # housing back, cavity floor, mating face
+    y0, y1 = -14.72, 2.22                 # housing ends (model y)
+    h, wall = 9.4, 1.0
+    b = [((x0, y0, 0), (xm, y1, h), blk),                       # housing body
+         ((xm, y0, h - wall), (x1, y1, h), blk),                # mating shroud: top
+         ((xm, y0, 0), (x1, y1, wall), blk),                    # bottom
+         ((xm, y0, wall), (x1, y0 + wall, h - wall), blk),      # ends
+         ((xm, y1 - wall, wall), (x1, y1, h - wall), blk),
+         ((xm - 0.01, y0 + wall, wall), (xm, y1 - wall, h - wall), dark)]   # cavity floor
+    for k in range(6):
+        y = -2.5 * k
+        b += [((-0.32, y - 0.32, -3.6), (0.32, y + 0.32, 4.98), tin),          # through-hole leg
+              ((-0.32, y - 0.32, 4.34), (x0, y + 0.32, 4.98), tin),            # 90 deg bend
+              ((xm, y - 0.32, 4.34), (x1 - 0.6, y + 0.32, 4.98), tin)]        # contact in the opening
+    for y in (0.0, -12.5):
+        b.append(((6.62, y - 0.58, -2.2), (7.74, y + 0.58, 0), blk))         # locating pegs
+    step_boxes(os.path.join(SHAPES, 'Molex_Nano-Fit_105313-1206_RA.step'), 'Molex_Nano-Fit_105313-1206_RA', b)
+
+
+from nanofit_fp import nanofit_ra_fp  # noqa: E402
+
+
 if __name__ == '__main__':
     for fn in (epc2304, epc2304_15pin, eruc23, r2512_kelvin, r2512_css2h, fuse456):
         fn().write(MODS)
     fuse_step()
+    nanofit_ra_step()
+    nanofit_ra_fp()
     redcube()
     nme1s()

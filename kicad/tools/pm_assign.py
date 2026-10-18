@@ -37,7 +37,7 @@ PARTS = [
                        'Skyworks', 'C7363570')),
     (['PS1'], ('NME1S0505SC', 'ECE533_Vendor:Murata_NME1S_SIP-4', 'NME1S0505SC', 'Murata',
                'C39128444')),
-    (['J4'], ('105313-1206', 'Connector_Molex:Molex_Nano-Fit_105313-xx06_1x06_P2.50mm_Horizontal',
+    (['J4'], ('105313-1206', 'ECE533_Mods:Molex_Nano-Fit_105313-1206_RA',
               '105313-1206', 'Molex', 'C17656275')),
     (['L1'], ('ERUC23-3R2K', 'ECE533_Mods:TDK_ERUC23', 'ERUC23-3R2K', 'TDK', '')),
     (rng('Q', 3, 4, 5, 6), ('EPC2304', 'ECE533_Mods:EPC2304_QFN-7_3x5mm_15pin', 'EPC2304', 'EPC',
