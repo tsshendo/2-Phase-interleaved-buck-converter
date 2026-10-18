@@ -143,6 +143,25 @@ These are DC estimates (ρ = 1.72 × 10⁻⁸ Ω·m, 70 µm). Stage 1 asked for 
 two layers. This module has one VOUT layer (the report's two-plane scheme puts PGND under it), so it
 runs warmer than the main board. See §7.
 
+## 6a. Parasitics vs the report (hand estimates, ±50 %)
+Report values: Q3D tables and the LTspice models in `sim/ltspice/`. Layout values: copper measured on
+this board; strip-over-shield L ≈ μ0·h·ℓ/w (h = 0.17 mm to the L2/L3 shield), microstrip 0.33 nH/mm,
+via pair 0.4·h·ln(s/r) nH, ρℓ/A, FR-4 3313 0.0994 mm (0.365 pF/mm²; alumina 70 µm was 1.265 pF/mm²).
+
+| Quantity | Report | This layout | Note |
+|---|---|---|---|
+| Commutation loop | 10.8 nH (Q3D) | ≈ 2.6 nH (2.1–3.4): planar 1.4 + 2 × 0805 in series 0.9 + FETs 0.3 | Lateral loop 6.6 × 6 mm over the shield |
+| LS V_DS overshoot | ≈ 88 V (160 V peak) | ≈ 17–28 V (scaled) → ≈ 95–105 V peak | Target < 100 V: borderline-OK, confirm by extraction |
+| HS gate loop | 4.93 nH, 12.6 mΩ | ≈ 4 nH, ≈ 9 mΩ (copper) | Kelvin island return under the trace |
+| LS gate loop | 9.79 nH, 22.7 mΩ | ≈ 3 nH, ≈ 7 mΩ | LS drivers moved next to the LS FETs |
+| Freewheel interconnect | target 0.15 mΩ (3 % RDS(on)); SPICE 0.25 + 0.1 mΩ | ≈ 0.4 mΩ (vias 0.06, SW band 0.25–0.3, return 0.1) | Over the 0.15 mΩ target, ≈ the SPICE value; an L1 copper layer over the SW band would roughly halve it (more SW area) |
+| SW node → shield | 71.5 pF | ≈ 49 pF (phase 1), ≈ 59 pF (phase 2) | Includes the Kelvin island and the L1 pad; phase 2 island is larger |
+| Shield return (tap → IL) | 1.02 nH, 0.94 mΩ | ≈ 0.3 nH, 0.24 mΩ (6 vias) | |
+| IL → ground (heatsink) | 141 pF | not comparable | Here L4 copper screens the shield from the heatsink; the heatsink touches the FETs through the TIM |
+| HF decoupling | 2.5 µF per leg (SPICE) | 1.1 µF per phase (2 × 2.2 µF in series, base schematic) | |
+| Bulk | 440 µF in / 100 µF out (SPICE) | 124 µF in / 124 µF out | |
+| Gate resistors | 2 Ω / 6 Ω, 1 kΩ pull-downs | 2 Ω / 5.6 Ω, **no pull-downs** (base schematic) | Pull-downs are in the SPICE model and CLAUDE.md §7 but not in the base schematic |
+
 ## 7. Open issues and deviations
 1. **VOUT on one layer, VBUS neck 2.6 mm:** expect roughly 20–30 °C of copper rise at 46 A with no
    airflow. Options: thicker copper, or VOUT on L4 as well with PGND moved to L1.
