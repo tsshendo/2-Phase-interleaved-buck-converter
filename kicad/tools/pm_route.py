@@ -238,8 +238,20 @@ def vias(R):
     R.track('+5V_iso', F, [(px, by), (bx, by)], 0.3)
     control_lanes(R)
     for t in R.b.GetTracks():
-        if t.GetNetname() in ('+5V_iso', '+5V') or t.GetNetname().startswith('Net-(AT1-A')                 or t.GetNetname().startswith('Net-(AT2-A'):
+        if t.GetNetname() in ('+5V_iso', '+5V') or t.GetNetname().startswith(('Net-(AT1-A', 'Net-(AT2-A', '/Gate_Drive/P')):
             t.SetLocked(True)
+    # gate pull-downs: HS (bottom) R pin 1 -> gate pad on L4; LS (top) pins -> gate / Kelvin vias on L1
+    def pc(ref, num):
+        x0, y0, x1, y1 = R.pad(ref, num)
+        return (x0 + x1) / 2, (y0 + y1) / 2
+    for rr, fet, net in (('R21', 'Q3', '/Gate_Drive/P1H'), ('R23', 'Q6', '/Gate_Drive/P2H')):
+        R.track(net, B, [pc(rr, '1'), pc(fet, '1')], 0.3)
+    for rr, fet in (('R22', 'Q4'), ('R24', 'Q5')):
+        gx0, gy0, gx1, gy1 = R.pad(fet, 1)
+        sx0, sy0, sx1, sy1 = R.pad(fet, 2)
+        gnet = [p.GetNetname() for p in R.fp(fet).Pads() if p.GetNumber() == '1'][0]
+        R.track(gnet, F, [pc(rr, '1'), ((gx0 + gx1) / 2, (gy0 + gy1) / 2)], 0.3)
+        R.track(PGND, F, [pc(rr, '2'), ((sx0 + sx1) / 2, sy1 - 0.5)], 0.3)
     # single-point Kelvin junction: island -> switch-node band, next to the HS FET
     R.track(SW[1], B, [(29.4, 16.0), (31.9, 16.0)], 0.4)
     R.track(SW[2], B, [(29.4, 40.0), (31.9, 40.0)], 0.4)

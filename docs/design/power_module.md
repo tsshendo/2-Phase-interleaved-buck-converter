@@ -8,7 +8,7 @@ board (`kicad/ECE533_Guide`, Stages 1–5) is a different project and is not aff
 |---|---|
 | Schematic | Base files from the report (commit `57d8ca5`): `PowerModule.kicad_sch` (power stage) + `gate_drive.kicad_sch`. The circuit is unchanged (see §2) |
 | Board | 85.60 × 53.98 mm ID-1 (R3.18), 4 × 2 oz, 1.6 mm, ENIG, JLCPCB 4-layer |
-| Parts | 56, the same parts as the report (bulk caps split, §2): 4 × EPC2304, ERUC23-3R2K, 4 × 1EDN7550B, 2 × SI86S620BC, NME1S0505SC, REDCUBE terminals |
+| Parts | 60, the same parts as the report (bulk caps split, 1 kΩ gate pull-downs added, §2): 4 × EPC2304, ERUC23-3R2K, 4 × 1EDN7550B, 2 × SI86S620BC, NME1S0505SC, REDCUBE terminals |
 | Checks | ERC: 0 errors, 6 warnings (off-grid wire ends in the base drawing). DRC with schematic parity: **0 violations, 0 unconnected, 0 parity issues** |
 | Scripts | `kicad/tools/pm_assign.py`, `pm_flags.py`, `pm_build.py`, `pm_route.py`, `pm_bom.py` (see §8) |
 
@@ -54,7 +54,9 @@ The base schematic is used as given. The only additions are:
 2. **`SHIELD` label** joining the two centre taps (C1/C2 and C3/C4). This is the interstitial-shield
    return terminal described in the report (p. 18).
 3. **PWR_FLAGs** on the driver supply nets, which come in through J4, PS1 and the bootstrap parts.
-4. `connectors.kicad_sch` was dropped: it was in the base folder but not in the hierarchy.
+4. **Gate pull-downs R21–R24** (1 kΩ, 0603, gate to Kelvin source: P1H–KS1, P1L–GNDPWR,
+   P2H–KS2, P2L–GNDPWR), as in the report's LTspice model (`pm_pulldowns.py`).
+5. `connectors.kicad_sch` was dropped: it was in the base folder but not in the hierarchy.
 
 EPC2304 uses the base SamacSys 15-pin symbol. The new footprint `EPC2304_QFN-7_3x5mm_15pin` has the
 EPC copper, mask and stencil drawing, with pins 8–15 stacked on the matching physical pad: G → 1/12,
@@ -160,7 +162,7 @@ via pair 0.4·h·ln(s/r) nH, ρℓ/A, FR-4 3313 0.0994 mm (0.365 pF/mm²; alumin
 | IL → ground (heatsink) | 141 pF | not comparable | Here L4 copper screens the shield from the heatsink; the heatsink touches the FETs through the TIM |
 | HF decoupling | 2.5 µF per leg (SPICE) | 1.1 µF per phase (2 × 2.2 µF in series, base schematic) | |
 | Bulk | 440 µF in / 100 µF out (SPICE) | 124 µF in / 124 µF out | |
-| Gate resistors | 2 Ω / 6 Ω, 1 kΩ pull-downs | 2 Ω / 5.6 Ω, **no pull-downs** (base schematic) | Pull-downs are in the SPICE model and CLAUDE.md §7 but not in the base schematic |
+| Gate resistors | 2 Ω / 6 Ω, 1 kΩ pull-downs | 2 Ω / 5.6 Ω, 1 kΩ pull-downs R21–R24 (added) | HS pull-downs on the bottom in the Kelvin island, LS on the top over the gate via |
 
 ## 7. Open issues and deviations
 1. **VOUT on one layer, VBUS neck 2.6 mm:** expect roughly 20–30 °C of copper rise at 46 A with no
@@ -174,7 +176,7 @@ via pair 0.4·h·ln(s/r) nH, ρℓ/A, FR-4 3313 0.0994 mm (0.365 pF/mm²; alumin
 4. **PS1 SIP-4 pitch** across the barrier: same issue as the main board. PS1 sits on J4's centreline. The barrier keep-out at PS1 runs from pin-2 centre to pin-3 centre, so
    copper reaches each pin only from its own side; a DRC exception allows 0.9 mm between the pins and
    1.5 mm for copper entering PS1 (≈ 1.4 mm needed for functional isolation at ≤ 80 V, PD2).
-5. There is no gate pull-down in the base schematic.
+5. Gate pull-downs R21–R24 (1 kΩ, gate to Kelvin source) were added to the base schematic (`pm_pulldowns.py`).
 6. The LS Kelvin return runs on L1 and joins PGND through the fill.
 7. Stock: the Digi-Key numbers come from the main BOM where the part is shared. The 1EDN7550BXTSA1
    Digi-Key PN and its stock still need to be confirmed, as do those of EGXF161ELL620MJ25S.
@@ -183,7 +185,7 @@ via pair 0.4·h·ln(s/r) nH, ρℓ/A, FR-4 3313 0.0994 mm (0.365 pF/mm²; alumin
 ## 8. Regenerating
 Run each command with KiCad's Python (`C:\Program Files\KiCad\10.0\bin\python.exe`) from `kicad/tools`.
 ```
-python pm_assign.py ; python pm_flags.py ; python pm_split_bulk.py   # once (already applied)
+python pm_assign.py ; python pm_flags.py ; python pm_split_bulk.py ; python pm_pulldowns.py   # once (applied)
 kicad-cli sch export netlist -o pm.net ../PowerModule/PowerModule.kicad_sch
 python pm_build.py pm.net                            # board, outline, stack-up, placement
 python pm_route.py power                             # report pours, vias, Kelvin islands, hops

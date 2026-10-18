@@ -8,7 +8,7 @@ Item,Qty,Reference designators,Value,Manufacturer part number,Manufacturer,Digi-
 7,1,J1,DC+,74650194R,Wurth Elektronik,,,Wurth_REDCUBE_74650194,Top,Same part as the main board BOM
 8,1,J2,Power_out,74650194R,Wurth Elektronik,,,Wurth_REDCUBE_74650194,Top,Same part as the main board BOM
 9,1,J3,DC-,74650194R,Wurth Elektronik,,,Wurth_REDCUBE_74650194,Top,Same part as the main board BOM
-10,1,J4,105313-1206,105313-1206,Molex,WM14975-ND,C17656275,Molex_Nano-Fit_105313-xx06_1x06_P2.50mm_Horizontal,Top,Report part (base schematic)
+10,1,J4,105313-1206,105313-1206,Molex,WM14975-ND,C17656275,Molex_Nano-Fit_105313-1206_RA,Top,Report part (base schematic)
 11,1,L1,ERUC23-3R2K,ERUC23-3R2K,TDK,495-ERUC23-3R2KCT-ND,,TDK_ERUC23,Top,Report part (base schematic)
 12,1,PS1,NME1S0505SC,NME1S0505SC,Murata,811-NME1S0505SC-ND,C39128444,Murata_NME1S_SIP-4,Top,Report part (base schematic)
 13,4,"Q3,Q4,Q5,Q6",EPC2304,EPC2304,EPC,917-EPC2304CT-ND,C6549215,EPC2304_QFN-7_3x5mm_15pin,Bottom,Report part (base schematic)
@@ -16,5 +16,6 @@ Item,Qty,Reference designators,Value,Manufacturer part number,Manufacturer,Digi-
 15,4,"R9,R10,R11,R12",4.7,RC0603FR-074R7L,YAGEO,,,R_0603_1608Metric,Top,Same part as the main board BOM
 16,4,"R13,R14,R19,R20",5.6,RC0603FR-075R6L,YAGEO,,,R_0603_1608Metric,Top,Same part as the main board BOM
 17,4,"R15,R16,R17,R18",2,RC0603FR-072RL,YAGEO,,,R_0603_1608Metric,Top,Same part as the main board BOM
-18,4,"U1,U2,U3,U4",1EDN7550B,1EDN7550BXTSA1,Infineon,,,SOT-23-6,Top,Report driver (base schematic); Digi-Key PN and stock to confirm
-19,1,(mechanical),Z60-12.7B heatsink,Z60-12.7B,Alpha Novatech,,,4 x M3 holes H1-H4,Bottom,"Pedestal 3.0 mm over the FET block, insulating TIM"
+18,4,"R21,R22,R23,R24",1k,RC0603FR-071KL,YAGEO,,,R_0603_1608Metric,Top + Bottom,"Gate pull-downs (report LTspice model): R21/R23 bottom, R22/R24 top"
+19,4,"U1,U2,U3,U4",1EDN7550B,1EDN7550BXTSA1,Infineon,,,SOT-23-6,Top,Report driver (base schematic); Digi-Key PN and stock to confirm
+20,1,(mechanical),Z60-12.7B heatsink,Z60-12.7B,Alpha Novatech,,,4 x M3 holes H1-H4,Bottom,"Pedestal 3.0 mm over the FET block, insulating TIM"

@@ -31,6 +31,7 @@ PARTS = [
     (rng('R', 9, 10, 11, 12), ('4.7', R0603, 'RC0603FR-074R7L', 'YAGEO', '')),
     (rng('R', 13, 14, 19, 20), ('5.6', R0603, 'RC0603FR-075R6L', 'YAGEO', '')),
     (rng('R', 15, 16, 17, 18), ('2', R0603, 'RC0603FR-072RL', 'YAGEO', '')),
+    (rng('R', 21, 22, 23, 24), ('1k', R0603, 'RC0603FR-071KL', 'YAGEO', '')),   # gate pull-downs
     (rng('D', 1, 2, 3, 4), ('SS110HL', 'Diode_SMD:D_SOD-123F', 'SS110HL-TP', 'MCC', 'C19996385')),
     (rng('U', 1, 2, 3, 4), ('1EDN7550B', 'Package_TO_SOT_SMD:SOT-23-6', '1EDN7550BXTSA1', 'Infineon', '')),
     (rng('AT', 1, 2), ('SI86S620BC-IS', 'Package_SO:SOIC-8_3.9x4.9mm_P1.27mm', 'SI86S620BC-IS',

@@ -120,6 +120,7 @@ through J4. Note: `docs/design/power_module.md`.
 | 2026-10-17 | All reference designators on silkscreen; owner block on the bottom silkscreen (2.0 mm) | User request |
 | 2026-10-17 | Bulk caps mirror-symmetric: C6/C16 top edge, C5/C15 bottom edge, x 37.5 / 64.6 | User: symmetric, 2 per edge; inductor body offset forces one pair each side of it |
 | 2026-10-17 | PS1 on J4's centreline; J4 right angle, overhanging the edge 2.2 mm, project footprint + model | User request; KiCad has no Nano-Fit model |
+| 2026-10-17 | 1 kΩ gate pull-downs R21–R24 (gate to Kelvin source): HS on the bottom in the Kelvin island, LS on top over the gate via | As in the report's LTspice model; CLAUDE.md §7 (user approved) |
 
 Status: ERC 0 errors (6 off-grid warnings from the base drawing); DRC with schematic parity 0 / 0 / 0.
 Open items: VOUT copper on one layer and the 2.6 mm VBUS neck (thermal); loop inductance not

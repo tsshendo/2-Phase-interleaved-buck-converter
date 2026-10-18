@@ -158,6 +158,12 @@ def floor_plan(P):
     # supply diodes: low side next to their drivers' R10 / R12, high side in the column
     P.fixed('D2', T, LS_DRV_X + 4.3, 28.3, rot=0)
     P.fixed('D4', T, LS_DRV_X, 39.4, rot=0)
+    # 1 kOhm gate pull-downs at the gate pads: HS on the bottom inside the Kelvin island (gate pin
+    # towards the gate pad), LS on the top over the gate via, next to the LS Kelvin via
+    P.fixed('R21', B, 28.2, 20.3, cond=lambda p, c: p(1)[0] > p(2)[0] + 1)
+    P.fixed('R23', B, 28.2, 36.1, cond=lambda p, c: p(1)[0] > p(2)[0] + 1)
+    P.fixed('R22', T, 38.2, 19.7, cond=lambda p, c: p(1)[1] > p(2)[1] + 1)
+    P.fixed('R24', T, 38.2, 35.5, cond=lambda p, c: p(1)[1] > p(2)[1] + 1)
     # isolator input-side decoupling, clear of the J4 lanes
     P.fixed('C11', T, 13.6, 13.3, rot=180)
     P.fixed('C12', T, 13.4, 31.0, rot=0)
@@ -253,8 +259,8 @@ def silk_labels(board):
                 ref.SetPosition(bp.V(cx, cy))
                 tb = _bb(ref)
                 tw, th = tb[2] - tb[0], tb[3] - tb[1]
-                for i in range(-24, 25):
-                    for j in range(-24, 25):
+                for i in range(-32, 33):
+                    for j in range(-32, 33):
                         px, py = cx + i * 0.25, cy + j * 0.25
                         d = (i * i + j * j) ** 0.5 * 0.25
                         if best and d >= best[0]:
