@@ -30,6 +30,8 @@ VIA_STD = rp.VIA_STD
 VIA_PAD = (0.2, 0.5)            # via-in-pad, filled and capped (JLC: 0.2 drill, 0.15 ring)
 LV_X = 16.1                     # barrier band 16.3-19.7
 HV_X0 = 19.9
+ISLAND1 = [(24.6, 15.1), (29.6, 15.1), (29.6, 17.4), (30.9, 17.4), (30.9, 19.4), (29.6, 19.4), (29.6, 20.7),
+           (24.6, 20.7)]          # HS1 Kelvin island under U1; phase 2 is the same 15.8 mm lower
 
 
 def control_lanes(R):
@@ -104,16 +106,16 @@ def power(R):
     # switch nodes: outer strip ends of both FETs, out to the inductor pad (phase 2 also takes in
     # the HS SK pad, which sits on the inner side)
     # (the bands start right of the HS SK pad, so the SK pad only feeds the Kelvin island below)
-    R.zone(SW[1], B, [(31.45, 14.4), (46.9, 14.4), (46.9, 21.2), (42.6, 21.2), (42.6, 18.4), (31.45, 18.4)],
+    # (the inductor body is centred, so its SW pads sit 3.95 mm above each FET row: the bands extend
+    # under them)
+    R.zone(SW[1], B, [(31.45, 14.4), (42.6, 14.4), (42.6, 12.6), (46.9, 12.6), (46.9, 18.4), (31.45, 18.4)],
            prio=6, name='SW1_L4')
-    R.zone(SW[2], B, [(31.45, 35.6), (42.6, 35.6), (42.6, 32.8), (46.9, 32.8), (46.9, 40.4), (31.45, 40.4)],
+    R.zone(SW[2], B, [(31.45, 35.6), (42.6, 35.6), (42.6, 28.4), (46.9, 28.4), (46.9, 40.4), (31.45, 40.4)],
            prio=6, name='SW2_L4')
     # Kelvin islands: HS SK pad -> island under the HS driver (its reference plane and the return
     # under its gate trace); joined to the switch node only inside the FET
-    R.zone(SW[1], B, [(24.6, 15.1), (29.6, 15.1), (29.6, 17.4), (30.9, 17.4), (30.9, 19.4), (29.6, 19.4),
-                      (29.6, 20.7), (24.6, 20.7)], prio=6, name='KS1_island_L4')
-    R.zone(SW[2], B, [(24.6, 33.3), (30.9, 33.3), (30.9, 35.2), (29.6, 35.2), (29.6, 42.6), (24.6, 42.6)],
-           prio=6, name='KS2_island_L4')
+    R.zone(SW[1], B, ISLAND1, prio=6, name='KS1_island_L4')
+    R.zone(SW[2], B, [(x, y + 15.8) for x, y in ISLAND1], prio=6, name='KS2_island_L4')   # same as phase 1
     # VBUS: HS drain combs (inner strip ends), bus column on the left, strip along the top edge to
     # the bulk capacitor and J1
     # (left edge kept off x 20.3-21.6: L4 channel for the isolator output cross-overs)
@@ -127,22 +129,18 @@ def power(R):
     R.zone(PGND, B, [(38.5, 20.0), (42.55, 20.0), (42.55, 21.6), (85.2, 21.6), (85.2, 50.6), (82.4, 53.4),
                      (38.5, 53.4)], prio=4, name='PGND_L4')
     R.rect(PGND, B, 36.5, 32.4, 38.6, 34.0, prio=3, name='PGND_Q5_SK')
-    # PGND tongues through the VBUS strip to the input bulk capacitors' '-' pins: C16 (right of the
-    # inductor) on L1 + L4 down to the PGND plane; C6 (above the switch node) on L1 only, down past
-    # the LS1 FET to vias into the L4 PGND comb
-    x0, y0, x1, y1 = R.pad('C16', 2)
-    xc = (x0 + x1) / 2
-    R.rect(PGND, B, xc - 1.6, y0 - 0.4, xc + 1.6, 21.8, prio=6, name='PGND_C16_L4')
-    R.rect(PGND, F, xc - 1.6, y0 - 0.4, xc + 1.6, 20.6, prio=6, name='PGND_C16_L1')
-    x0, y0, x1, y1 = R.pad('C6', 2)
-    xc = (x0 + x1) / 2
-    R.zone(PGND, F, [(xc - 1.6, y0 - 0.4), (xc + 1.5, y0 - 0.4), (xc + 1.5, 17.0), (42.4, 17.0), (42.4, 21.6),
-                     (38.3, 21.6), (38.3, 19.6), (xc - 1.6, 19.6)], prio=6, name='PGND_C6_L1')
+    # PGND tongue (L1) from the input bulk capacitors' '-' pins through the VBUS strip, down past the
+    # LS1 FET to vias into the L4 PGND comb (the caps sit over the VBUS feed, above the switch node)
+    xs = [(R.pad(r, 2)[0] + R.pad(r, 2)[2]) / 2 for r in ('C6', 'C16')]
+    y0 = R.pad('C6', 2)[1] - 0.4
+    R.zone(PGND, F, [(min(xs) - 1.6, y0), (42.2, y0), (42.2, 21.6), (38.3, 21.6), (38.3, 12.0),
+                     (min(xs) - 1.6, 12.0)], prio=6, name='PGND_Cin_L1')
     # ---- L1: 1st Cu plane -----------------------------------------------------------------------
-    R.rect(SW[1], F, 42.6, 14.4, 46.9, 21.2, prio=6, name='SW1_L1')
-    R.rect(SW[2], F, 42.6, 32.8, 46.9, 39.6, prio=6, name='SW2_L1')
-    R.zone(VOUT, F, [(52.9, 21.0), (85.2, 21.0), (85.2, 33.6), (72.4, 33.6), (72.4, 53.4), (32.4, 53.4),
-                     (32.4, 45.6), (52.9, 45.6)], prio=5, name='VOUT_L1')     # + strip to C5
+    R.rect(SW[1], F, 42.6, 12.6, 46.9, 18.4, prio=6, name='SW1_L1')
+    R.rect(SW[2], F, 42.6, 28.4, 46.9, 39.6, prio=6, name='SW2_L1')
+    R.zone(VOUT, F, [(52.9, 19.0), (66.0, 19.0), (66.0, 21.0), (85.2, 21.0), (85.2, 33.6), (72.4, 33.6),
+                     (72.4, 53.4), (45.6, 53.4), (45.6, 42.0), (52.9, 42.0)], prio=5,
+           name='VOUT_L1')     # + strip to the output caps on the bottom edge
     R.zone(VBUS, F, [(31.5, 0.6), (82.4, 0.6), (85.2, 3.4), (85.2, 13.7), (31.5, 13.7)], prio=5,
            name='VBUS_L1')
     R.zone(PGND, F, [(72.8, 34.2), (85.2, 34.2), (85.2, 50.6), (82.4, 53.4), (72.8, 53.4)], prio=4,
@@ -192,7 +190,7 @@ def vias(R):
             for j in range(5):
                 R.via(SW[ph], x0 + 0.45 + i * (x1 - x0 - 0.9) / 4, y0 + 0.45 + j * (y1 - y0 - 0.9) / 4,
                       VIA_PAD, same_pad_ok=True)
-        ys = (14.95, 15.85) if ph == 1 else (37.95, 38.85)
+        ys = (17.75,) if ph == 1 else (33.75, 34.65)
         for y in ys:
             for i in range(4):
                 R.via(SW[ph], 43.3 + i * 1.0, y)
@@ -254,7 +252,7 @@ def vias(R):
         R.track(PGND, F, [pc(rr, '2'), ((sx0 + sx1) / 2, sy1 - 0.5)], 0.3)
     # single-point Kelvin junction: island -> switch-node band, next to the HS FET
     R.track(SW[1], B, [(29.4, 16.0), (31.9, 16.0)], 0.4)
-    R.track(SW[2], B, [(29.4, 40.0), (31.9, 40.0)], 0.4)
+    R.track(SW[2], B, [(25.2, 36.3), (25.2, 37.6), (31.9, 37.6)], 0.4)   # SW2 band is below the gate pad
     for x in (39.25, 40.05, 40.85, 41.65):  # C6 tongue (L1) -> L4 PGND comb under LS1
         R.via(PGND, x, 21.3, VIA_PAD)
     # shield return: the centre-tap island to L2 / L3

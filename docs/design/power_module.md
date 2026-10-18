@@ -108,13 +108,19 @@ layer, because it sits right next to the switch nodes. If you want L3 empty, del
     had LS 11–14 mm).
 - **Input path:** J1 → VBUS strip (L1 + L4 along the top edge, C6 on a PGND tongue) → VBUS column
   down the left of the FET block → the HS combs. **Output path:** inductor pads → L1 VOUT plane → J2,
-  and a VOUT strip along the bottom edge. **Return:** L4 PGND under the inductor → J3.
-- **Bulk capacitors, mirror-symmetric:** input C6 + C16 on the top edge (VBUS strip), output C5 + C15
-  on the bottom edge (VOUT strip), at the same x (37.5 / 64.6 mm), '+' towards the edge. One pair sits
-  each side of the inductor: its body is 4 mm below the board centre (the switch-node pads are
-  off-centre in the TDK footprint), so two caps cannot fit right of it on the bottom edge. C16's '−'
-  has a PGND tongue on L1 + L4; C6's '−' (above the switch node) a PGND tongue on L1 with vias into
-  the L4 PGND comb.
+  and the VOUT plane down to the output capacitors on the bottom edge. **Return:** L4 PGND under the inductor → J3.
+- **Symmetry about the board centreline:** the FET rows (y 19.1 / 34.9), the inductor body (centred;
+  its SW pads, off-centre in the TDK footprint, sit 3.95 mm above each FET row and the L4 switch-node
+  copper extends under them), J4, PS1, AT1/AT2, C11/C12, the screws and the terminals are mirrored.
+  The **per-phase gate-drive cells are identical copies one phase pitch (15.8 mm) apart**, like the FET
+  rows: the EPC2304 gate pad is at the same corner in both rows (a bottom-side part cannot be
+  mirrored), so mirrored cells would give the two phases different gate loops. As copies, both phases
+  have the same driver→gate paths (HS 8.3 mm, LS 5.9 mm including the pull-down stubs).
+- **Bulk capacitors grouped by role:** input C6 + C16 together on the top edge, on the **input side**
+  of the inductor, over the VBUS feed to the HS drains: they supply the pulsed input current next to
+  the ceramics and keep the input ripple off the output side; their '−' pins reach the L4 PGND comb
+  through an L1 tongue and vias next to LS1. Output C5 + C15 together on the bottom edge, on the
+  **output side**, under the inductor's VOUT pads and next to J2, on the VOUT plane.
 
 | L1 (1st Cu plane) | L2 (shield) |
 |---|---|
@@ -157,7 +163,7 @@ via pair 0.4·h·ln(s/r) nH, ρℓ/A, FR-4 3313 0.0994 mm (0.365 pF/mm²; alumin
 | HS gate loop | 4.93 nH, 12.6 mΩ | ≈ 4 nH, ≈ 9 mΩ (copper) | Kelvin island return under the trace |
 | LS gate loop | 9.79 nH, 22.7 mΩ | ≈ 3 nH, ≈ 7 mΩ | LS drivers moved next to the LS FETs |
 | Freewheel interconnect | target 0.15 mΩ (3 % RDS(on)); SPICE 0.25 + 0.1 mΩ | ≈ 0.4 mΩ (vias 0.06, SW band 0.25–0.3, return 0.1) | Over the 0.15 mΩ target, ≈ the SPICE value; an L1 copper layer over the SW band would roughly halve it (more SW area) |
-| SW node → shield | 71.5 pF | ≈ 49 pF (phase 1), ≈ 59 pF (phase 2) | Includes the Kelvin island and the L1 pad; phase 2 island is larger |
+| SW node → shield | 71.5 pF | ≈ 45 pF (phase 1), ≈ 64 pF (phase 2) | Includes the Kelvin island and the L1 pad; SW2 reaches 7 mm up to the centred inductor's pad |
 | Shield return (tap → IL) | 1.02 nH, 0.94 mΩ | ≈ 0.3 nH, 0.24 mΩ (6 vias) | |
 | IL → ground (heatsink) | 141 pF | not comparable | Here L4 copper screens the shield from the heatsink; the heatsink touches the FETs through the TIM |
 | HF decoupling | 2.5 µF per leg (SPICE) | 1.1 µF per phase (2 × 2.2 µF in series, base schematic) | |

@@ -30,7 +30,7 @@ HS_X = (19.0, 79.0)                         # Z60-12.7B on the bottom, 60 x 60, 
 HOLES = ((21.5, 4.0), (21.5, 50.0), (69.6, 18.0), (69.6, 36.0))
 PH_Y = {1: 19.1, 2: 34.9}
 HS_XC, LS_XC = 33.0, 39.6                   # FET centres
-L1_C = (50.0, 30.95)
+L1_C = (50.0, H / 2)                        # body centred on the board (SW pads 3.95 mm above the rows)
 LV_REFS = {'J4', 'C11', 'C12'}
 BARRIER_REFS = {'AT1', 'AT2', 'PS1'}
 HV_SW = ('/VIN', '/Gate_Drive/KS1', '/Gate_Drive/KS2')
@@ -38,10 +38,16 @@ LV_NETS = ('GND', '+5V', 'Net-(AT1-A1)', 'Net-(AT1-A2)', 'Net-(AT2-A1)', 'Net-(A
 
 DRV_X = 27.15
 J4_PIN_X = 8.68                             # pin column; mating face at 8.68 - 10.88 = -2.2
-BULK_X = (37.5, 64.6)
+BULK_IN_X = (30.0, 40.6)                    # input side of the inductor, top edge
+BULK_OUT_X = (51.6, 62.2)                   # output side, bottom edge
+PITCH = 15.8
+HS_CELL_Y = 17.0
+LS_CELL_Y = 25.3
 LS_DRV_X = 35.4
-CELLS = [dict(u='U1', y=17.0, src='R15', snk='R16', inp='R1', inm='R2', c='C7', rv='R9'),
-         dict(u='U3', y=38.6, src='R17', snk='R18', inp='R7', inm='R8', c='C9', rv='R11')]
+CELLS = [dict(u='U1', src='R15', snk='R16', inp='R1', inm='R2', c='C7', rv='R9', d='D1', pd='R21',
+              ls=dict(u='U2', src='R13', snk='R14', inp='R5', inm='R6', c='C8', rv='R10', d='D2', pd='R22')),
+         dict(u='U3', src='R17', snk='R18', inp='R7', inm='R8', c='C9', rv='R11', d='D3', pd='R23',
+              ls=dict(u='U4', src='R19', snk='R20', inp='R3', inm='R4', c='C10', rv='R12', d='D4', pd='R24'))]
 PHASES = {1: dict(hs='Q3', ls='Q4', drv_h='U1', drv_l='U2', caps=('C1', 'C2')),
           2: dict(hs='Q6', ls='Q5', drv_h='U3', drv_l='U4', caps=('C3', 'C4'))}
 
@@ -107,27 +113,36 @@ def floor_plan(P):
     # REDCUBE terminals on the right edge: DC+ top, VOUT middle, DC- bottom
     for ref, y in (('J1', 9.0), ('J2', 27.0), ('J3', 45.0)):
         P.fixed(ref, T, 79.0, y)
-    # bulk capacitors: input next to DC+, output next to the inductor output pads
-    # (C6 '-' pin downwards, onto a PGND tongue cut through the VBUS strip)
-    # bulk capacitors, two per long edge, mirror-symmetric about the board centreline ('+' pin
-    # towards the edge): input C6 + C16 on the top edge (VBUS strip), output C5 + C15 on the bottom
-    # edge (VOUT strip); one pair each side of the inductor (its body is 4 mm below centre)
+    # bulk capacitors grouped by role (two in parallel each):
+    #  input C6 + C16 together on the top edge, on the input side of the inductor, over the VBUS feed
+    #  that runs to the HS drains: they supply the pulsed input current with the shortest VBUS/PGND
+    #  path to the ceramics, and keep the 16 A input ripple out of the output side;
+    #  output C5 + C15 together on the bottom edge, on the output side under the inductor's VOUT pads,
+    #  next to J2: they filter the output ripple where it leaves the inductor
     up = lambda p, c: abs(p(1)[0] - p(2)[0]) < 0.01 and p(2)[1] > p(1)[1] + 1
     down = lambda p, c: abs(p(1)[0] - p(2)[0]) < 0.01 and p(1)[1] > p(2)[1] + 1
-    P.fixed('C6', T, BULK_X[0], 5.9, cond=up, by_court=True)
-    P.fixed('C16', T, BULK_X[1], 5.9, cond=up, by_court=True)
-    P.fixed('C5', T, BULK_X[0], H - 5.9, cond=down, by_court=True)
-    P.fixed('C15', T, BULK_X[1], H - 5.9, cond=down, by_court=True)
-    # control connector on the left edge, isolators and PS1 across the barrier
+    for ref, x in zip(('C6', 'C16'), BULK_IN_X):
+        P.fixed(ref, T, x, 5.9, cond=up, by_court=True)
+    for ref, x in zip(('C5', 'C15'), BULK_OUT_X):
+        P.fixed(ref, T, x, H - 5.9, cond=down, by_court=True)
+    # control connector on the left edge, isolators and PS1 across the barrier (mirror-symmetric)
     P.fixed('PS1', T, 14.19, 27.0, cond=lambda p, c: p(1)[0] < p(4)[0] - 5 and abs(p(1)[1] - p(4)[1]) < 0.01)
     at_ok = lambda p, c: p(1)[0] < c[0] - 1 and p(1)[1] < p(4)[1]
     P.fixed('AT1', T, 18.0, 17.0, cond=at_ok)
     P.fixed('AT2', T, 18.0, 37.0, cond=at_ok)
-    # high-side drivers in the column left of the FET block, level with their FET row (outputs face
-    # the FETs)
+    P.fixed('C11', T, 13.6, 13.1, rot=180)                    # isolator input-side decoupling
+    P.fixed('C12', T, 13.6, H - 13.1, rot=180)
+    P.fixed('C13', T, 26.4, 25.6, rot=0)                      # PS1 output decoupling
+    P.fixed('C14', T, 26.4, 28.4, rot=0)
+    # per-phase gate-drive cells: identical copies one phase pitch (15.8 mm) apart, like the FET rows,
+    # so both phases have the same gate loops (the EPC2304 gate pad is at the same corner in both rows)
     out_right = lambda p, c: p(5)[0] > c[0] + 0.5 and p(6)[1] < p(4)[1]
-    for d in CELLS:
-        ux, uy = DRV_X, d['y']
+    pin1_top = lambda p, c: p(1)[1] < p(2)[1] - 1
+    pin1_right = lambda p, c: p(1)[0] > p(2)[0] + 1
+    pin1_left = lambda p, c: p(1)[0] < p(2)[0] - 1
+    for k, d in enumerate(CELLS):
+        dy = k * PITCH
+        ux, uy = DRV_X, HS_CELL_Y + dy                      # HS driver, left of its FET row
         P.fixed(d['u'], T, ux, uy, cond=out_right)
         P.fixed(d['snk'], T, ux + 3.7, uy - 0.9, rot=180)      # pin 1 (gate) towards the FET
         P.fixed(d['src'], T, ux + 3.7, uy + 0.9, rot=180)
@@ -135,40 +150,21 @@ def floor_plan(P):
         P.fixed(d['inp'], T, ux - 3.85, uy + 0.9, rot=180)
         P.fixed(d['c'], T, ux + 1.6, uy + 2.65, rot=0)         # VDD | driver GND
         P.fixed(d['rv'], T, ux - 1.6, uy + 2.65, rot=0)        # D cathode | VDD
-    # low-side drivers on the top between the two phases, right at the LS gate pads: outputs face
-    # the gate via (U2 up to phase 1, U4 down to phase 2), gate resistors vertical, VDD cap at VDD
-    pin1_top = lambda p, c: p(1)[1] < p(2)[1] - 1
-    pin1_bot = lambda p, c: p(1)[1] > p(2)[1] + 1
-    pin1_right = lambda p, c: p(1)[0] > p(2)[0] + 1
-    pin1_left = lambda p, c: p(1)[0] < p(2)[0] - 1
-    P.fixed('U2', T, LS_DRV_X, 25.3, cond=lambda p, c: p(5)[1] < c[1] - 0.5 and p(6)[0] < p(4)[0])
-    P.fixed('R14', T, LS_DRV_X - 0.8, 21.6, cond=pin1_top)
-    P.fixed('R13', T, LS_DRV_X + 0.8, 21.6, cond=pin1_top)
-    P.fixed('C8', T, LS_DRV_X + 3.3, 24.4, cond=pin1_left)
-    P.fixed('R10', T, LS_DRV_X + 3.3, 26.1, cond=lambda p, c: p(2)[0] < p(1)[0] - 1)
-    P.fixed('R6', T, LS_DRV_X - 3.3, 25.6, cond=pin1_right)
-    P.fixed('R5', T, LS_DRV_X - 3.3, 27.2, cond=pin1_right)
-    P.fixed('U4', T, LS_DRV_X, 31.2, cond=lambda p, c: p(5)[1] > c[1] + 0.5 and p(6)[0] > p(4)[0])
-    P.fixed('R20', T, LS_DRV_X + 0.8, 34.85, cond=pin1_bot)
-    P.fixed('R19', T, LS_DRV_X - 0.8, 34.85, cond=pin1_bot)
-    P.fixed('C10', T, LS_DRV_X - 3.2, 34.6, cond=pin1_right)
-    P.fixed('R12', T, LS_DRV_X - 0.4, 37.3, cond=lambda p, c: p(2)[0] < p(1)[0] - 1)
-    P.fixed('R3', T, LS_DRV_X - 3.3, 29.6, cond=pin1_right)     # B1 above B2, as at the AT2 pins
-    P.fixed('R4', T, LS_DRV_X - 3.3, 31.2, cond=pin1_right)
-    # supply diodes: low side next to their drivers' R10 / R12, high side in the column
-    P.fixed('D2', T, LS_DRV_X + 4.3, 28.3, rot=0)
-    P.fixed('D4', T, LS_DRV_X, 39.4, rot=0)
-    # 1 kOhm gate pull-downs at the gate pads: HS on the bottom inside the Kelvin island (gate pin
-    # towards the gate pad), LS on the top over the gate via, next to the LS Kelvin via
-    P.fixed('R21', B, 28.2, 20.3, cond=lambda p, c: p(1)[0] > p(2)[0] + 1)
-    P.fixed('R23', B, 28.2, 36.1, cond=lambda p, c: p(1)[0] > p(2)[0] + 1)
-    P.fixed('R22', T, 38.2, 19.7, cond=lambda p, c: p(1)[1] > p(2)[1] + 1)
-    P.fixed('R24', T, 38.2, 35.5, cond=lambda p, c: p(1)[1] > p(2)[1] + 1)
-    # isolator input-side decoupling, clear of the J4 lanes
-    P.fixed('C11', T, 13.6, 13.3, rot=180)
-    P.fixed('C12', T, 13.4, 31.0, rot=0)
-    P.fixed('D1', T, 27.4, 22.4, rot=0)
-    P.fixed('D3', T, DRV_X, 43.8, rot=0)
+        P.fixed(d['d'], T, 27.4, 22.4 + dy, rot=0)
+        l = d['ls']                                          # LS driver, under its FET row on the top,
+        ly = LS_CELL_Y + dy                                  # outputs up to the LS gate via
+        P.fixed(l['u'], T, LS_DRV_X, ly, cond=lambda p, c: p(5)[1] < c[1] - 0.5 and p(6)[0] < p(4)[0])
+        P.fixed(l['snk'], T, LS_DRV_X - 0.8, ly - 3.7, cond=pin1_top)
+        P.fixed(l['src'], T, LS_DRV_X + 0.8, ly - 3.7, cond=pin1_top)
+        P.fixed(l['c'], T, LS_DRV_X + 3.3, ly - 0.9, cond=pin1_left)
+        P.fixed(l['rv'], T, LS_DRV_X + 3.3, ly + 0.8, cond=lambda p, c: p(2)[0] < p(1)[0] - 1)
+        P.fixed(l['inp'], T, LS_DRV_X - 3.3, ly + 0.3, cond=pin1_right)  # B1 above B2, as at the AT pins
+        P.fixed(l['inm'], T, LS_DRV_X - 3.3, ly + 1.9, cond=pin1_right)
+        P.fixed(l['d'], T, LS_DRV_X + 4.3, ly + 3.0, rot=0)
+        # 1 kOhm gate pull-downs at the gate pads: HS on the bottom inside the Kelvin island, LS on
+        # the top over the gate via next to the LS Kelvin via
+        P.fixed(d['pd'], B, 28.2, 20.3 + dy, cond=lambda p, c: p(1)[0] > p(2)[0] + 1)
+        P.fixed(l['pd'], T, 38.2, 19.7 + dy, cond=lambda p, c: p(1)[1] > p(2)[1] + 1)
 
 
 NAME_BLOCK = ('Tanishq Shendokar', 'MS Electrical Engineering', 'NC State University',
@@ -283,7 +279,7 @@ def silk_labels(board):
     return missing
 
 
-def name_block(board, band=(42.9, 62.2), span=(2.0, 52.0)):
+def name_block(board, band=(42.9, 62.2), span=(2.0, 44.0)):
     """Owner text on the bottom silkscreen, as large as fits (credit-card name size is about
     2.5 mm): the clear strip between the FET block and the bulk capacitors, lines along the long side
     (vias are tented, so the strip under the inductor's via field is usable)."""
